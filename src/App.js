@@ -1,14 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Home from "./Home";
+import { ConfigProvider, theme } from "antd";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [isAuth, setIsAuth] = useState(localStorage.getItem('access_token') ? true : false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+      <div className="text-white min-w-full min-h-screen overflow-clip bg-black">
+        <Routes>
+          {isAuth ? (
+            <>
+              <Route path="/admin" element={<div>Hello Admin</div>} />
+            </>
+          ) : (
+            <>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<div>Login</div>} />
+            </>
+          )}
+        </Routes>
+      </div>
+    </ConfigProvider>
   );
-}
+};
 
 export default App;
