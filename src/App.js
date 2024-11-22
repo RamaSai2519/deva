@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Intro from "./screens/Intro";
 import Header from "./components/Header";
 import { ConfigProvider, theme } from "antd";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./Home";
 
 const App = () => {
   const [isAuth, setIsAuth] = useState(localStorage.getItem('access_token') ? true : false);
@@ -20,7 +20,7 @@ const App = () => {
             </>
           ) : (
             <>
-              <Route path="/" element={<Intro />} />
+              <Route path="/" element={<Home />} />
               <Route path="/login" element={<div>Login</div>} />
             </>
           )}
