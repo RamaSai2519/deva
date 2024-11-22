@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Home from "./Home";
+import Intro from "./screens/Intro";
 import Header from "./components/Header";
 import { ConfigProvider, theme } from "antd";
 import { Route, Routes } from "react-router-dom";
@@ -20,7 +22,8 @@ const App = () => {
             </>
           ) : (
             <>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Intro />} /> {/* Render Intro for non-authenticated users */}
+              <Route path="/home" element={<Home />} /> {/* Optional route for Home */}
               <Route path="/login" element={<div>Login</div>} />
             </>
           )}
