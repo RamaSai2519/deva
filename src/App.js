@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Home from "./Home";
+import Intro from "./screens/Intro";
 import Header from "./components/Header";
 import { ConfigProvider, theme } from "antd";
 import { Route, Routes } from "react-router-dom";
