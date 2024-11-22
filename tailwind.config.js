@@ -7,10 +7,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        mutedWhite: 'rgba(255, 255, 255, 0.8)',
+        darkBlack: "#141414",
+        lightBlack: "#212121",
       },
       fontSize: {
-      },
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio')
+  ],
 }
