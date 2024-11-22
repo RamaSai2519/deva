@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const NeonText = ({ text, color1, color2, color3 }) => (
     <span className="relative">
@@ -50,4 +50,4 @@ const EpochIntro = () => {
     );
 };
 
-export default EpochIntro;
+export default Intro;

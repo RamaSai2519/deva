@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import Intro from "../screens/Intro";
+import EpochHero from "../screens/Hero";
 
 const Home = () => {
     return (
-        <div className="h-screen bg-black pt-10">
-            Hello
-        </div>
-    );
-};
+        <>
+            <EpochHero />
+            <Intro />
+        </>
+    )
+}
 
 export default Home;
