@@ -1,7 +1,7 @@
 import React from 'react';
 import useScrollPosition from '../../hooks/useScrollPostion';
 
-const EpochHero = () => {
+const Hero = () => {
     const { isScrolled } = useScrollPosition(1);
 
     return (
@@ -43,4 +43,4 @@ const EpochHero = () => {
     );
 };
 
-export default EpochHero;
+export default Hero;

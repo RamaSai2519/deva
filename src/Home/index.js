@@ -1,11 +1,11 @@
 import React from "react";
 import Intro from "../screens/Intro";
-import EpochHero from "../screens/Hero";
+import Hero from "../screens/Hero";
 
 const Home = () => {
     return (
         <>
-            <EpochHero />
+            <Hero />
             <Intro />
         </>
     )
