@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
-      <div className="text-white min-w-full min-h-screen overflow-clip">
+      <div className="text-white min-w-full min-h-screen overflow-clip bg-black">
         <Header />
         <Routes>
           {isAuth ? (
