@@ -4,7 +4,7 @@ import Octicon from '../../Icons/octicon';
 import SearchIcon from '../../Icons/Searchicon';
 
 const Header = () => {
-    const [hoveredMenu, setHoveredMenu] = useState(true);
+    const [hoveredMenu, setHoveredMenu] = useState(null);
 
     const navItem = (text, menu) => (
         <span
@@ -39,7 +39,7 @@ const Header = () => {
     );
 
     return (
-        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 backdrop-blur-lg rounded-b-md ${hoveredMenu ? "bg-lightBlack" : "bg-transparent"}`}>
+        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 backdrop-blur-lg rounded-b-md ${hoveredMenu ? "bg-lightBlack" : "bg-black"}`}>
             <nav className='flex w-full items-center justify-center'>
                 <div className="flex w-full max-w-2xl items-center justify-between">
                     {navItem(<Octicon />, '/')}

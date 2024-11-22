@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Home from "./Home";
+import Intro from "./screens/Intro";
 import Header from "./components/Header";
 import { ConfigProvider, theme } from "antd";
 import { Route, Routes } from "react-router-dom";
@@ -10,6 +10,7 @@ const App = () => {
 
   return (
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
+      <Header />
       <div className="text-white min-w-full min-h-screen overflow-clip bg-black">
         <Header />
         <Routes>
@@ -19,7 +20,7 @@ const App = () => {
             </>
           ) : (
             <>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Intro />} />
               <Route path="/login" element={<div>Login</div>} />
             </>
           )}
