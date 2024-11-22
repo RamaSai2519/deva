@@ -25,11 +25,11 @@ const Hero = () => {
             </div>
 
             {/* Call-to-Action */}
-            <button className="relative bg-black border border-transparent hover:border-transparent hover:text-white rounded-full px-8 py-3 text-lg font-medium transition duration-300 mb-4 hover:bg-gradient-to-r hover:from-blue-500 hover:via-green-400 hover:to-purple-600 group">
-                <span className="relative z-10 bg-gradient-to-r from-blue-500 via-green-400 to-purple-600 text-transparent bg-clip-text group-hover:text-white">
+            <button className="relative bg-black border border-transparent hover:border-transparent hover:text-white rounded-full px-8 py-3 text-lg font-medium mb-4 group">
+                <span className="relative text-xl z-10 bg-gradient-to-r from-blue-500 via-green-400 to-purple-600 text-transparent bg-clip-text group-hover:text-white">
                     Join the Epoch
                 </span>
-                <div className="absolute inset-0 rounded-full border-2 border-transparent bg-gradient-to-r from-blue-500 via-green-400 to-purple-600 p-[2px]">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-green-400 to-purple-600 p-[2px]">
                     <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r from-blue-500 via-green-400 to-purple-600"></div>
                 </div>
             </button>
