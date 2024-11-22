@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Octicon from '../../Icons/octicon';
 import SearchIcon from '../../Icons/Searchicon';
+import useScrollPosition from '../../hooks/useScrollPostion';
 
 const Header = () => {
     const [hoveredMenu, setHoveredMenu] = useState(null);
+    const { isScrolled } = useScrollPosition('80vh');
 
     const navItem = (text, menu) => (
         <span
@@ -39,10 +41,9 @@ const Header = () => {
     );
 
     return (
-        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 backdrop-blur-lg rounded-b-md ${hoveredMenu ? "bg-lightBlack" : "bg-black"}`}>
+        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 rounded-b-md ${hoveredMenu ? "bg-lightBlack" : isScrolled ? 'bg-lightBlack' : 'bg-black'}`}>
             <nav className='flex w-full items-center justify-center'>
                 <div className="flex w-full max-w-2xl items-center justify-between">
-                    {/* {navItem(<Octicon />, '/')} */}
                     <Octicon />
                     {navItem('Events', 'Mac')}
                     {navItem('FAQ', 'iPhone')}
