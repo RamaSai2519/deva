@@ -24,7 +24,7 @@ const Header = () => {
 
     const renderDropdown = () => (
         <div className={`fixed top-10 left-0 right-0 w-full h-screen text-white z-20 backdrop-blur-md transition-opacity duration-300 ease-in-out ${hoveredMenu ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-            <div className="w-full mx-auto flex flex-col items-center justify-center gap-5 bg-lightBlack" onMouseLeave={() => setHoveredMenu(null)}>
+            <div className="w-full mx-auto flex flex-col items-center justify-center py-10 rounded-b-xl gap-5 bg-lightBlack" onMouseLeave={() => setHoveredMenu(null)}>
                 {dropdownMenus[hoveredMenu]?.map((item, index) => (
                     <Link
                         key={index}
@@ -42,7 +42,8 @@ const Header = () => {
         <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 backdrop-blur-lg rounded-b-md ${hoveredMenu ? "bg-lightBlack" : "bg-black"}`}>
             <nav className='flex w-full items-center justify-center'>
                 <div className="flex w-full max-w-2xl items-center justify-between">
-                    {navItem(<Octicon />, '/')}
+                    {/* {navItem(<Octicon />, '/')} */}
+                    <Octicon />
                     {navItem('Events', 'Mac')}
                     {navItem('FAQ', 'iPhone')}
                     {navItem('About Us', 'Watch')}
