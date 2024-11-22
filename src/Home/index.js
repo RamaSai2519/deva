@@ -2,7 +2,8 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <div className="flex items-center justify-center bg-black">
+        <div className="h-screen bg-black pt-10">
+            Hello
         </div>
     );
 };
