@@ -11,7 +11,7 @@ const FAQ = () => {
         },
         {
             question: "When and where is Epoch Tech Fest held?",
-            answer: "Epoch Tech Fest is held annually in the month of November at the Tech Convention Center."
+            answer: "Epoch Tech Fest is held annually in the month of November at the Gitam University campus in Bengaluru, India."
         },
         {
             question: "How can I participate in Epoch Tech Fest?",
@@ -28,52 +28,55 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-black p-8">
-            <div className="space-y-4">
-                {faqItems.map((item, index) => (
-                    <div key={index}>
-                        <button
-                            onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                            className="w-full p-4 flex justify-between items-center text-left text-mutedWhite hover:bg-darkBlack transition-colors duration-200"
-                        >
-                            <span className="font-medium">{item.question}</span>
-                            <motion.span
-                                animate={{ rotate: activeIndex === index ? 180 : 0 }}
-                                transition={{ duration: 0.3, ease: "easeInOut" }}
-                                className="transform"
+        <div className="min-h-screen bg-black p-8 flex items-center justify-center">
+            <div className="w-full max-w-2xl">
+                <h1 className="text-3xl font-bold text-white mb-6 text-center">FAQs</h1>
+                <div className="space-y-4">
+                    {faqItems.map((item, index) => (
+                        <div key={index}>
+                            <button
+                                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                                className="w-full p-4 flex justify-between items-center text-left text-mutedWhite hover:bg-darkBlack transition-colors duration-200"
                             >
-                                <svg
-                                    className="w-5 h-5 text-mutedWhite"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="currentColor"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M19 9l-7 7-7-7"
-                                    />
-                                </svg>
-                            </motion.span>
-                        </button>
-
-                        <AnimatePresence>
-                            {activeIndex === index && (
-                                <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
-                                    animate={{ height: "auto", opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
+                                <span className="font-medium">{item.question}</span>
+                                <motion.span
+                                    animate={{ rotate: activeIndex === index ? 180 : 0 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    className="transform"
                                 >
-                                    <div className="p-4 text-mutedWhite">
-                                        {item.answer}
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                ))}
+                                    <svg
+                                        className="w-5 h-5 text-mutedWhite"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </motion.span>
+                            </button>
+
+                            <AnimatePresence>
+                                {activeIndex === index && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    >
+                                        <div className="p-4 text-mutedWhite bg-lightBlack">
+                                            {item.answer}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

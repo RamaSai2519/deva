@@ -8,7 +8,7 @@ const Intro = () => {
                 <div className="absolute inset-[4px] rounded-[26px] bg-black shadow-[0_0_30px_15px_rgba(0,204,255,0.4),0_0_50px_30px_rgba(128,0,255,0.3)]">
                     <div className="relative h-full w-full rounded-[24px] bg-black flex items-center justify-center">
                         <h1 className="text-white text-center text-2xl font-semibold">
-                            Glowing Inner Border
+                            Epoch Tech Fest 2024
                         </h1>
                     </div>
                 </div>
