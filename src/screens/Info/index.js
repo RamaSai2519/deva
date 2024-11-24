@@ -31,29 +31,31 @@ const Info = () => {
         <div className="relative min-h-screen bg-lightBlack">
             <div className="text-white text-center mb-8">
                 <h2 className="text-2xl font-bold mb-4">Time Until Epoch 3.0</h2>
-                <div className="flex justify-center gap-4">
-                    <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
-                        <div className="bg-black p-4 rounded-lg">
-                            <span className="text-3xl">{timeLeft.days}</span>
-                            <p>Days</p>
+                <div className='flex justify-center'>
+                    <div className="grid grid-cols-4 gap-4 max-w-xl">
+                        <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
+                            <div className="bg-black p-4 rounded-lg">
+                                <span className="text-3xl">{timeLeft.days}</span>
+                                <p>Days</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
-                        <div className="bg-black p-4 rounded-lg">
-                            <span className="text-3xl">{timeLeft.hours}</span>
-                            <p>Hours</p>
+                        <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
+                            <div className="bg-black p-4 rounded-lg">
+                                <span className="text-3xl">{timeLeft.hours}</span>
+                                <p>Hours</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
-                        <div className="bg-black p-4 rounded-lg">
-                            <span className="text-3xl">{timeLeft.minutes}</span>
-                            <p>Minutes</p>
+                        <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
+                            <div className="bg-black p-4 rounded-lg">
+                                <span className="text-3xl">{timeLeft.minutes}</span>
+                                <p>Minutes</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
-                        <div className="bg-black p-4 rounded-lg">
-                            <span className="text-3xl">{timeLeft.seconds}</span>
-                            <p>Seconds</p>
+                        <div className="bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-[1px] rounded-lg">
+                            <div className="bg-black p-4 rounded-lg">
+                                <span className="text-3xl">{timeLeft.seconds}</span>
+                                <p>Seconds</p>
+                            </div>
                         </div>
                     </div>
                 </div>

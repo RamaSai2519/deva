@@ -15,6 +15,15 @@
   animation: fadeInBottom 0.5s forwards;
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .mask-gradient {
   -webkit-mask-size: 100% 100%;
   mask-size: 100% 100%;

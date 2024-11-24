@@ -2,16 +2,21 @@
     {
         "title": "Oasis Design Showcase",
         "description": "Explore stunning graphic design and creativity.",
-        "image": "https://via.placeholder.com/800x400"
+        "image": "https://via.placeholder.com/400x200"
     },
     {
         "title": "3D Animation Studio",
         "description": "Discover 3D tools that bring imagination to life.",
-        "image": "https://via.placeholder.com/800x400"
+        "image": "https://via.placeholder.com/400x200"
     },
     {
         "title": "Circular Principles Workshop",
         "description": "Learn about innovative design with circular principles.",
-        "image": "https://via.placeholder.com/800x400"
+        "image": "https://via.placeholder.com/400x200"
+    },
+    {
+        "title": "Circular Principles Workshop",
+        "description": "Learn about innovative design with circular principles.",
+        "image": "https://via.placeholder.com/400x200"
     }
 ]
