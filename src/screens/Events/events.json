@@ -1,0 +1,52 @@
+[
+    {
+        "title": "Hackathon",
+        "date": "March 15-16, 2024",
+        "description": "24-hour coding challenge to build innovative solutions for real-world problems.",
+        "image": "/assets/images/test.jpg",
+        "details": [
+            "Prize pool of ₹50,000",
+            "Teams of 2-4 members",
+            "Theme: AI for Social Good",
+            "Mentorship from industry experts",
+            "Free food and refreshments"
+        ]
+    },
+    {
+        "title": "Tech Talks",
+        "date": "March 15, 2024",
+        "description": "Expert sessions on emerging technologies and future trends in tech industry.",
+        "image": "/assets/images/test.jpg",
+        "details": [
+            "Keynote by leading tech experts",
+            "Panel discussions on AI/ML",
+            "Networking opportunities",
+            "Certificate of participation",
+            "Q&A sessions"
+        ]
+    },
+    {
+        "title": "Game Jam",
+        "date": "March 16-17, 2024",
+        "description": "48-hour challenge to build an innovative game from scratch.",
+        "image": "/assets/images/test.jpg",
+        "details": [
+            "Top 3 teams awarded prizes",
+            "Showcase your game at the main event",
+            "Free access to game dev tools",
+            "Networking with game designers"
+        ]
+    },
+    {
+        "title": "AI Workshop",
+        "date": "March 17, 2024",
+        "description": "Hands-on workshop to explore AI tools and frameworks.",
+        "image": "/assets/images/test.jpg",
+        "details": [
+            "Learn TensorFlow and PyTorch basics",
+            "Interactive coding sessions",
+            "Certificate of completion",
+            "Guidance from industry mentors"
+        ]
+    }
+]

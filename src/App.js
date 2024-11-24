@@ -10,7 +10,6 @@ const App = () => {
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <Header />
       <div className="text-white min-w-full min-h-screen overflow-clip bg-black">
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
