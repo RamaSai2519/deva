@@ -9,6 +9,7 @@ const Home = () => {
     return (
         <div className={`${hoveredMenu && 'transition-all duration-700 blur-md'}`}>
             <Hero />
+            <Info />
             <Intro />
         </div>
     )

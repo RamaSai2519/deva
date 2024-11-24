@@ -29,7 +29,6 @@ const Hero = () => {
                         <span className="absolute text-mutedWhite text-9xl">3.0</span>
                     </span>
 
-                    {/* CH with glow */}
                     <span className="relative">
                         <span className="absolute inset-0 blur-[20px] text-purple-400 opacity-70">CH</span>
                         <span className="absolute inset-0 blur-[10px] text-purple-300 opacity-80">CH</span>
@@ -37,14 +36,17 @@ const Hero = () => {
                     </span>
                 </h2>
             </div>
+
+            {/* Subtle Classic Button */}
             <button className="relative bg-black border border-transparent hover:border-transparent hover:text-white rounded-full px-8 py-3 text-lg font-medium mb-4 group">
-                <span className="relative text-xl z-10 bg-gradient-to-r from-blue-500 via-green-400 to-purple-600 text-transparent bg-clip-text group-hover:text-white">
+                <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent bg-clip-text group-hover:text-white transition-colors duration-300">
                     Join the Epoch
                 </span>
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 via-green-400 to-purple-600 p-[2px]">
-                    <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r from-blue-500 via-green-400 to-purple-600"></div>
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-100 p-[1px]">
+                    <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
                 </div>
             </button>
+
             <p className="text-mutedWhite">
                 Tech Fest | 2024 | 18th - 20th December
             </p>
@@ -52,4 +54,5 @@ const Hero = () => {
         </div>
     );
 };
+
 export default Hero;
