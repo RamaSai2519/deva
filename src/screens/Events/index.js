@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import events from "./events.json";
 import Slider from "../../components/Slider";
+import events from "./events.json";
 
 const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
