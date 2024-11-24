@@ -14,7 +14,9 @@ const Intro = () => {
                 </p>
             </GlowDiv>
             <PeepParent elementId="intro" onClick={() => setShowPopup(true)}>
-                <h1>Welcome to Epoch Tech Fest</h1>
+                <div className="flex w-full justify-center items-center">
+                    <h1>Welcome to Epoch Tech Fest</h1>
+                </div>
             </PeepParent>
             <GiantPopup visible={showPopup} setVisible={setShowPopup}>
                 Hello World

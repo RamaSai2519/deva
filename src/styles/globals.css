@@ -29,6 +29,10 @@ body {
   background: #555;
 }
 
+.animate-climb-up {
+  animation: climbUp 0.6s forwards;
+}
+
 .animate-fade-in {
   animation: fadeIn 0.6s forwards;
 }

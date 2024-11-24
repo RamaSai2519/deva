@@ -26,12 +26,15 @@ const Peep = ({ children, isSettled, onClick }) => {
                     onClick={onClick}
                     id="circloid"
                     className={`flex cursor-pointer items-center rounded-full transition-all duration-1000 mb-5 bg-lightBlack bg-opacity-80
-                        ${state.isCircle ? "w-12 h-12 justify-center" : "lg:w-1/5 w-4/5 min-h-12 h-auto p-2 pr-3 justify-between"} 
-                        ${state.isVisible ? "translate-y-0" : "translate-y-20"}
-                        animate-fade-in
-                        `}
+                                ${state.isCircle ? "w-12 h-12 justify-center" : "w-[80%] md:w-[30%] min-h-12 h-auto p-2 pr-3 justify-between"}
+                                ${state.isVisible ? "translate-y-0" : "translate-y-20"}
+                                animate-fade-in overflow-hidden gap-4
+                                `}
                 >
-                    {state.isVisible && <PlusIcon />}
+                    {state.isVisible &&
+                        <div className={`flex items-center justify-center w-10 h-10 rounded-full`}>
+                            <PlusIcon />
+                        </div>}
                     {state.shouldRender && children}
                 </div>
             </div>

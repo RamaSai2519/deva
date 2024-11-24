@@ -52,7 +52,7 @@ export default function TeamSection() {
     }
 
     return (
-        <div className="w-full h-screen bg-black flex items-center justify-center">
+        <div className="w-full h-screen bg-black flex items-center justify-center pt-16">
             <div
                 ref={ref}
                 className="relative w-[1200px] h-[800px] flex items-center justify-center"
