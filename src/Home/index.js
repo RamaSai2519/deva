@@ -1,6 +1,7 @@
 import React from "react";
 import Info from "../screens/Info";
 import Hero from "../screens/Hero";
+import About from "../screens/About";
 import Intro from "../screens/Intro";
 import Events from "../screens/Events";
 import { useHoveredMenu } from "../contexts/hoveredMenuContext";
@@ -15,6 +16,7 @@ const Home = () => {
             <Info />
             <Intro />
             <Events />
+            <About />
             <FAQ />
         </div>
     )
