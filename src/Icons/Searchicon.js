@@ -1,5 +1,3 @@
-import Search from "antd/es/transfer/search";
-
 const SearchIcon = () => {
     return (
         <svg viewBox="64 64 896 896" focusable="false" data-icon="search" width="14" height="14" fill="currentColor" aria-hidden="true">
