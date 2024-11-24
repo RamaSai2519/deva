@@ -22,6 +22,6 @@ const Home = () => {
             <FAQ />
         </div>
     )
-}
+};
 
 export default Home;
