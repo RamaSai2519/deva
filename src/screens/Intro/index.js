@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GlowDiv from "../../components/GlowDiv";
-import useScrollTo from "../../hooks/useScrollTo";
+import Peep from "../../components/Peep";
 
 const Intro = () => {
-    useScrollTo("intro");
-    useScrollTo("slider");
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const introElement = document.getElementById("intro");
+            if (introElement) {
+                const rect = introElement.getBoundingClientRect();
+                setIsInView(rect.top < window.innerHeight && rect.bottom > 0);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <div id="intro" className="min-h-screen bg-black p-8 flex flex-col items-center justify-center">
@@ -14,6 +30,7 @@ const Intro = () => {
                     Gitam Bengaluru
                 </p>
             </GlowDiv>
+            {isInView && <Peep />}
         </div>
     );
 };
