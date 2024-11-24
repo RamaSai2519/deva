@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Octicon from '../../Icons/octicon';
 import SearchIcon from '../../Icons/Searchicon';
 import useScrollPosition from '../../hooks/useScrollPostion';
+import { useHoveredMenu } from '../../contexts/hoveredMenuContext';
 
 const Header = () => {
-    const [hoveredMenu, setHoveredMenu] = useState(null);
+    const { hoveredMenu, setHoveredMenu } = useHoveredMenu();
     const { isScrolled } = useScrollPosition('80vh');
 
     const navItem = (text, menu) => (
@@ -25,13 +26,13 @@ const Header = () => {
     };
 
     const renderDropdown = () => (
-        <div className={`fixed top-10 left-0 right-0 w-full h-screen text-white z-20 backdrop-blur-md transition-opacity duration-300 ease-in-out ${hoveredMenu ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
-            <div className="w-full mx-auto flex flex-col items-center justify-center py-10 rounded-b-xl gap-5 bg-lightBlack" onMouseLeave={() => setHoveredMenu(null)}>
+        <div className={`fixed top-10 bottom-0 left-0 right-0 w-full h-screen text-white z-20 ${hoveredMenu ? 'animate-fade-in-bottom' : 'animate-fade-out-bottom'}`}>
+            <div className={`w-full mx-auto flex flex-col items-center justify-center py-10 rounded-b-xl gap-5 bg-lightBlack ${hoveredMenu ? 'bg-lightBlack animate-fade-in animate-fade-in-bottom' : 'bg-transparent animate-fade-out animate-fade-out-bottom'}`} onMouseLeave={() => setHoveredMenu(null)}>
                 {dropdownMenus[hoveredMenu]?.map((item, index) => (
                     <Link
                         key={index}
                         to={`/${hoveredMenu.toLowerCase()}/${item.toLowerCase().replace(/ /g, '-')}`}
-                        className="hover:underline text-lg"
+                        className="hover:underline text-lg animate-fade-in-bottom"
                     >
                         {item}
                     </Link>
@@ -41,7 +42,7 @@ const Header = () => {
     );
 
     return (
-        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 rounded-b-md ${hoveredMenu ? "bg-lightBlack" : isScrolled ? 'bg-lightBlack' : 'bg-black'}`}>
+        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-30 ${hoveredMenu ? 'bg-lightBlack transition-all duration-500' : isScrolled ? 'bg-lightBlack transition-all duration-500 rounded-b-md' : 'bg-black'}`}>
             <nav className='flex w-full items-center justify-center'>
                 <div className="flex w-full max-w-2xl items-center justify-between">
                     <Octicon />
