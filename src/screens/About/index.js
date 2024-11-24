@@ -77,16 +77,26 @@ export default function TeamSection() {
                         variants={cardVariants}
                         initial="initial"
                         animate={controls}
-                        className="absolute w-[250px] bg-[#1A1A1A] rounded-xl overflow-hidden text-center p-4"
+                        className="absolute w-[280px] bg-[#1A1A1A] rounded-xl overflow-hidden text-left p-4"
                         style={{
                             boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)"
                         }}
                     >
-                        <h3 className="text-white text-lg font-semibold">
-                            {member.name}
-                        </h3>
-                        <p className="text-blue-400 text-sm">{member.role}</p>
-                        <p className="text-gray-400 text-sm">{member.description}</p>
+                        <div className="flex items-start gap-4">
+                            <img
+                                src={member.image}
+                                alt={member.name}
+                                className="w-16 h-16 rounded-lg object-cover"
+                            />
+                            <div>
+                                <h3 className="text-white text-lg font-semibold">
+                                    {member.name}
+                                </h3>
+                                <p className="text-blue-400 text-sm">{member.role}</p>
+                            </div>
+                        </div>
+                        <p className="text-gray-400 text-sm mt-4">{member.description}</p>
+
                     </motion.div>
                 ))}
             </div>
