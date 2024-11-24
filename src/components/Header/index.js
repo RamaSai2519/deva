@@ -26,7 +26,7 @@ const Header = () => {
     };
 
     const renderDropdown = () => (
-        <div className={`fixed top-10 bottom-0 left-0 right-0 w-full h-screen text-white z-20 ${hoveredMenu ? 'animate-fade-in-bottom' : 'animate-fade-out'}`}>
+        <div className={`fixed top-10 bottom-0 left-0 right-0 w-full h-screen text-white z-20 ${hoveredMenu ? 'animate-fade-in-bottom' : 'hidden animate-fade-out'}`}>
             <div className={`w-full mx-auto flex flex-col items-center justify-center py-10 rounded-b-xl gap-5 bg-lightBlack ${hoveredMenu ? 'bg-lightBlack animate-fade-in animate-fade-in-bottom' : 'bg-transparent animate-fade-out'}`} onMouseLeave={() => setHoveredMenu(null)}>
                 {dropdownMenus[hoveredMenu]?.map((item, index) => (
                     <Link
