@@ -1,18 +1,18 @@
 import React from "react";
+import useScrollTo from "../../hooks/useScrollTo";
+import GlowBox from "../../components/GlowBox";
 
 const Intro = () => {
+    useScrollTo("intro");
+
     return (
-        <div className="min-h-screen bg-black p-8 flex justify-center items-center">
-            <div className="relative h-[calc(100vh-4rem)] max-w-full w-full">
-                <div className="absolute inset-0 rounded-[28px] bg-gray-800"></div>
-                <div className="absolute inset-[4px] rounded-[26px] bg-black shadow-[0_0_30px_15px_rgba(0,204,255,0.4),0_0_50px_30px_rgba(128,0,255,0.3)]">
-                    <div className="relative h-full w-full rounded-[24px] bg-black flex items-center justify-center">
-                        <h1 className="text-white text-center text-2xl font-semibold">
-                            Epoch Tech Fest 2024
-                        </h1>
-                    </div>
-                </div>
-            </div>
+        <div id="intro" className="min-h-screen bg-black p-8 flex flex-col items-center justify-center">
+            <GlowBox>
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">Epoch Tech Fest</h2>
+                <p className="text-lg text-white/80 text-center max-w-md">
+                    Gitam Bengaluru
+                </p>
+            </GlowBox>
         </div>
     );
 };

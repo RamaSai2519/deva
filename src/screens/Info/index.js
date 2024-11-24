@@ -28,7 +28,7 @@ const GraphicsWorkflow = () => {
     });
 
     return (
-        <div className="min-h-screen bg-black p-8">
+        <div className="relative min-h-screen bg-lightBlack">
             <div className="text-white text-center mb-8">
                 <h2 className="text-2xl font-bold mb-4">Time Until Epoch 3.0</h2>
                 <div className="flex justify-center gap-4">
@@ -99,6 +99,7 @@ const GraphicsWorkflow = () => {
                     </div>
                 </div>
             </div>
+            <div className={`bg-[linear-gradient(to_bottom,_transparent_0%,_black)] w-full h-20 absolute bottom-0 z-10`} />
         </div>
     );
 };
