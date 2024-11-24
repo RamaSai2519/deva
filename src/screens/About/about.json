@@ -1,0 +1,46 @@
+{
+    "teamMembers": [
+        {
+            "id": 1,
+            "name": "Event Head",
+            "role": "Core Team",
+            "description": "Leading all coordination and execution of Epoch 3.0, ensuring seamless integration of all events and activities."
+        },
+        {
+            "id": 2,
+            "name": "Technical Lead",
+            "role": "Tech Team",
+            "description": "Managing all technical aspects of the fest including workshops, hackathons, and coding competitions."
+        },
+        {
+            "id": 3,
+            "name": "Creative Director",
+            "role": "Design Team",
+            "description": "Overseeing the visual identity and creative direction of all fest materials and presentations."
+        },
+        {
+            "id": 4,
+            "name": "Operations Head",
+            "role": "Management",
+            "description": "Coordinating logistics, venue management, and smooth execution of all events."
+        },
+        {
+            "id": 5,
+            "name": "Marketing Lead",
+            "role": "Outreach Team",
+            "description": "Driving promotional strategies and social media presence for maximum engagement."
+        },
+        {
+            "id": 6,
+            "name": "Content Head",
+            "role": "Media Team",
+            "description": "Creating and managing all content including social media, website, and promotional materials."
+        },
+        {
+            "id": 7,
+            "name": "Sponsorship Head",
+            "role": "Partnership Team",
+            "description": "Managing sponsorships and external collaborations for maximum impact."
+        }
+    ]
+}
