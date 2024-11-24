@@ -4,6 +4,7 @@ import Hero from "../screens/Hero";
 import Intro from "../screens/Intro";
 import Events from "../screens/Events";
 import { useHoveredMenu } from "../contexts/hoveredMenuContext";
+import FAQ from "../screens/faq";
 
 const Home = () => {
     const { hoveredMenu } = useHoveredMenu();
@@ -14,6 +15,7 @@ const Home = () => {
             <Info />
             <Intro />
             <Events />
+            <FAQ />
         </div>
     )
 }
