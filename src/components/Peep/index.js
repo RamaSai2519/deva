@@ -22,9 +22,11 @@ const Peep = ({ children, isSettled }) => {
             <div className="w-full flex justify-center items-center">
                 <div
                     id="circloid"
-                    className={`flex justify-center items-center rounded-full transition-all duration-1000 mb-5 bg-red-600 
+                    className={`flex justify-center items-center rounded-full transition-all duration-1000 mb-5 bg-lightBlack bg-opacity-80
                         ${state.isCircle ? "w-12 h-12" : "w-1/3 min-h-12 h-auto p-2"} 
-                        ${state.isVisible ? "translate-y-0" : "translate-y-20"}`}
+                        ${state.isVisible ? "translate-y-0" : "translate-y-20"}
+                        animate-fade-in
+                        `}
                 >
                     {state.shouldRender && children}
                 </div>
