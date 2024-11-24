@@ -1,6 +1,7 @@
 import React from "react";
-import Intro from "../screens/Intro";
+import Info from "../screens/Info";
 import Hero from "../screens/Hero";
+import Intro from "../screens/Intro";
 import { useHoveredMenu } from "../contexts/hoveredMenuContext";
 
 const Home = () => {
