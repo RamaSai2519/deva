@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PlusIcon from "../../Icons/Plusicon";
 
 
-const Peep = ({ children, isSettled }) => {
+const Peep = ({ children, isSettled, onClick }) => {
     const [state, setState] = useState({
         isCircle: true,
         isVisible: false,
@@ -23,9 +23,10 @@ const Peep = ({ children, isSettled }) => {
         <div className={`fixed ${isSettled ? 'relative w-full' : 'bottom-0'} right-0 left-0 h-max z-20 animate-fade-in`}>
             <div className="w-full flex justify-center items-center">
                 <div
+                    onClick={onClick}
                     id="circloid"
-                    className={`flex items-center rounded-full transition-all duration-1000 mb-5 bg-lightBlack bg-opacity-80
-                        ${state.isCircle ? "w-12 h-12 justify-center" : "md:w-1/5 w-4/5 min-h-12 h-auto p-2 pr-3 justify-between"} 
+                    className={`flex cursor-pointer items-center rounded-full transition-all duration-1000 mb-5 bg-lightBlack bg-opacity-80
+                        ${state.isCircle ? "w-12 h-12 justify-center" : "lg:w-1/5 w-4/5 min-h-12 h-auto p-2 pr-3 justify-between"} 
                         ${state.isVisible ? "translate-y-0" : "translate-y-20"}
                         animate-fade-in
                         `}
