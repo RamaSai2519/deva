@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import { ConfigProvider, theme } from "antd";
 import useScrollTo from "./hooks/useScrollTo";
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 
 const App = () => {
   useScrollTo();

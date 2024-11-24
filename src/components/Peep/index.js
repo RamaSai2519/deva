@@ -1,34 +1,37 @@
 import React, { useState, useEffect } from "react";
+import PlusIcon from "../../Icons/Plusicon";
 
-const Peep = ({ children }) => {
-    const [isCircle, setIsCircle] = useState(true);
-    const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsCircle(false);
-        }, 1000);
-
-        return () => clearTimeout(timer);
-    }, []);
+const Peep = ({ children, isSettled }) => {
+    const [state, setState] = useState({
+        isCircle: true,
+        isVisible: false,
+        shouldRender: false
+    });
 
     useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsVisible(true);
-        }, 500);
-        return () => clearTimeout(timer);
+        const timers = [
+            setTimeout(() => setState(prev => ({ ...prev, isCircle: false })), 1000),
+            setTimeout(() => setState(prev => ({ ...prev, isVisible: true })), 500),
+            setTimeout(() => setState(prev => ({ ...prev, shouldRender: true })), 1700)
+        ];
+
+        return () => timers.forEach(timer => clearTimeout(timer));
     }, []);
 
     return (
-        <div className="fixed bottom-0 right-0 left-0 h-max z-50">
+        <div className={`fixed ${isSettled ? 'relative w-full' : 'bottom-0'} right-0 left-0 h-max z-20 animate-fade-in`}>
             <div className="w-full flex justify-center items-center">
                 <div
                     id="circloid"
-                    className={`flex justify-center items-center transition-all duration-1000 mb-5 bg-red-600 
-                        ${isCircle ? "w-12 h-12 rounded-full" : "w-48 min-w-0 h-12 rounded-2xl p-2"} 
-                        ${isVisible ? "translate-y-0" : "translate-y-20"}`}
+                    className={`flex items-center rounded-full transition-all duration-1000 mb-5 bg-lightBlack bg-opacity-80
+                        ${state.isCircle ? "w-12 h-12 justify-center" : "md:w-1/5 w-4/5 min-h-12 h-auto p-2 pr-3 justify-between"} 
+                        ${state.isVisible ? "translate-y-0" : "translate-y-20"}
+                        animate-fade-in
+                        `}
                 >
-                    {!isCircle && children}
+                    {state.isVisible && <PlusIcon />}
+                    {state.shouldRender && children}
                 </div>
             </div>
         </div>
