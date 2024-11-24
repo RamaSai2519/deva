@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const GraphicsWorkflow = () => {
+const Info = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     function calculateTimeLeft() {
@@ -104,4 +104,4 @@ const GraphicsWorkflow = () => {
     );
 };
 
-export default GraphicsWorkflow;
+export default Info;
