@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import teamData from './team.json';
 
 const TeamCard = ({ member }) => (
@@ -38,9 +39,6 @@ const Team = () => {
 
     const getCurrentMembers = () => {
         const start = currentPage * membersPerPage;
-        if (currentPage === totalPages - 1) {
-            return teamData.teamMembers.slice(start);
-        }
         return teamData.teamMembers.slice(start, start + membersPerPage);
     };
 
@@ -52,18 +50,27 @@ const Team = () => {
         setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
     };
 
+    const handlers = useSwipeable({
+        onSwipedLeft: nextPage,
+        onSwipedRight: prevPage,
+        trackMouse: true,
+    });
+
     return (
-        <div className="bg-black min-h-screen py-20">
+        <div className="bg-black min-h-screen py-20" {...handlers}>
             <div className="max-w-6xl mx-auto px-4 mb-20">
                 <h2 className="text-[2.5rem] leading-tight text-center">
-                    <span className="text-gray-400 font-light">
-                        "Behind every great innovation and transformative experience at Epoch 3.0,
+                    {/* Short quote for mobile devices */}
+                    <span className="block md:hidden">
+                        <span className="text-gray-400 font-light">{teamData.quote.short.prefix} </span>
+                        <span className="text-white font-normal">{teamData.quote.short.highlight} </span>
+                        <span className="text-gray-400 font-light">{teamData.quote.short.suffix}</span>
                     </span>
-                    <span className="text-white font-normal">
-                        "stands a team of passionate individuals who bring their unique strengths together to create something extraordinary"
-                    </span>
-                    <span className="text-gray-400 font-light">
-                        "— because the greatest achievements aren't built by individuals, but by teams who dare to dream bigger. - Satya Nadella"
+                    {/* Full quote for larger screens */}
+                    <span className="hidden md:block">
+                        <span className="text-gray-400 font-light">{teamData.quote.full.prefix} </span>
+                        <span className="text-white font-normal">{teamData.quote.full.highlight} </span>
+                        <span className="text-gray-400 font-light">{teamData.quote.full.suffix}</span>
                     </span>
                 </h2>
             </div>
@@ -75,7 +82,7 @@ const Team = () => {
                 </div>
                 <button
                     onClick={prevPage}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-zinc-800/80 hover:bg-zinc-700 rounded-full p-4 transition-colors"
+                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-zinc-800/80 hover:bg-zinc-700 rounded-full p-4 transition-colors hidden md:block"
                     aria-label="Previous page"
                 >
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -85,7 +92,7 @@ const Team = () => {
 
                 <button
                     onClick={nextPage}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-zinc-800/80 hover:bg-zinc-700 rounded-full p-4 transition-colors"
+                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-zinc-800/80 hover:bg-zinc-700 rounded-full p-4 transition-colors hidden md:block"
                     aria-label="Next page"
                 >
                     <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -93,20 +100,50 @@ const Team = () => {
                     </svg>
                 </button>
 
-                {/* Page Indicators */}
-                <div className="flex justify-center gap-2">
+                {/* Page Indicators with Navigation Arrows for Smaller Screens */}
+                <div className="flex justify-center items-center gap-2 mt-4">
+                    <button
+                        onClick={prevPage}
+                        className="md:hidden p-2"
+                        aria-label="Previous page"
+                    >
+                        <svg className="w-4 h-4 text-white" fill="none" strokeLinecap='round' strokeLinejoin='round' viewBox='0 0 24 24'>
+                            <path d='M15 19l-7 -7l7 -7' />
+                        </svg>
+                    </button>
                     {[...Array(totalPages)].map((_, i) => (
                         <button
                             key={i}
                             onClick={() => setCurrentPage(i)}
-                            className={`w-2 h-2 rounded-full transition-colors ${i === currentPage ? 'bg-blue-500' : 'bg-zinc-700'
+                            className={`w-[10px] h-[10px] rounded-full transition-colors ${i === currentPage ? 'bg-blue-500' : 'bg-zinc-700'
                                 }`}
                             aria-label={`Go to page ${i + 1}`}
                         />
                     ))}
+                    <button
+                        onClick={nextPage}
+                        className='md:hidden p-[10px]'
+                        aria-label='Next page'
+                    >
+                        <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            fill='none'
+                            viewBox='0 0 24 24'
+                            strokeWidth='1.5'
+                            stroke='currentColor'
+                            className='w-[16px] h-[16px]'
+                        >
+                            <path
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                                d='M9 5l7 7 -7 7'
+                            />
+                        </svg>
+                    </button>
+
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -5,16 +5,20 @@ import React, { useState, useEffect } from 'react';
 const TimeUnit = ({ value, label }) => (
     <div className="relative group">
         <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-        <div className="relative bg-black rounded-lg flex flex-col items-center p-6">
-            <span className="text-[80px] font-bold text-white mb-2">{String(value).padStart(2, '0')}</span>
-            <span className="text-blue-500 uppercase tracking-wider text-sm font-medium">{label}</span>
+        <div className="relative bg-black rounded-lg flex flex-col items-center p-3 sm:p-4 md:p-6">
+            <span className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[80px] font-bold text-white mb-1 sm:mb-2">
+                {String(value).padStart(2, '0')}
+            </span>
+            <span className="text-blue-500 uppercase tracking-wider text-[10px] sm:text-xs md:text-sm font-medium">
+                {label}
+            </span>
         </div>
     </div>
 );
 
 const Separator = () => (
     <div className="flex items-center justify-center">
-        <span className="text-[60px] text-white/50 -mt-8">:</span>
+        <span className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[60px] text-white/50 -mt-4 sm:-mt-6 md:-mt-8">:</span>
     </div>
 );
 
@@ -47,9 +51,8 @@ const Info = () => {
 
     return (
         <div className="bg-black">
-            {/* Countdown Timer */}
-            <div className="w-full min-h-[400px] flex flex-col items-center justify-center p-8">
-                <div className="flex items-center gap-4">
+            <div className="w-full min-h-[300px] sm:min-h-[400px] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                     <TimeUnit value={timeLeft.days} label="Days" />
                     <Separator />
                     <TimeUnit value={timeLeft.hours} label="Hours" />

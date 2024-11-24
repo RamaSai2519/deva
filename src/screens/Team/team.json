@@ -1,8 +1,15 @@
 {
     "quote": {
-        "prefix": "Behind every great innovation and transformative experience at Epoch 3.0,",
-        "highlight": "stands a team of passionate individuals who bring their unique strengths together to create something extraordinary",
-        "suffix": "— because the greatest achievements aren't built by individuals, but by teams who dare to dream bigger. - Satya Nadella"
+        "full": {
+            "prefix": "Behind every great innovation and transformative experience at Epoch 3.0,",
+            "highlight": "stands a team of passionate individuals who bring their unique strengths together to create something extraordinary",
+            "suffix": "— because the greatest achievements aren't built by individuals, but by teams who dare to dream bigger. - Satya Nadella"
+        },
+        "short": {
+            "prefix": "At Epoch 3.0, passionate teams",
+            "highlight": "unite to create extraordinary innovations",
+            "suffix": ", proving that great achievements come from collaborative dreaming."
+        }
     },
     "teamMembers": [
         {
