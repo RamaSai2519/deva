@@ -4,6 +4,7 @@ import useScrollTo from "../../hooks/useScrollTo";
 
 const Intro = () => {
     useScrollTo("intro");
+    useScrollTo("slider");
 
     return (
         <div id="intro" className="min-h-screen bg-black p-8 flex flex-col items-center justify-center">
