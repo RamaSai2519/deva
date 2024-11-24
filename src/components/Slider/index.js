@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from "react";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
@@ -14,7 +13,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
     };
 
     useEffect(() => {
-        if (buttonRefs.current[currentSlide]) {
+        if (currentSlide !== 0 && buttonRefs.current[currentSlide]) {
             buttonRefs.current[currentSlide].scrollIntoView({
                 behavior: "smooth",
                 block: "nearest",
@@ -80,7 +79,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
             </div>
 
             {/* Dynamic Description */}
-            <div className="mt-4 text-center mb-10">
+            <div className="mt-4 text-center">
                 <p className="text-gray-300 max-w-2xl mx-auto">
                     {events[currentSlide]?.description}
                 </p>

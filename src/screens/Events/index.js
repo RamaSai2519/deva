@@ -6,7 +6,7 @@ const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     return (
-        <section className="bg-black text-white min-h-screen">
+        <section className="bg-black text-white min-h-screen flex-col items-center justify-center h-full">
             {/* Header Section */}
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-3xl mx-auto text-left mb-12">

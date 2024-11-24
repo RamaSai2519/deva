@@ -1,33 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import GlowDiv from "../../components/GlowDiv";
-import Peep from "../../components/Peep";
+import PeepParent from "../../components/PeepParent";
 
 const Intro = () => {
-    const [state, setState] = useState({
-        isInView: false,
-        isSettled: false
-    });
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const introElement = document.getElementById("intro");
-            if (introElement) {
-                const rect = introElement.getBoundingClientRect();
-                setState({
-                    isInView: rect.top < window.innerHeight && rect.bottom > 0,
-                    isSettled: rect.bottom <= window.innerHeight
-                });
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        handleScroll();
-
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
     return (
         <div id="intro" className="min-h-screen bg-black flex flex-col items-center justify-between">
             <GlowDiv>
@@ -36,11 +11,9 @@ const Intro = () => {
                     Gitam Bengaluru
                 </p>
             </GlowDiv>
-            {state.isInView &&
-                <Peep isSettled={state.isSettled}>
-                    <h1>Welcome to Epoch Tech Fest</h1>
-                </Peep>
-            }
+            <PeepParent elementId="intro">
+                <h1>Welcome to Epoch Tech Fest</h1>
+            </PeepParent>
         </div>
     );
 };
