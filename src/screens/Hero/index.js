@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react';
 import useScrollPosition from '../../hooks/useScrollPostion';
 
@@ -37,7 +39,6 @@ const Hero = () => {
                 </h2>
             </div>
 
-            {/* Subtle Classic Button */}
             <button className="relative bg-black border border-transparent hover:border-transparent hover:text-white rounded-full px-8 py-3 text-lg font-medium mb-4 group">
                 <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent bg-clip-text group-hover:text-white transition-colors duration-300">
                     Join the Epoch
@@ -47,9 +48,12 @@ const Hero = () => {
                 </div>
             </button>
 
-            <p className="text-mutedWhite">
-                Tech Fest | 2024 | 18th - 20th December
+            <p className="text-3xl relative">
+                <span className="absolute inset-0 blur-[10px] text-blue-400 opacity-70">18th - 19th December | 2024</span>
+                <span className="absolute inset-0 blur-[5px] text-blue-300 opacity-80">18th - 19th December | 2024</span>
+                <span className="relative text-white">18th - 19th December | 2024</span>
             </p>
+
             <div className={`${isScrolled ? "animate-fade-in" : "animate-fade-out"} bg-[linear-gradient(to_bottom,_transparent_0%,_#212121)] w-full h-20 absolute bottom-0 z-10`} />
         </div>
     );

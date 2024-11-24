@@ -12,7 +12,7 @@ const positions = [
     { x: 400, y: 0 },      
     { x: -250, y: 200 },   
     { x: 250, y: 200 },    
-    { x: 0, y: 350 }       
+    { x: 0, y: 400 }       
 ];
 
 export default function TeamSection() {

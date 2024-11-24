@@ -1,0 +1,279 @@
+{
+    "quote": {
+        "prefix": "Behind every great innovation and transformative experience at Epoch 3.0,",
+        "highlight": "stands a team of passionate individuals who bring their unique strengths together to create something extraordinary",
+        "suffix": "— because the greatest achievements aren't built by individuals, but by teams who dare to dream bigger. - Satya Nadella"
+    },
+    "teamMembers": [
+        {
+            "id": 1,
+            "name": "Aditya Sharma",
+            "role": "Event Head",
+            "department": "Core Team",
+            "image": "assets/images/test.jpg",
+            "description": "Leading the overall coordination and execution of Epoch 3.0",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 2,
+            "name": "Aditya Sharma",
+            "role": "Event Head",
+            "department": "Core Team",
+            "image": "/team/aditya.jpg",
+            "description": "Leading the overall coordination and execution of Epoch 3.0",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 3,
+            "name": "Priya Patel",
+            "role": "Technical Lead",
+            "department": "Development",
+            "image": "/team/priya.jpg",
+            "description": "Managing technical infrastructure and development teams",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 4,
+            "name": "Sarah Khan",
+            "role": "Marketing Lead",
+            "department": "Outreach",
+            "image": "/team/sarah.jpg",
+            "description": "Driving promotional campaigns and partnerships",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 5,
+            "name": "Arjun Reddy",
+            "role": "Operations Manager",
+            "department": "Logistics",
+            "image": "/team/arjun.jpg",
+            "description": "Coordinating event logistics and venue management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 6,
+            "name": "Neha Gupta",
+            "role": "Content Head",
+            "department": "Media",
+            "image": "/team/neha.jpg",
+            "description": "Managing content strategy and social media",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 7,
+            "name": "Karthik Kumar",
+            "role": "Workshop Coordinator",
+            "department": "Education",
+            "image": "/team/karthik.jpg",
+            "description": "Organizing technical workshops and training sessions",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 8,
+            "name": "Ananya Singh",
+            "role": "Sponsorship Head",
+            "department": "Finance",
+            "image": "/team/ananya.jpg",
+            "description": "Managing sponsorships and financial partnerships",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 9,
+            "name": "Rohan Verma",
+            "role": "Technical Advisor",
+            "department": "Development",
+            "image": "/team/rohan.jpg",
+            "description": "Providing technical guidance and mentorship",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 10,
+            "name": "Zara Ahmed",
+            "role": "UI/UX Lead",
+            "department": "Design",
+            "image": "/team/zara.jpg",
+            "description": "Leading user interface and experience design",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 11,
+            "name": "Vikram Malhotra",
+            "role": "Security Head",
+            "department": "Operations",
+            "image": "/team/vikram.jpg",
+            "description": "Managing event security and safety protocols",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 12,
+            "name": "Shreya Desai",
+            "role": "PR Manager",
+            "department": "Communications",
+            "image": "/team/shreya.jpg",
+            "description": "Handling public relations and media communications",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 13,
+            "name": "Dev Patel",
+            "role": "Hackathon Lead",
+            "department": "Events",
+            "image": "/team/dev.jpg",
+            "description": "Coordinating hackathon events and challenges",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 14,
+            "name": "Riya Kapoor",
+            "role": "Volunteer Coordinator",
+            "department": "Management",
+            "image": "/team/riya.jpg",
+            "description": "Managing volunteer teams and assignments",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 15,
+            "name": "Aarav Khanna",
+            "role": "Tech Support Lead",
+            "department": "IT",
+            "image": "/team/aarav.jpg",
+            "description": "Providing technical support during events",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 16,
+            "name": "Ishaan Shah",
+            "role": "Photography Head",
+            "department": "Media",
+            "image": "/team/ishaan.jpg",
+            "description": "Leading event photography and documentation",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 17,
+            "name": "Meera Nair",
+            "role": "Registration Head",
+            "department": "Operations",
+            "image": "/team/meera.jpg",
+            "description": "Managing participant registration and check-in",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 18,
+            "name": "Aryan Joshi",
+            "role": "Gaming Lead",
+            "department": "Events",
+            "image": "/team/aryan.jpg",
+            "description": "Organizing gaming tournaments and competitions",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 19,
+            "name": "Tanya Sharma",
+            "role": "Social Media Manager",
+            "department": "Marketing",
+            "image": "/team/tanya.jpg",
+            "description": "Managing social media presence and engagement",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 20,
+            "name": "Kabir Sinha",
+            "role": "Innovation Lead",
+            "department": "Research",
+            "image": "/team/kabir.jpg",
+            "description": "Leading innovation initiatives and research projects",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 21,
+            "name": "Nisha Verma",
+            "role": "Student Relations",
+            "department": "Core Team",
+            "image": "/team/nisha.jpg",
+            "description": "Managing student engagement and community building",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 22,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 23,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 24,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 25,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 26,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 27,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 28,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 29,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 30,
+            "name": "Raj Malhotra",
+            "role": "Logistics Head",
+            "department": "Operations",
+            "image": "/team/raj.jpg",
+            "description": "Coordinating venue and equipment management",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        }
+    ]
+}
