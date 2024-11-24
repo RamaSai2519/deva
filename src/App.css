@@ -14,7 +14,3 @@
 .animate-fade-in-bottom {
   animation: fadeInBottom 0.5s forwards;
 }
-
-.animate-fade-out-bottom {
-  animation: fadeOutBottom 0.5s forwards;
-}
