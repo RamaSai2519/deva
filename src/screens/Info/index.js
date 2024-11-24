@@ -61,7 +61,7 @@ const Info = () => {
                 </div>
             </div>
 
-            <div className="flex justify-between gap-8">
+            <div className="grid md:grid-cols-3 gap-2 p-4">
                 <div className="flex-1">
                     <div className="relative rounded-2xl bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-indigo-500/20 p-[1px]">
                         <div className="w-full bg-black/90 rounded-2xl p-8">
