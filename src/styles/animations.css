@@ -26,3 +26,13 @@
     transform: translateY(0);
   }
 }
+
+@keyframes climbUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+  
+}

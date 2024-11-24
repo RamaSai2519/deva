@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Peep from "../Peep";
 
-const PeepParent = ({ children, elementId }) => {
+const PeepParent = ({ children, elementId, onClick }) => {
     const [state, setState] = useState({
         isInView: false,
         isSettled: false
@@ -28,7 +28,7 @@ const PeepParent = ({ children, elementId }) => {
     }, [elementId]);
 
     return (
-        state.isInView && <Peep isSettled={state.isSettled}>{children}</Peep>
+        state.isInView && <Peep onClick={onClick} isSettled={state.isSettled}>{children}</Peep>
     );
 };
 
