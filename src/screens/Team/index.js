@@ -57,7 +57,7 @@ const Team = () => {
     });
 
     return (
-        <div className="bg-black min-h-screen py-20" {...handlers}>
+        <div className="bg-black min-h-screen" {...handlers}>
             <div className="max-w-6xl mx-auto px-4 mb-20">
                 <h2 className="text-[2.5rem] leading-tight text-center">
                     
