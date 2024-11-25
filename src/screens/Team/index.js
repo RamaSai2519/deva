@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react';
-import { useSwipeable } from 'react-swipeable';
 import teamData from './team.json';
 
 const TeamCard = ({ member }) => (
@@ -50,23 +49,17 @@ const Team = () => {
         setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
     };
 
-    const handlers = useSwipeable({
-        onSwipedLeft: nextPage,
-        onSwipedRight: prevPage,
-        trackMouse: true,
-    });
-
     return (
-        <div className="bg-black min-h-screen" {...handlers}>
+        <div className="bg-black min-h-screen">
             <div className="max-w-6xl mx-auto px-4 mb-20">
                 <h2 className="text-[2.5rem] leading-tight text-center">
-                    
+
                     <span className="block md:hidden">
                         <span className="text-gray-400 font-light">{teamData.quote.short.prefix} </span>
                         <span className="text-white font-normal">{teamData.quote.short.highlight} </span>
                         <span className="text-gray-400 font-light">{teamData.quote.short.suffix}</span>
                     </span>
-                    
+
                     <span className="hidden md:block">
                         <span className="text-gray-400 font-light">{teamData.quote.full.prefix} </span>
                         <span className="text-white font-normal">{teamData.quote.full.highlight} </span>

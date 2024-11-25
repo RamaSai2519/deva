@@ -1,16 +1,9 @@
 import React, { useState } from "react";
-import { useSwipeable } from "react-swipeable";
 import Slider from "../../components/Slider";
 import events from "./events.json";
 
 const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const handlers = useSwipeable({
-        onSwipedLeft: () => setCurrentSlide((prev) => (prev + 1) % events.length),
-        onSwipedRight: () => setCurrentSlide((prev) => (prev - 1 + events.length) % events.length),
-        trackMouse: true,
-    });
 
     return (
         <section className="bg-black text-white min-h-screen flex-col items-center justify-center h-full">
@@ -26,7 +19,7 @@ const Events = () => {
                     </a>
                 </div>
             </div>
-            <div {...handlers}>
+            <div>
                 <Slider events={events} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
             </div>
         </section>
