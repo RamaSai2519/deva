@@ -1,105 +1,77 @@
-'use client'
+import React, { useEffect, useRef, useState } from "react";
+import useDeviceType from "../../hooks/useDeviceType";
+import AboutMobile from "./mobile-index";
+import aboutData from "./about.json";
 
-import { motion, useAnimation } from "framer-motion"
-import { useEffect } from "react"
-import { useInView } from "react-intersection-observer"
-import aboutData from './about.json'
-
-const positions = [
-    { x: -250, y: -200 },
-    { x: 250, y: -200 },
-    { x: -400, y: 0 },    
-    { x: 400, y: 0 },      
-    { x: -250, y: 200 },   
-    { x: 250, y: 200 },    
-    { x: 0, y: 350 }       
-];
-
-export default function TeamSection() {
-    const controls = useAnimation()
-    const [ref, inView] = useInView({
-        threshold: 0.2,
-        triggerOnce: false
-    })
+const About = () => {
+    const isDesktop = useDeviceType();
+    const parentRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        if (inView) {
-            controls.start("animate")
-        } else {
-            controls.start("initial")
-        }
-    }, [inView, controls])
+        const observer = new IntersectionObserver(
+            ([entry]) => { setIsVisible(entry.isIntersecting); },
+            { threshold: 0.1 }
+        );
 
-    const cardVariants = {
-        initial: {
-            opacity: 0,
-            scale: 0.8,
-            x: 0,
-            y: 0
-        },
-        animate: (i) => ({
-            opacity: 1,
-            scale: 1,
-            x: positions[i].x,
-            y: positions[i].y,
-            transition: {
-                type: "spring",
-                stiffness: 50,
-                damping: 20,
-                delay: i * 0.2
-            }
-        })
-    }
+        const currentRef = parentRef.current;
+        if (currentRef) observer.observe(currentRef);
+
+        return () => { if (currentRef) observer.unobserve(currentRef) };
+    }, []);
+
+    const positions = [
+        { x: -200, y: -200 },
+        { x: 200, y: -200 },
+        { x: -400, y: 0 },
+        { x: 400, y: 0 },
+        { x: -300, y: 200 },
+        { x: 300, y: 200 },
+        { x: 0, y: 250 },
+    ];
 
     return (
-        <div className="w-full h-screen bg-black flex items-center justify-center pt-16">
-            <div
-                ref={ref}
-                className="relative w-[1200px] h-[800px] flex items-center justify-center"
-            >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                    className="absolute w-[400px] h-[200px] z-10 rounded-lg overflow-hidden"
+        <div
+            id="core-team"
+            className="w-full h-full min-h-screen bg-black flex items-center justify-center"
+        >
+            {isDesktop ? (
+                <div
+                    ref={parentRef}
+                    className={`relative w-full h-full flex items-center justify-center ${isVisible ? "parent-animate-in" : "animate-fade-out"}`}
                 >
-                    <img
-                        src="/assets/images/test.jpg"
-                        alt="Epoch 3.0"
-                        className="w-full h-full object-cover"
-                    />
-                </motion.div>
+                    <div className="absolute w-[200px] h-[100px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-20 rounded-lg overflow-hidden">
+                        <img src="/assets/images/test.jpg" alt="Epoch" className="w-full h-full object-cover" />
+                    </div>
 
-                {aboutData.teamMembers.map((member, i) => (
-                    <motion.div
-                        key={member.id}
-                        custom={i}
-                        variants={cardVariants}
-                        initial="initial"
-                        animate={controls}
-                        className="absolute w-[280px] bg-[#1A1A1A] rounded-xl overflow-hidden text-left p-4"
-                        style={{
-                            boxShadow: "0 8px 32px rgba(0, 0, 0, 0.3)"
-                        }}
-                    >
-                        <div className="flex items-start gap-4">
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-16 h-16 rounded-lg object-cover"
-                            />
-                            <div>
-                                <h3 className="text-white text-lg font-semibold">
-                                    {member.name}
-                                </h3>
-                                <p className="text-blue-400 text-sm">{member.role}</p>
+                    {aboutData.teamMembers.map((member, i) => (
+                        <div
+                            key={member.id}
+                            className="card"
+                            style={{
+                                "--x": `${positions[i]?.x}px`,
+                                "--y": `${positions[i]?.y}px`,
+                                animationDelay: `${i * 0.4}s`,
+                            }}
+                        >
+                            <div className="flex items-start gap-4">
+                                <img src={member.image} alt={member.name} className="w-16 h-16 rounded-lg object-cover" />
+                                <div>
+                                    <h3 className="text-lg font-semibold">{member.name}</h3>
+                                    <p className="text-blue-400 text-sm">{member.role}</p>
+                                </div>
                             </div>
+                            <p className="text-gray-400 text-sm mt-4">
+                                {member.description}
+                            </p>
                         </div>
-                        <p className="text-gray-400 text-sm mt-4">{member.description}</p>
-
-                    </motion.div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            ) : (
+                <AboutMobile aboutData={aboutData} />
+            )}
         </div>
-    )
-}
+    );
+};
+
+export default About;
