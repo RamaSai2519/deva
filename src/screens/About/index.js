@@ -1,14 +1,12 @@
-'use client'
-
-import { motion, useAnimation } from "framer-motion"
-import { useEffect, useState } from "react"
-import { useInView } from "react-intersection-observer"
-import aboutData from './about.json'
+import { motion, useAnimation } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { useInView } from "react-intersection-observer";
+import aboutData from './about.json';
 
 const getPositions = (screenWidth) => {
-    if (screenWidth < 640) { // Mobile
-        return aboutData.teamMembers.map((_, i) => ({ x: 0, y: i * 220 })); // Stacked vertically
-    } else if (screenWidth < 1024) { // Tablet
+    if (screenWidth < 640) {
+        return aboutData.teamMembers.map((_, i) => ({ x: 0, y: i * 220 }));
+    } else if (screenWidth < 1024) {
         return [
             { x: -150, y: -100 },
             { x: 150, y: -100 },
@@ -18,7 +16,7 @@ const getPositions = (screenWidth) => {
             { x: 150, y: 300 },
             { x: 0, y: 500 }
         ];
-    } else { // Desktop
+    } else {
         return [
             { x: -250, y: -200 },
             { x: 250, y: -200 },
@@ -33,12 +31,14 @@ const getPositions = (screenWidth) => {
 
 export default function TeamSection() {
     const [positions, setPositions] = useState(getPositions(typeof window !== 'undefined' ? window.innerWidth : 1024));
-    const [containerHeight, setContainerHeight] = useState(800); // Default height for desktop
+    const [containerHeight, setContainerHeight] = useState(800);
     const controls = useAnimation();
     const [ref, inView] = useInView({
         threshold: 0.2,
         triggerOnce: false
     });
+    const lastAnimationTime = useRef(0);
+
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
@@ -57,19 +57,21 @@ export default function TeamSection() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    // Control animations based on visibility
     useEffect(() => {
         if (inView) {
-            controls.start("animate");
-        } else {
-            controls.start("initial");
+            const currentTime = Date.now();
+            if (currentTime - lastAnimationTime.current > 8000) {
+                controls.start("animate");
+                lastAnimationTime.current = currentTime;
+            }
         }
+
     }, [inView, controls]);
 
     const cardVariants = {
         initial: {
             opacity: 0,
-            scale: 0.8,
+            scale: 0.9,
             x: 0,
             y: 0
         },
@@ -82,7 +84,8 @@ export default function TeamSection() {
                 type: "spring",
                 stiffness: 50,
                 damping: 20,
-                delay: i * 0.2
+                delay: i * 0.2,
+                duration: 1.2
             }
         })
     };
@@ -90,7 +93,7 @@ export default function TeamSection() {
     return (
         <div
             style={{ marginBottom: '4rem', height: containerHeight }}
-            className="w-full bg-black flex items-center justify-center px-4 md:px-8 lg:px-16"
+            className="w-full bg-black flex items-center justify-center px-4 md:px-8 lg:px-16 pt-8"
         >
             <div
                 ref={ref}
@@ -101,7 +104,7 @@ export default function TeamSection() {
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 1 }}
-                    className="absolute w-[200px] h-[100px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-10 rounded-lg overflow-hidden"
+                    className="absolute w-[200px] h-[100px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-20 rounded-lg overflow-hidden"
                 >
                     <img
                         src="/assets/images/test.jpg"
@@ -119,7 +122,7 @@ export default function TeamSection() {
                         animate={controls}
                         className="absolute w-[280px] bg-[#1A1A1A] rounded-xl overflow-hidden text-left p-4"
                         style={{
-                            boxShadow: "0px 8px rgba(32 ,32)"
+                            boxShadow: "0px 8px rgba(32,32)"
                         }}
                     >
                         <div className="flex items-start gap-4">
