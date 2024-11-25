@@ -1,22 +1,22 @@
 [
     {
-        "title": "Oasis Design Showcase",
-        "description": "Epoch 3.0 is a premier GitHub Community Club Event designed for tech enthusiasts, developers, and innovators. This two-day event blends technology, creativity, and collaboration to offer participants hands-on experiences, inspiring workshops, and engaging challenges.",
+        "title": "Hackathon Arena",
+        "description": "Compete with top developers in a 24-hour hackathon. Solve real-world challenges and showcase your coding skills.",
         "image": "https://via.placeholder.com/400x200"
     },
     {
-        "title": "3D Animation Studio",
-        "description": "Discover 3D tools that bring imagination to life.",
+        "title": "AI/ML Workshops",
+        "description": "Dive into the world of Artificial Intelligence and Machine Learning with hands-on sessions from industry experts.",
         "image": "https://via.placeholder.com/400x200"
     },
     {
-        "title": "Circular Principles Workshop",
-        "description": "Learn about innovative design with circular principles.",
+        "title": "Tech Talk Series",
+        "description": "Engage with thought leaders and visionaries as they discuss the future of technology and innovation.",
         "image": "https://via.placeholder.com/400x200"
     },
     {
-        "title": "Principles Workshop",
-        "description": "Learn about innovative design with circular principles.",
+        "title": "Robotics Showcase",
+        "description": "Witness cutting-edge robotic innovations and interact with creators pushing the boundaries of technology.",
         "image": "https://via.placeholder.com/400x200"
     }
 ]

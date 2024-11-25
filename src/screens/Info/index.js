@@ -75,15 +75,15 @@ const Info = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                         <div>
                             <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">Up to</p>
+                            <p className="text-gray-400 text-lg mb-2">For</p>
                             <h2 className="text-white text-7xl font-medium mb-4">48 hours</h2>
-                            <p className="text-gray-500 text-lg">of non-stop coding</p>
+                            <p className="text-gray-500 text-lg">Of Non-stop Tech Celebration</p>
                         </div>
 
                         <div>
                             <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8" />
                             <p className="text-gray-400 text-lg mb-2">Over</p>
-                            <h2 className="text-white text-7xl font-medium mb-4">₹1L+</h2>
+                            <h2 className="text-white text-7xl font-medium mb-4">15+ Tech Stalls</h2>
                             <p className="text-gray-500 text-lg">in prizes and rewards</p>
                         </div>
                     </div>
