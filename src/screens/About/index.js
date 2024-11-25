@@ -1,7 +1,5 @@
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
-import { useInView } from "react-intersection-observer";
-import aboutData from './about.json';
+import React, { useEffect, useRef, useState } from "react";
+import aboutData from "./about.json";
 
 const getPositions = (screenWidth) => {
     if (screenWidth < 640) {
@@ -14,7 +12,7 @@ const getPositions = (screenWidth) => {
             { x: 150, y: 100 },
             { x: -150, y: 300 },
             { x: 150, y: 300 },
-            { x: 0, y: 500 }
+            { x: 0, y: 500 },
         ];
     } else {
         return [
@@ -24,21 +22,21 @@ const getPositions = (screenWidth) => {
             { x: 400, y: 0 },
             { x: -250, y: 200 },
             { x: 250, y: 200 },
-            { x: 0, y: 400 }
+            { x: 0, y: 400 },
         ];
     }
 };
 
 export default function TeamSection() {
-    const [positions, setPositions] = useState(getPositions(typeof window !== 'undefined' ? window.innerWidth : 1024));
+    const [positions, setPositions] = useState(
+        getPositions(typeof window !== "undefined" ? window.innerWidth : 1024)
+    );
     const [containerHeight, setContainerHeight] = useState(800);
-    const controls = useAnimation();
-    const [ref, inView] = useInView({
-        threshold: 0.2,
-        triggerOnce: false
-    });
-    const lastAnimationTime = useRef(0);
+    const [triggerAnimation, setTriggerAnimation] = useState(false);
+    const containerRef = useRef(null);
+    const observerRef = useRef(null);
 
+    // Handle responsive layout and height
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
@@ -46,64 +44,62 @@ export default function TeamSection() {
             if (screenWidth < 640) {
                 setContainerHeight(aboutData.teamMembers.length * 250);
             } else if (screenWidth < 1024) {
-                setContainerHeight(aboutData.teamMembers.length / 2 * 300);
+                setContainerHeight((aboutData.teamMembers.length / 2) * 300);
             } else {
                 setContainerHeight(800);
             }
         };
 
         handleResize();
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    // Observer to track component visibility
     useEffect(() => {
-        if (inView) {
-            const currentTime = Date.now();
-            if (currentTime - lastAnimationTime.current > 8000) {
-                controls.start("animate");
-                lastAnimationTime.current = currentTime;
-            }
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setTriggerAnimation(true);
+                } else {
+                    setTriggerAnimation(false);
+                }
+            },
+            { threshold: 0.2 }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+            observerRef.current = observer;
         }
 
-    }, [inView, controls]);
+        return () => {
+            if (observerRef.current) observerRef.current.disconnect();
+        };
+    }, []);
 
-    const cardVariants = {
-        initial: {
-            opacity: 0,
-            scale: 0.9,
-            x: 0,
-            y: 0
-        },
-        animate: (i) => ({
-            opacity: 1,
-            scale: 1,
-            x: positions[i].x,
-            y: positions[i].y,
-            transition: {
-                type: "spring",
-                stiffness: 50,
-                damping: 20,
-                delay: i * 0.2,
-                duration: 1.2
-            }
-        })
-    };
+    // Loop animation every 10 seconds
+    useEffect(() => {
+        if (!triggerAnimation) return;
+        const interval = setInterval(() => {
+            setTriggerAnimation(false); // Reset animation
+            setTimeout(() => setTriggerAnimation(true), 0); // Trigger animation again
+        }, 10000);
+
+        return () => clearInterval(interval);
+    }, [triggerAnimation]);
 
     return (
         <div
-            style={{ marginBottom: '4rem', height: containerHeight }}
+            style={{ marginBottom: "2rem" }}
             className="w-full bg-black flex items-center justify-center px-4 md:px-8 lg:px-16 pt-8"
         >
             <div
-                ref={ref}
-                className="relative w-full max-w-[1200px] h-auto flex items-center justify-center flex-wrap"
-                style={{ position: 'relative' }}
+                ref={containerRef}
+                className="relative w-full max-w-[1200px] min-h-[calc(100vh-8rem)] h-auto flex items-center justify-center flex-wrap"
             >
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
+                {/* Background Image */}
+                <div
                     className="absolute w-[200px] h-[100px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-20 rounded-lg overflow-hidden"
                 >
                     <img
@@ -111,18 +107,17 @@ export default function TeamSection() {
                         alt="Epoch"
                         className="w-full h-full object-cover"
                     />
-                </motion.div>
+                </div>
 
+                {/* Team Member Cards */}
                 {aboutData.teamMembers.map((member, i) => (
-                    <motion.div
+                    <div
                         key={member.id}
-                        custom={i}
-                        variants={cardVariants}
-                        initial="initial"
-                        animate={controls}
-                        className="absolute w-[280px] bg-[#1A1A1A] rounded-xl overflow-hidden text-left p-4"
+                        className={`card ${triggerAnimation ? "card-animate" : ""}`}
                         style={{
-                            boxShadow: "0px 8px rgba(32,32)"
+                            "--x": `${positions[i]?.x}px`,
+                            "--y": `${positions[i]?.y}px`,
+                            animationDelay: `${i * 0.4}s`, // Add staggered delays
                         }}
                     >
                         <div className="flex items-start gap-4">
@@ -132,14 +127,16 @@ export default function TeamSection() {
                                 className="w-16 h-16 rounded-lg object-cover"
                             />
                             <div>
-                                <h3 className="text-white text-lg font-semibold">
+                                <h3 className="text-lg font-semibold">
                                     {member.name}
                                 </h3>
                                 <p className="text-blue-400 text-sm">{member.role}</p>
                             </div>
                         </div>
-                        <p className="text-gray-400 text-sm mt-4">{member.description}</p>
-                    </motion.div>
+                        <p className="text-gray-400 text-sm mt-4">
+                            {member.description}
+                        </p>
+                    </div>
                 ))}
             </div>
         </div>
