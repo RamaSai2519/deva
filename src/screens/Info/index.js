@@ -90,7 +90,7 @@ const Info = () => {
                 </div>
             </div>
         </div>
-    );
+    )
 };
 
 export default Info;
