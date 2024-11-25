@@ -1,28 +1,25 @@
 'use client'
 import React from 'react';
-import useScrollPosition from '../../hooks/useScrollPostion';
 
 const Hero = () => {
-    const { isScrolled } = useScrollPosition(1);
-
     return (
         <div className="relative min-h-screen bg-black flex flex-col items-center justify-center text-center px-4">
             <div className="relative mb-8">
                 <h2 className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold flex items-center justify-center w-full px-4 sm:px-8">
-                <div className="flex items-center space-x-2 sm:space-x-4"></div>
-                        {/* E */}
-                        <span className="relative inline-block">
-                            <span className="absolute inset-0 blur-[20px] text-blue-400 opacity-70">E</span>
-                            <span className="absolute inset-0 blur-[10px] text-blue-300 opacity-80">E</span>
-                            <span className="relative text-white">E</span>
-                        </span>
-                        {/* P */}
-                        <span className="relative inline-block">
-                            <span className="absolute inset-0 blur-[20px] text-blue-400 opacity-70">P</span>
-                            <span className="absolute inset-0 blur-[10px] text-blue-300 opacity-80">P</span>
-                            <span className="relative text-white">P</span>
-                        </span>
-                        {/* GitHub Logo and 3.0 */}
+                    <div className="flex items-center space-x-2 sm:space-x-4"></div>
+                    {/* E */}
+                    <span className="relative inline-block">
+                        <span className="absolute inset-0 blur-[20px] text-blue-400 opacity-70">E</span>
+                        <span className="absolute inset-0 blur-[10px] text-blue-300 opacity-80">E</span>
+                        <span className="relative text-white">E</span>
+                    </span>
+                    {/* P */}
+                    <span className="relative inline-block">
+                        <span className="absolute inset-0 blur-[20px] text-blue-400 opacity-70">P</span>
+                        <span className="absolute inset-0 blur-[10px] text-blue-300 opacity-80">P</span>
+                        <span className="relative text-white">P</span>
+                    </span>
+                    {/* GitHub Logo and 3.0 */}
                     <span className="inline-flex items-center justify-center w-[3em] h-[3em] sm:w-[3.5em] sm:h-[3.5em] md:w-[4em] md:h-[4em] lg:w-[2.5em] lg:h-[2.5em] relative mx-4">
                         <span className="absolute inset-0 blur-[20px] opacity-70">
                             <img
@@ -38,17 +35,17 @@ const Hero = () => {
                         />
                         <span className="absolute text-mutedWhite text-[0.6em] sm:text-[0.7em] md:text-[0.8em]">3.0</span>
                     </span>
-                        {/* C */}
-                        <span className="relative inline-block">
-                            <span className="absolute inset-0 blur-[20px] text-purple-400 opacity-70">C</span>
-                            <span className="absolute inset-0 blur-[10px] text-purple-300 opacity-80">C</span>
-                            <span className="relative text-white">C</span>
-                        </span>
-                        {/* H */}
-                        <span className="relative inline-block">
-                            <span className="absolute inset-0 blur-[20px] text-purple-400 opacity-70">H</span>
-                            <span className="absolute inset-0 blur-[10px] text-purple-300 opacity-80">H</span>
-                            <span className="relative text-white">H</span>
+                    {/* C */}
+                    <span className="relative inline-block">
+                        <span className="absolute inset-0 blur-[20px] text-purple-400 opacity-70">C</span>
+                        <span className="absolute inset-0 blur-[10px] text-purple-300 opacity-80">C</span>
+                        <span className="relative text-white">C</span>
+                    </span>
+                    {/* H */}
+                    <span className="relative inline-block">
+                        <span className="absolute inset-0 blur-[20px] text-purple-400 opacity-70">H</span>
+                        <span className="absolute inset-0 blur-[10px] text-purple-300 opacity-80">H</span>
+                        <span className="relative text-white">H</span>
                     </span>
                 </h2>
             </div>
@@ -67,8 +64,6 @@ const Hero = () => {
                 <span className="absolute inset-0 blur-[5px] text-blue-300 opacity-80">18th - 19th December | 2024</span>
                 <span className="relative text-white">18th - 19th December | 2024</span>
             </p>
-
-            <div className={`${isScrolled ? "animate-fade-in" : "animate-fade-out"} bg-[linear-gradient(to_bottom,_transparent_0%,_#212121)] w-full h-20 absolute bottom-0 z-10`} />
         </div>
     );
 };
