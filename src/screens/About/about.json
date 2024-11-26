@@ -2,49 +2,49 @@
     "teamMembers": [
         {
             "id": 1,
-            "name": "Event Head",
+            "name": "Lakshmi Srujana",
             "role": "Core Team",
             "image": "/assets/images/test.jpg",
             "description": "Leading all coordination and execution of Epoch 3.0, ensuring seamless integration of all events and activities."
         },
         {
             "id": 2,
-            "name": "Technical Lead",
+            "name": "Rama Sathya Sai",
             "role": "Tech Team",
             "image": "/assets/images/test.jpg",
             "description": "Managing all technical aspects of the fest including workshops, hackathons, and coding competitions."
         },
         {
             "id": 3,
-            "name": "Creative Director",
+            "name": "Santosh krishna",
             "role": "Design Team",
             "image": "/assets/images/test.jpg",
             "description": "Overseeing the visual identity and creative direction of all fest materials and presentations."
         },
         {
             "id": 4,
-            "name": "Operations Head",
+            "name": "L E Chakrawarthy Sreenivas",
             "role": "Management",
             "image": "/assets/images/test.jpg",
             "description": "Coordinating logistics, venue management, and smooth execution of all events."
         },
         {
             "id": 5,
-            "name": "Marketing Lead",
+            "name": "Summaya Nuzhat",
             "role": "Outreach Team",
             "image": "/assets/images/test.jpg",
             "description": "Driving promotional strategies and social media presence for maximum engagement."
         },
         {
             "id": 6,
-            "name": "Content Head",
+            "name": "Yuvaraj",
             "role": "Media Team",
             "image": "/assets/images/test.jpg",
             "description": "Creating and managing all content including social media, website, and promotional materials."
         },
         {
             "id": 7,
-            "name": "Sponsorship Head",
+            "name": "Deeksha Oruganti",
             "role": "Partnership Team",
             "image": "/assets/images/test.jpg",
             "description": "Managing sponsorships and external collaborations for maximum impact."
