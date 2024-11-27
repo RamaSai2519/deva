@@ -1,38 +1,20 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import faqData from "./faq.json";
+import peepParentData from "./peepParent.json";
+import PeepParent from "../../components/PeepParent";
+import GiantPopup from "../../components/Popups/GiantPopup";
 
 const FAQ = () => {
     const [activeIndex, setActiveIndex] = useState(null);
-
-    const faqItems = [
-        {
-            question: "What is Epoch Tech Fest?",
-            answer: "Epoch Tech Fest is an annual technology festival that showcases the latest in tech innovations and provides a platform for tech enthusiasts to connect and learn."
-        },
-        {
-            question: "When and where is Epoch Tech Fest held?",
-            answer: "Epoch Tech Fest is held annually in the month of November at the Gitam University campus in Bengaluru, India."
-        },
-        {
-            question: "How can I participate in Epoch Tech Fest?",
-            answer: "You can participate by registering on our official website. There are various events and workshops you can join."
-        },
-        {
-            question: "Are there any fees to attend Epoch Tech Fest?",
-            answer: "Yes, there is a nominal fee for attending the festival. Details about the fee structure can be found on our website."
-        },
-        {
-            question: "Who can I contact for more information?",
-            answer: "For more information, you can contact our support team at support@epochtechfest.com."
-        }
-    ];
+    const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <div className="min-h-screen bg-black p-8 flex items-center justify-center">
+        <div id="faq" className="min-h-screen bg-black p-8 flex flex-col items-center justify-between">
             <div className="w-full max-w-2xl">
                 <h1 className="text-3xl font-bold text-white mb-6 text-center">FAQs</h1>
                 <div className="space-y-4">
-                    {faqItems.map((item, index) => (
+                    {faqData.map((item, index) => (
                         <div key={index}>
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
@@ -78,6 +60,14 @@ const FAQ = () => {
                     ))}
                 </div>
             </div>
+            <PeepParent elementId="faq" onClick={() => setShowPopup(true)}>
+                <div className="flex w-full justify-center items-center">
+                    <h2>{peepParentData.peepParent.text}</h2>
+                </div>
+            </PeepParent>
+            <GiantPopup visible={showPopup} setVisible={setShowPopup}>
+                {peepParentData.peepParent.popupContent}
+            </GiantPopup>
         </div>
     );
 };
