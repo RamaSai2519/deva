@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Octicon from '../../Icons/octicon';
 import SearchIcon from '../../Icons/Searchicon';
 import useScrollPosition from '../../hooks/useScrollPostion';
@@ -8,11 +8,13 @@ import { useHoveredMenu } from '../../contexts/hoveredMenuContext';
 const Header = () => {
     const { hoveredMenu, setHoveredMenu } = useHoveredMenu();
     const { isScrolled } = useScrollPosition('80vh');
+    const navigate = useNavigate();
 
-    const navItem = (text, menu) => (
+    const navItem = (text, menu, link) => (
         <span
             className='cursor-pointer text-mutedWhite hover:text-white transition-colors'
             onMouseEnter={() => setHoveredMenu(menu)}
+            onClick={() => link && navigate(link)}
         >
             {text}
         </span>
@@ -22,7 +24,7 @@ const Header = () => {
         Events: ['Upcoming Events', 'Past Events', 'Highlights', 'Get Involved'],
         FAQ: ['General Questions', 'Event Policies', 'Accessibility', 'Contact Support'],
         About: ['Our Team', 'Mission & Vision', 'Careers', 'Press'],
-        Account: ['Profile', 'Settings', 'Notifications', 'Sign Out'],
+        Account: ['Profile', 'Settings', 'Notifications', 'Sign Out', 'Login', 'Sign Up'],
     };
 
     const renderDropdown = () => (
@@ -36,8 +38,9 @@ const Header = () => {
                 {dropdownMenus[hoveredMenu]?.map((item, index) => (
                     <Link
                         key={index}
-                        to={`/${hoveredMenu.toLowerCase()}/${item.toLowerCase().replace(/ /g, '-')}`}
+                        to={item === 'Login' ? '/login' : item === 'Profile' ? '/account' : item === 'Sign Up' ? '/signup' : `/${hoveredMenu.toLowerCase()}/${item.toLowerCase().replace(/ /g, '-')}`}
                         className='hover:underline text-lg animate-fade-in-bottom'
+                        onClick={() => setHoveredMenu(null)}
                     >
                         {item}
                     </Link>
@@ -56,12 +59,14 @@ const Header = () => {
         >
             <nav className='flex w-full items-center justify-center'>
                 <div className='flex w-full max-w-2xl items-center justify-between'>
-                    <Octicon />
+                    <Link to="/">
+                        <Octicon />
+                    </Link>
                     {navItem('Events', 'Events')}
                     {navItem('FAQ', 'FAQ')}
                     {navItem('About Us', 'About')}
                     {navItem('Account', 'Account')}
-                    {navItem(<SearchIcon />, '')}
+                    {navItem(<SearchIcon />, '', '/search')}
                 </div>
             </nav>
             {renderDropdown()}
