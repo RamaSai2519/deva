@@ -1,11 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
-// AnimatedCharacters.jsx
 export function AnimatedCharacters({ mousePosition, isPasswordVisible }) {
   return (
     <svg viewBox="0 0 400 300" className="w-full h-full">
-      {/* Ocean Wave Base (instead of orange semicircle) */}
+      {/* Ocean Wave Base) */}
       <motion.path
         d="M 100 200 Q 180 170 260 200"
         fill="#0EA5E9"
@@ -16,8 +14,6 @@ export function AnimatedCharacters({ mousePosition, isPasswordVisible }) {
         }}
         transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
       />
-
-      {/* Octocat-inspired Purple Character */}
       <motion.g
         animate={{
           y: [-5, 5, -5],
@@ -52,8 +48,6 @@ export function AnimatedCharacters({ mousePosition, isPasswordVisible }) {
           <circle cx="175" cy="120" r="6" fill="white" />
         </motion.g>
       </motion.g>
-
-      {/* Te Fiti-inspired Black Character */}
       <motion.g
         animate={{
           y: [-3, 3, -3],
@@ -71,8 +65,6 @@ export function AnimatedCharacters({ mousePosition, isPasswordVisible }) {
           transition={{ duration: 2 }}
         />
       </motion.g>
-
-      {/* Heart of Te Fiti-inspired Yellow Character */}
       <motion.g
         animate={{
           y: [-4, 4, -4],
