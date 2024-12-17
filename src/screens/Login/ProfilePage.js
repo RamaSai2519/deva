@@ -1,15 +1,85 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
+import { Input, Button, Form, Spin, Alert } from 'antd';
 
+const ProfileForm = ({ onSubmit, isLoading, errors, formData, handleChange, isPasswordVisible, togglePasswordVisibility }) => (
+    <Form layout="vertical" onFinish={onSubmit}>
+        <Form.Item label="Full Name" validateStatus={errors.name ? 'error' : ''} help={errors.name}>
+            <Input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
+                aria-label="Full Name"
+            />
+        </Form.Item>
+        <Form.Item label="Email" validateStatus={errors.email ? 'error' : ''} help={errors.email}>
+            <Input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
+                aria-label="Email"
+            />
+        </Form.Item>
+        <Form.Item label="New Password" validateStatus={errors.newPassword ? 'error' : ''} help={errors.newPassword}>
+            <div className="relative">
+                <Input
+                    type={isPasswordVisible ? 'text' : 'password'}
+                    name="newPassword"
+                    value={formData.newPassword}
+                    onChange={handleChange}
+                    placeholder="Enter new password"
+                    className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
+                    aria-label="New Password"
+                />
+                <Button
+                    type="button"
+                    onClick={togglePasswordVisibility}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
+                    aria-label="Toggle Password Visibility"
+                >
+                    {isPasswordVisible ? <EyeOff size={20} /> : <Eye size={20} />}
+                </Button>
+            </div>
+        </Form.Item>
+        <Form.Item label="Confirm New Password" validateStatus={errors.confirmPassword ? 'error' : ''} help={errors.confirmPassword}>
+            <Input
+                type="password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                placeholder="Confirm new password"
+                className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
+                aria-label="Confirm New Password"
+            />
+        </Form.Item>
+        <Form.Item>
+            <Button
+                type="primary"
+                htmlType="submit"
+                className="w-full py-3 px-4 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center"
+                disabled={isLoading}
+                aria-label="Update Profile"
+            >
+                {isLoading ? <Spin /> : 'Update Profile'}
+            </Button>
+        </Form.Item>
+    </Form>
+);
 
 export function ProfilePage() {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [name, setName] = useState('Captain America');
-    const [email, setEmail] = useState('Avengers@gitam.in');
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        newPassword: '',
+        confirmPassword: ''
+    });
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-    const [newPassword, setNewPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
@@ -24,19 +94,27 @@ export function ProfilePage() {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
+
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible((prev) => !prev);
+    };
+
     const validateForm = () => {
         const newErrors = {};
-        if (!name.trim()) newErrors.name = "Name is required";
-        if (!email.trim()) newErrors.email = "Email is required";
-        else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = "Email is invalid";
-        if (newPassword && newPassword.length < 8) newErrors.newPassword = "Password must be at least 8 characters";
-        if (newPassword !== confirmPassword) newErrors.confirmPassword = "Passwords do not match";
+        if (!formData.name.trim()) newErrors.name = "Name is required";
+        if (!formData.email.trim()) newErrors.email = "Email is required";
+        else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Email is invalid";
+        if (formData.newPassword && formData.newPassword.length < 8) newErrors.newPassword = "Password must be at least 8 characters";
+        if (formData.newPassword !== formData.confirmPassword) newErrors.confirmPassword = "Passwords do not match";
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
         if (validateForm()) {
             setIsLoading(true);
             try {
@@ -48,7 +126,7 @@ export function ProfilePage() {
             } finally {
                 setIsLoading(false);
             }
-        }
+        }   
     };
 
     return (
@@ -73,74 +151,16 @@ export function ProfilePage() {
                                 <h1 className="text-2xl font-semibold mb-1">Your Profile</h1>
                                 <p className="text-gray-400">Manage your account details</p>
                             </div>
-                            <form className="space-y-6" onSubmit={handleSubmit}>
-                                <div>
-                                    <label className="block text-sm mb-2 text-gray-300">Full Name</label>
-                                    <input
-                                        type="text"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
-                                    />
-                                    {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
-                                </div>
-                                <div>
-                                    <label className="block text-sm mb-2 text-gray-300">Email</label>
-                                    <input
-                                        type="email"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
-                                    />
-                                    {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-                                </div>
-                                <div>
-                                    <label className="block text-sm mb-2 text-gray-300">New Password</label>
-                                    <div className="relative">
-                                        <input
-                                            type={isPasswordVisible ? 'text' : 'password'}
-                                            value={newPassword}
-                                            onChange={(e) => setNewPassword(e.target.value)}
-                                            placeholder="Enter new password"
-                                            className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
-                                        />
-                                        <button
-                                            type="button"
-                                            onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                                            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
-                                        >
-                                            {isPasswordVisible ? <EyeOff size={20} /> : <Eye size={20} />}
-                                        </button>
-                                    </div>
-                                    {errors.newPassword && <p className="text-red-500 text-xs mt-1">{errors.newPassword}</p>}
-                                </div>
-                                <div>
-                                    <label className="block text-sm mb-2 text-gray-300">Confirm New Password</label>
-                                    <input
-                                        type="password"
-                                        value={confirmPassword}
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
-                                        placeholder="Confirm new password"
-                                        className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 custom-gradient-ring"
-                                    />
-                                    {errors.confirmPassword && <p className="text-red-500 text-xs mt-1">{errors.confirmPassword}</p>}
-                                </div>
-                                <div>
-                                    <button
-                                        type="submit"
-                                        className="w-full py-3 px-4 bg-white text-black rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center"
-                                        disabled={isLoading}
-                                    >
-                                        {isLoading ? (
-                                            <svg className="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
-                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                            </svg>
-                                        ) : null}
-                                        {isLoading ? 'Updating...' : 'Update Profile'}
-                                    </button>
-                                </div>
-                            </form>
+                            {errors.form && <Alert message={errors.form} type="error" showIcon />}
+                            <ProfileForm
+                                onSubmit={handleSubmit}
+                                isLoading={isLoading}
+                                errors={errors}
+                                formData={formData}
+                                handleChange={handleChange}
+                                isPasswordVisible={isPasswordVisible}
+                                togglePasswordVisibility={togglePasswordVisibility}
+                            />
                             <div className="space-y-4">
                                 <h3 className="text-lg font-medium text-white">Account Activity</h3>
                                 <div className="text-sm text-gray-400">
