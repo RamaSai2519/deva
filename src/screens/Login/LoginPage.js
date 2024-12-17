@@ -16,6 +16,8 @@ const FormInput = ({ label, type, value, onChange, error, suffix }) => (
             onChange={onChange}
             placeholder={`Enter your ${label.toLowerCase()}`}
             suffix={suffix}
+            className="rounded-lg"
+        
         />
     </Form.Item>
 );
