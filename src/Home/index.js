@@ -1,7 +1,9 @@
 import React from "react";
+import ErrorBoundary from "../components/ErrorBoundary";
 import Info from "../screens/Info";
 import Hero from "../screens/Hero";
-import About from "../screens/About";
+import About from "../screens/About/About";
+import aboutData from "../screens/About/about.json";
 import Intro from "../screens/Intro";
 import Events from "../screens/Events";
 import Team from "../screens/Team";
@@ -17,7 +19,9 @@ const Home = () => {
             <Info />
             <Intro />
             <Events />
-            <About />
+            <ErrorBoundary>
+                <About teamMembers={aboutData.teamMembers} mainImage="/assets/images/test.jpg" />
+            </ErrorBoundary>
             <Team />
             <FAQ />
         </div>
