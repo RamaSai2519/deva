@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./Home";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { ConfigProvider, theme } from "antd";
 import useScrollTo from "./hooks/useScrollTo";
 import { Route, Routes } from "react-router-dom";
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
         </Routes>
       </div>
+      <Footer />
     </ConfigProvider>
   );
 };
