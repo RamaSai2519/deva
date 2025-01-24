@@ -12,7 +12,7 @@ const SocialLink = ({ href, label }) => (
 );
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear() || 2024; // Fallback to a default year
+    const currentYear = new Date().getFullYear() || 2025; // Fallback to a default year
 
     return (
         <footer className="relative bg-black text-white py-16 overflow-hidden">
@@ -40,7 +40,7 @@ const Footer = () => {
                         </p>
                         <div className="space-y-2">
                             <p className="text-sm">
-                                <span className="font-semibold">Date:</span> December 18th & 19th
+                                <span className="font-semibold">Date:</span> February 27 & 28, 2025
                             </p>
                             <p className="text-sm">
                                 <span className="font-semibold">Location:</span> Gitam Bengaluru

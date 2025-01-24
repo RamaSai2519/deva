@@ -10,8 +10,15 @@ const FAQ = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <div id="faq" className="min-h-screen bg-black p-8 flex flex-col items-center justify-between">
-            <div className="w-full max-w-2xl">
+        <div id="faq" className="min-h-screen bg-black p-8 flex flex-col items-center justify-between relative">
+            <div
+                className="absolute inset-x-0 bottom-0 h-32"
+                style={{
+                    background: "linear-gradient(to top, black, transparent)",
+                }}
+            />
+
+            <div className="w-full max-w-2xl z-10">
                 <h1 className="text-3xl font-bold text-white mb-6 text-center">FAQs</h1>
                 <div className="space-y-4">
                     {faqData.map((item, index) => (
@@ -60,6 +67,7 @@ const FAQ = () => {
                     ))}
                 </div>
             </div>
+
             <PeepParent elementId="faq" onClick={() => setShowPopup(true)}>
                 <div className="flex w-full justify-center items-center">
                     <h2>{peepParentData.peepParent.text}</h2>
