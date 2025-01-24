@@ -8,6 +8,7 @@ import SignupPage from "./screens/Login/SignupPage";
 import AccountPage from "./screens/Login/ProfilePage";
 import useScrollTo from "./hooks/useScrollTo";
 
+
 const App = () => {
   useScrollTo();
 
