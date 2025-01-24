@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const FINAL_URL = 'https://7iox8huibl.execute-api.ap-south-1.amazonaws.com/main';
 
-export const Raxios = axios.create({ baseURL: FINAL_URL });
+const Raxios = axios.create({ baseURL: FINAL_URL });
 
 Raxios.interceptors.request.use(
     (config) => {
