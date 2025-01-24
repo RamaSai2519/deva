@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import LoginPage from "./screens/Login/LoginPage";
 import SignupPage from "./screens/Login/SignupPage";
 import AccountPage from "./screens/Login/ProfilePage";
+import Footer from "./components/Footer";
 import useScrollTo from "./hooks/useScrollTo";
 
 
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/account" element={<AccountPage />} />
         </Routes>
       </div>
+      <Footer />
     </ConfigProvider>
   );
 };
