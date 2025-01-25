@@ -3,6 +3,7 @@ import { ConfigProvider, theme } from "antd";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import LoginPage from "./screens/Login/LoginPage";
 import SignupPage from "./screens/Login/SignupPage";
 import AccountPage from "./screens/Login/ProfilePage";
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/account" element={<AccountPage />} />
         </Routes>
       </div>
+      <Footer />
     </ConfigProvider>
   );
 };
