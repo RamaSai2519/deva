@@ -60,9 +60,9 @@ const Hero = () => {
             </button>
 
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl relative mt-4">
-                <span className="absolute inset-0 blur-[10px] text-blue-400 opacity-70">18th - 19th December | 2024</span>
-                <span className="absolute inset-0 blur-[5px] text-blue-300 opacity-80">18th - 19th December | 2024</span>
-                <span className="relative text-white">18th - 19th December | 2024</span>
+                <span className="absolute inset-0 blur-[10px] text-blue-400 opacity-70">27th - 28th February | 2025</span>
+                <span className="absolute inset-0 blur-[5px] text-blue-300 opacity-80">27th - 28th February | 2025</span>
+                <span className="relative text-white">27th - 28th February | 2025</span>
             </p>
         </div>
     );
