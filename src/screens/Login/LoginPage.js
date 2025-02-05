@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
-import { Link } from 'react-router-dom';
-import { Form, Input, Button, Checkbox, Alert, Spin } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
+import { Form, Input, Button, Checkbox, Alert, Spin, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import axios from 'axios';
 
 const LoginPage = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({});
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -19,34 +21,21 @@ const LoginPage = () => {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
-    const validateForm = ({ email, password }) => {
-        const newErrors = {};
-        if (!email.trim()) {
-            newErrors.email = 'Email is required';
-        } else if (!/\S+@\S+\.\S+/.test(email)) {
-            newErrors.email = 'Email is invalid';
-        }
-        if (!password) {
-            newErrors.password = 'Password is required';
-        }
-        setErrors(newErrors);
-        return Object.keys(newErrors).length === 0;
-    };
-
     const handleSubmit = async (values) => {
-        if (validateForm(values)) {
-            setIsLoading(true);
-            try {
-                // Replace with actual API call
-                await new Promise((resolve) => setTimeout(resolve, 1500));
-                console.log('Login successful');
-            } catch (error) {
-                console.error('Login failed:', error);
-                setErrors({ form: 'Login failed. Please try again.' });
-            } finally {
-                setIsLoading(false);
-            }
-        }
+        setIsLoading(true);
+        setErrors({});
+
+        try {
+            const response = await axios.post('/api/auth/login', values);
+            localStorage.setItem('token', response.data.token);
+            message.success('Login successful!');
+            navigate('/Home'); 
+        } catch (error) {
+            console.error('Login failed:', error);
+            setErrors({ form: error.response?.data?.message || 'Login failed. Please try again.' });
+        } finally {
+            setIsLoading(false);
+        }   
     };
 
     return (
@@ -59,13 +48,6 @@ const LoginPage = () => {
                         </div>
                     </div>
                     <div className="p-12 relative bg-black text-white">
-                        <div className="absolute top-8 right-8">
-                            <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center">
-                                <svg width="16" height="16" viewBox="0 0 24 24" className="text-gray-400">
-                                    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                        </div>
                         <div className="space-y-8">
                             <div>
                                 <h1 className="text-2xl font-semibold mb-1">Welcome Back</h1>
@@ -73,64 +55,30 @@ const LoginPage = () => {
                             </div>
                             {errors.form && <Alert message={errors.form} type="error" showIcon />}
                             <Form className="space-y-6" onFinish={handleSubmit}>
-                                <Form.Item
-                                    validateStatus={errors.email ? 'error' : ''}
-                                    help={errors.email}
-                                    name="email"
-                                >
-                                    <Input
-                                        prefix={<UserOutlined />}
-                                        type="email"
-                                        placeholder="Enter your email"
-                                        className="bg-zinc-800 text-white"
-                                        aria-invalid={errors.email ? 'true' : 'false'}
-                                    />
+                                <Form.Item name="email" rules={[{ required: true, message: 'Email is required' }]}>
+                                    <Input prefix={<UserOutlined />} type="email" placeholder="Enter your email" />
                                 </Form.Item>
-                                <Form.Item
-                                    validateStatus={errors.password ? 'error' : ''}
-                                    help={errors.password}
-                                    name="password"
-                                >
+                                <Form.Item name="password" rules={[{ required: true, message: 'Password is required' }]}>
                                     <Input.Password
                                         prefix={<LockOutlined />}
                                         type={isPasswordVisible ? 'text' : 'password'}
                                         placeholder="Enter your password"
-                                        className="bg-zinc-800 text-white"
-                                        iconRender={() =>
-                                            <Button
-                                                type="text"
-                                                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
-                                                icon={isPasswordVisible ? <EyeOff /> : <Eye />}
-                                            />
-                                        }
-                                        aria-invalid={errors.password ? 'true' : 'false'}
+                                        iconRender={(visible) => (visible ? <EyeOff /> : <Eye />)}
                                     />
                                 </Form.Item>
                                 <Form.Item>
-                                    <Form.Item name="remember" valuePropName="checked" noStyle>
-                                        <Checkbox className="text-gray-400">Remember for 30 days</Checkbox>
-                                    </Form.Item>
-                                    <Link to="/account" className="float-right text-gray-400">
-                                        Forgot password?
-                                    </Link>
+                                    <Checkbox className="text-gray-400">Remember for 30 days</Checkbox>
+                                    <Link to="/forgot-password" className="float-right text-gray-400">Forgot password?</Link>
                                 </Form.Item>
                                 <Form.Item>
-                                    <Button
-                                        type="primary"
-                                        htmlType="submit"
-                                        className="w-full"
-                                        disabled={isLoading}
-                                        icon={isLoading ? <Spin /> : null}
-                                    >
+                                    <Button type="primary" htmlType="submit" className="w-full" loading={isLoading}>
                                         {isLoading ? 'Logging in...' : 'Log in'}
                                     </Button>
                                 </Form.Item>
                             </Form>
                             <p className="text-center text-sm text-gray-400">
                                 Don't have an account?{' '}
-                                <Link to="/signup" className="text-white hover:underline">
-                                    Sign up
-                                </Link>
+                                <Link to="/signup" className="text-white hover:underline">Sign up</Link>
                             </p>
                         </div>
                     </div>
