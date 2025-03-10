@@ -26,7 +26,7 @@ const LoginPage = () => {
         setErrors({});
 
         try {
-            const response = await axios.post('/api/auth/login', values);
+            const response = await axios.post('/actions/user_auth', values);
             localStorage.setItem('token', response.data.token);
             message.success('Login successful!');
             navigate('/Home'); 
