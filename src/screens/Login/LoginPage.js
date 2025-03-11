@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { Button, Form, Input, Checkbox, message, Alert } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { useNavigate, Link } from 'react-router-dom';
 import { Eye, EyeOff } from 'lucide-react';
-import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
-import { Link, useNavigate } from 'react-router-dom';
-import { Form, Input, Button, Checkbox, Alert, Spin, message } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import axios from 'axios';
+import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
 
 const LoginPage = () => {
+    const navigate = useNavigate();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -26,16 +26,21 @@ const LoginPage = () => {
         setErrors({});
 
         try {
-            const response = await axios.post('/actions/user_auth', values);
-            localStorage.setItem('token', response.data.token);
+            const response = await axios.post('https://7iox8huibl.execute-api.ap-south-1.amazonaws.com/main/actions/user_auth', {
+                action: "login",
+                reg_no: values.reg_no,
+                password: values.password,
+                email: values.email
+            });
+            localStorage.setItem('token', response.data.output_details.access_token);
             message.success('Login successful!');
-            navigate('/Home'); 
+            navigate('/Intro'); // Redirect to dashboard or home
         } catch (error) {
             console.error('Login failed:', error);
-            setErrors({ form: error.response?.data?.message || 'Login failed. Please try again.' });
+            setErrors({ form: error.response?.data?.output_message || 'Login failed. Please try again.' });
         } finally {
             setIsLoading(false);
-        }   
+        }
     };
 
     return (
@@ -65,6 +70,9 @@ const LoginPage = () => {
                                         placeholder="Enter your password"
                                         iconRender={(visible) => (visible ? <EyeOff /> : <Eye />)}
                                     />
+                                </Form.Item>
+                                <Form.Item name="reg_no" rules={[{ required: true, message: 'Registration number is required' }]}>
+                                    <Input placeholder="Enter your registration number" />
                                 </Form.Item>
                                 <Form.Item>
                                     <Checkbox className="text-gray-400">Remember for 30 days</Checkbox>
