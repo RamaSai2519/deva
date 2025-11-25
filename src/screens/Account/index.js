@@ -4,7 +4,7 @@ import Raxios from "../../services/axiosHelper";
 import { useAuth } from "../../contexts/AuthContext";
 import { User, Mail, Hash, ArrowUpRight, ArrowDownRight, Wallet, Phone } from "lucide-react";
 
-export function ProfilePage() {
+export function Account() {
     const [profileData, setProfileData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
@@ -114,11 +114,15 @@ export function ProfilePage() {
     }
 
     return (
-        <div className="min-h-screen bg-black p-8 pt-12">
+        <div className="min-h-screen bg-black p-8 pt-12 w-full">
             <div className="max-w-7xl h-full mx-auto">
                 <div className="flex w-full justify-between items-center">
-                    <h1 className="text-4xl font-bold text-white mb-8">My Account</h1>
-                    <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
+                    <h1 className="text-4xl font-bold text-white mb-8">My Account <span className="text-mutedWhite text-lg">{profileData.is_admin ? "Admin" : ""}</span></h1>
+                    {/* Recharge User Button */}
+                    <div className="flex gap-4">
+                        {profileData.is_admin && <button onClick={() => {window.location.href = '/users'}} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge User</button>}
+                        <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
+                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -145,7 +149,7 @@ export function ProfilePage() {
 
                         {!isEditing ? (
                             <div className="space-y-6">
-                                <div className="bg-gray-900 rounded-lg p-4">
+                                <div className="bg-lightBlack rounded-lg p-4">
                                     <div className="flex items-start gap-3">
                                         <User className="w-5 h-5 text-gray-500 mt-1" />
                                         <div>
@@ -155,7 +159,7 @@ export function ProfilePage() {
                                     </div>
                                 </div>
 
-                                <div className="bg-gray-900 rounded-lg p-4">
+                                <div className="bg-lightBlack rounded-lg p-4">
                                     <div className="flex items-start gap-3">
                                         <Mail className="w-5 h-5 text-gray-500 mt-1" />
                                         <div>
@@ -165,7 +169,7 @@ export function ProfilePage() {
                                     </div>
                                 </div>
 
-                                <div className="bg-gray-900 rounded-lg p-4">
+                                <div className="bg-lightBlack rounded-lg p-4">
                                     <div className="flex items-start gap-3">
                                         <Hash className="w-5 h-5 text-gray-500 mt-1" />
                                         <div>
@@ -176,7 +180,7 @@ export function ProfilePage() {
                                 </div>
 
                                 {profileData.phoneNumber && (
-                                    <div className="bg-gray-900 rounded-lg p-4">
+                                    <div className="bg-lightBlack rounded-lg p-4">
                                         <div className="flex items-start gap-3">
                                             <Phone className="w-5 h-5 text-gray-500 mt-1" />
                                             <div>
@@ -200,7 +204,7 @@ export function ProfilePage() {
                                     rules={[{ required: true, message: 'Please enter your name' }]}
                                 >
                                     <Input
-                                        className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                                        className="w-full px-4 py-3 bg-lightBlack border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
                                         placeholder="Enter your name"
                                     />
                                 </Form.Item>
@@ -214,7 +218,7 @@ export function ProfilePage() {
                                     ]}
                                 >
                                     <Input
-                                        className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                                        className="w-full px-4 py-3 bg-lightBlack border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
                                         placeholder="Enter your email"
                                     />
                                 </Form.Item>
@@ -224,7 +228,7 @@ export function ProfilePage() {
                                     label={<span className="text-sm font-medium text-gray-300">Phone Number</span>}
                                 >
                                     <Input
-                                        className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                                        className="w-full px-4 py-3 bg-lightBlack border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
                                         placeholder="Enter your phone number"
                                     />
                                 </Form.Item>
@@ -234,7 +238,7 @@ export function ProfilePage() {
                                     label={<span className="text-sm font-medium text-gray-300">Password (leave blank to keep current)</span>}
                                 >
                                     <Input.Password
-                                        className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
+                                        className="w-full px-4 py-3 bg-lightBlack border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent"
                                         placeholder="Enter new password"
                                     />
                                 </Form.Item>
@@ -251,7 +255,7 @@ export function ProfilePage() {
                                         type="button"
                                         onClick={handleEditToggle}
                                         disabled={isSaving}
-                                        className="flex-1 bg-black text-white border border-gray-700 py-3 rounded-lg font-medium hover:bg-gray-900 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                        className="flex-1 bg-black text-white border border-gray-700 py-3 rounded-lg font-medium hover:bg-lightBlack transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                     >
                                         Cancel
                                     </button>
@@ -268,48 +272,54 @@ export function ProfilePage() {
                         </div>
 
                         {/* Balance Card */}
-                        <div className="bg-gray-900 rounded-2xl p-6 mb-6">
+                        {!profileData.is_admin && <div className="bg-lightBlack rounded-2xl p-6 mb-6">
                             <p className="text-sm text-gray-400 mb-2">Current Balance</p>
-                            <p className="text-4xl font-bold">${profileData.balance.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
-                        </div>
+                            <p className="text-4xl font-bold">${(profileData.balance ?? 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                        </div>}
 
                         {/* Recent Transactions */}
                         <div>
                             <h3 className="text-sm font-medium text-gray-400 mb-4">Recent Transactions</h3>
                             <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
                                 {profileData.transactions && profileData.transactions.length > 0 ? (
-                                    profileData.transactions.map((transaction, index) => (
-                                        <div
-                                            key={index}
-                                            className="bg-gray-900 rounded-lg p-4 flex items-start justify-between hover:bg-gray-800 transition-colors"
-                                        >
-                                            <div className="flex items-start gap-3">
-                                                <div className="mt-1">
-                                                    {transaction.action === 'add' ? (
-                                                        <ArrowUpRight className="w-5 h-5 text-green-500" />
-                                                    ) : (
-                                                        <ArrowDownRight className="w-5 h-5 text-red-500" />
-                                                    )}
+                                    profileData.transactions.map((transaction, index) => {
+                                        const effectiveAction = profileData.is_admin
+                                            ? (transaction.action === 'add' ? 'remove' : 'add')
+                                            : transaction.action;
+
+                                        return (
+                                            <div
+                                                key={index}
+                                                className="bg-lightBlack rounded-lg p-4 flex items-start justify-between hover:bg-gray-800 transition-colors"
+                                            >
+                                                <div className="flex items-start gap-3">
+                                                    <div className="mt-1">
+                                                        {effectiveAction === 'add' ? (
+                                                            <ArrowUpRight className="w-5 h-5 text-green-500" />
+                                                        ) : (
+                                                            <ArrowDownRight className="w-5 h-5 text-red-500" />
+                                                        )}
+                                                    </div>
+                                                    <div>
+                                                        <p className="font-medium text-white">
+                                                            {effectiveAction === 'add' ? 'Credit' : 'Debit'}
+                                                        </p>
+                                                        <p className="text-sm text-gray-400">
+                                                            by {profileData.is_admin ? transaction.user_name : transaction.admin_name}
+                                                        </p>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <p className="font-medium text-white">
-                                                        {transaction.action === 'add' ? 'Credit' : 'Debit'}
+                                                <div className="text-right">
+                                                    <p className={`font-semibold ${effectiveAction === 'add' ? 'text-green-500' : 'text-red-500'}`}>
+                                                        {effectiveAction === 'add' ? '+' : '-'}${Math.abs(transaction.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                                     </p>
-                                                    <p className="text-sm text-gray-400">
-                                                        by {transaction.admin_name}
+                                                    <p className="text-xs text-gray-500 mt-1">
+                                                        {formatTimestamp(transaction.timestamp)}
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className="text-right">
-                                                <p className={`font-semibold ${transaction.action === 'add' ? 'text-green-500' : 'text-red-500'}`}>
-                                                    {transaction.action === 'add' ? '+' : '-'}${Math.abs(transaction.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                                                </p>
-                                                <p className="text-xs text-gray-500 mt-1">
-                                                    {formatTimestamp(transaction.timestamp)}
-                                                </p>
-                                            </div>
-                                        </div>
-                                    ))
+                                        );
+                                    })
                                 ) : (
                                     <p className="text-center text-gray-500 py-8">No transactions yet</p>
                                 )}
@@ -322,4 +332,4 @@ export function ProfilePage() {
     );
 }
 
-export default ProfilePage;
+export default Account;
