@@ -3,6 +3,7 @@ import { Eye, EyeOff } from 'lucide-react';
 import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
 import { Link, useLocation } from 'react-router-dom';
 import TermsModal from './TermsModal';
+import ForgotPasswordModal from './ForgotPasswordModal';
 import { Form, Input, Button, Alert, Checkbox } from 'antd';
 import { useAuth } from '../../contexts/AuthContext';
 import Raxios from '../../services/axiosHelper';
@@ -14,6 +15,7 @@ export function AuthPage() {
     const [isLoading, setIsLoading] = useState(false);
     const [generalError, setGeneralError] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
     const [form] = Form.useForm();
     const { login } = useAuth();
 
@@ -99,22 +101,15 @@ export function AuthPage() {
     };
 
     return (
-        <div className="min-h-screen bg-black flex items-center justify-center p-4">
+        <div className="min-h-screen bg-black flex items-center justify-center p-4 mt-5">
             <div className="rounded-[32px] border border-gray-800 w-full max-w-[1000px] overflow-hidden">
                 <div className="grid md:grid-cols-2">
-                    <div className="bg-gray-50 p-12 flex items-center justify-center">
+                    <div className="bg-gray-50 p-6 flex items-center justify-center">
                         <div className="w-full max-w-[400px]">
                             <AnimatedScene mousePosition={mousePosition} isPasswordVisible={isPasswordVisible} />
                         </div>
                     </div>
-                    <div className="p-12 relative bg-black text-white">
-                        <div className="absolute top-8 right-8">
-                            <div className="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center">
-                                <svg width="16" height="16" viewBox="0 0 24 24" className="text-gray-400">
-                                    <path d="M12 5V19M5 12H19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-                                </svg>
-                            </div>
-                        </div>
+                    <div className="p-6 relative bg-black text-white">
                         <div className="space-y-8">
                             <div>
                                 <h1 className="text-2xl font-semibold mb-1">
@@ -240,9 +235,13 @@ export function AuthPage() {
 
                                 {!isSignupMode && (
                                     <Form.Item>
-                                        <Link to="/account" className="float-right text-gray-300 hover:text-white">
+                                        <Button
+                                            type="link"
+                                            onClick={() => setIsForgotPasswordModalOpen(true)}
+                                            className="float-right text-gray-300 hover:text-white p-0"
+                                        >
                                             Forgot password?
-                                        </Link>
+                                        </Button>
                                     </Form.Item>
                                 )}
 
@@ -302,6 +301,10 @@ export function AuthPage() {
                 </div>
             </div>
             <TermsModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+            <ForgotPasswordModal
+                isOpen={isForgotPasswordModalOpen}
+                onClose={() => setIsForgotPasswordModalOpen(false)}
+            />
         </div>
     );
 }
