@@ -1,8 +1,12 @@
 import axios from 'axios';
 
-export const FINAL_URL = 'https://7iox8huibl.execute-api.ap-south-1.amazonaws.com/main';
+const LOCAL_URL = 'http://localhost:8000/api';
+const PROD_URL = 'https://19qn5c5l3h.execute-api.us-east-1.amazonaws.com/master/api';
 
-const Raxios = axios.create({ baseURL: FINAL_URL });
+const ENV = process.env.NODE_ENV || 'development';
+export const BASE_URL = ENV === 'production' ? PROD_URL : LOCAL_URL;
+
+const Raxios = axios.create({ baseURL: BASE_URL });
 
 Raxios.interceptors.request.use(
     (config) => {
@@ -23,7 +27,7 @@ const logout_user = () => {
 const refreshFaxiosAccessToken = async () => {
     const refreshToken = localStorage.getItem('refresh_token');
     try {
-        let response = await axios.post(`${FINAL_URL}/actions/user_auth`,
+        let response = await axios.post(`${BASE_URL}/user_auth`,
             { action: 'refresh' }, {
             headers: { Authorization: `Bearer ${refreshToken}` }
         });

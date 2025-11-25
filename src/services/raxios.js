@@ -1,7 +1,7 @@
 import { message } from "antd";
 import Raxios from "./axiosHelper";
 
-export const RaxiosPost = async (url, data, isNotify = false, setLoading = null) => {
+const RaxiosPost = async (url, data, isNotify = false, setLoading = null) => {
     setLoading && setLoading(true);
     try {
         const response = await Raxios.post(url, data);
@@ -19,3 +19,5 @@ export const RaxiosPost = async (url, data, isNotify = false, setLoading = null)
         setLoading && setLoading(false);
     }
 };
+
+export default RaxiosPost;
