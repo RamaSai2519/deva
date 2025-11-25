@@ -10,6 +10,10 @@ export default function PaymentScannerPage() {
     const [transactionData, setTransactionData] = useState(null);
     const [errorData, setErrorData] = useState(null);
 
+    if (localStorage.getItem('is_admin') === 'true') {
+        window.location.href = '/account';
+    }
+
     const handleStartScan = () => {
         setScanState("scanning");
     };

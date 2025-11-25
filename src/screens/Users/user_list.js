@@ -19,6 +19,10 @@ export function UserListPage() {
     const [selectedUser, setSelectedUser] = useState(null)
     const [isRechargeModalOpen, setIsRechargeModalOpen] = useState(false)
 
+    if (!localStorage.getItem('is_admin') || localStorage.getItem('is_admin') !== 'true') {
+        window.location.href = '/account';
+    }
+
     const fetchUsers = async () => {
         setLoading(true)
         try {
