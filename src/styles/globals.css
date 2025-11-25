@@ -3,14 +3,28 @@
 @import 'tailwindcss/utilities';
 @import './animations.css';
 
+.la-belle-aurore-regular {
+  font-family: "La Belle Aurore", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "La Belle Aurore", cursive;
+  --font-mono: "La Belle Aurore", cursive;
+}
+
 body {
-  margin: 0;
-  background-color: black;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "La Belle Aurore", cursive;
 }
 
 ::-webkit-scrollbar {
@@ -96,10 +110,26 @@ body {
 .card {
   transform: scale(0.9);
   position: absolute;
-  background-color: #1A1A1A;
-  border-radius: 16px;
-  padding: 16px;
-  width: 280px;
-  color: white;
-  margin: 0.5rem;
+}
+
+.scale-in {
+  animation: scaleIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: center;
+}
+
+.card-hover-effect {
+  transition: transform 0.4s ease-out;
+}
+
+.card-hover-effect:hover {
+  transform: translateX(var(--card-x, 0)) rotate(10deg) !important;
+  z-index: 10;
+}
+
+.animate-pop-rotated {
+  animation: popEffectRotated 1s infinite;
+}
+
+.animate-pop {
+  animation: popEffect 1s infinite;
 }
