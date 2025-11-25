@@ -4,7 +4,7 @@ import { SearchOutlined } from '@ant-design/icons'
 const filterOptions = [
     { value: "name", label: "Name" },
     { value: "email", label: "Email" },
-    { value: "reg_no", label: "Registration No" },
+    { value: "reg_no", label: "Reg No" },
 ]
 
 export function UserFilters({ filterField, filterValue, onFilterFieldChange, onFilterValueChange, onSubmit }) {
@@ -21,7 +21,7 @@ export function UserFilters({ filterField, filterValue, onFilterFieldChange, onF
                 value={filterValue}
                 onChange={(e) => onFilterValueChange(e.target.value)}
                 prefix={<SearchOutlined />}
-                className="flex-1"
+                // className="flex-1"
                 onPressEnter={onSubmit}
             />
             <Button type="primary" onClick={onSubmit}>

@@ -40,7 +40,6 @@ export function Account() {
 
     const handleEditToggle = () => {
         if (isEditing) {
-            // Cancel editing, reset form to original data
             form.setFieldsValue({
                 name: profileData.name,
                 email: profileData.email,

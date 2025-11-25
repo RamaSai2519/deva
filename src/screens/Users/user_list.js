@@ -75,7 +75,7 @@ export function UserListPage() {
     }
 
     return (
-        <div className="min-h-screen py-8 px-4">
+        <div className="min-h-screen py-8 px-4 overflow-auto">
             <div className="max-w-7xl mx-auto">
                 <Space direction="vertical" size="large" className="w-full mb-8">
                     <Space align="center" size="middle">

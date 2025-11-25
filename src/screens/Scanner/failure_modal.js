@@ -1,15 +1,5 @@
 import { useEffect, useState } from "react"
 
-// interface FailureModalProps {
-//   isOpen: boolean
-//   onClose: () => void
-//   onRetry: () => void
-//   errorData: {
-//     message: string
-//     code: string
-//   } | null
-// }
-
 export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
   const [shake, setShake] = useState(false)
 
@@ -25,41 +15,41 @@ export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-lightBlack/80 backdrop-blur-sm" onClick={onClose} />
 
       <div
-        className={`relative w-full max-w-md mx-4 mb-4 sm:mb-0 bg-card rounded-3xl p-8 animate-slide-up ${shake ? "animate-shake" : ""}`}
+        className={`relative w-full max-w-md mx-4 mb-4 sm:mb-0 bg-lightBlack rounded-3xl p-8 animate-slide-up ${shake ? "animate-shake" : ""}`}
       >
         <div className="flex justify-center mb-6">
-          <div className="w-20 h-20 rounded-full bg-background flex items-center justify-center">
-            <svg className="w-10 h-10 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="w-20 h-20 rounded-full bg-darkBlack flex items-center justify-center">
+            <svg className="w-10 h-10 text-error" fill="none" stroke="#ef4444" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </div>
         </div>
 
         <h2 className="text-foreground text-xl font-semibold text-center mb-2">Payment Failed</h2>
-        <p className="text-muted-foreground text-sm text-center mb-8">{errorData.message}</p>
+        <p className="text-mutedWhite text-sm text-center mb-8">{errorData.message}</p>
 
-        <div className="bg-background rounded-2xl p-4 mb-8">
+        <div className="bg-darkBlack rounded-2xl p-4 mb-8">
           <div className="flex justify-between items-center">
-            <span className="text-muted-foreground text-sm">Error Code</span>
-            <span className="text-muted-foreground text-xs font-mono bg-card px-2 py-1 rounded">{errorData.code}</span>
+            <span className="text-mutedWhite text-sm">Error Code</span>
+            <span className="text-mutedWhite text-xs font-mono bg-lightBlack px-2 py-1 rounded">{errorData.code}</span>
           </div>
         </div>
 
         <div className="mb-8 space-y-3">
-          <p className="text-muted-foreground text-xs uppercase tracking-wider">Suggestions</p>
+          <p className="text-mutedWhite text-xs uppercase tracking-wider">Suggestions</p>
           <ul className="space-y-2">
-            <li className="flex items-start gap-2 text-muted-foreground text-sm">
+            <li className="flex items-start gap-2 text-mutedWhite text-sm">
               <span className="mt-0.5">•</span>
               Check if the QR code is valid and not expired
             </li>
-            <li className="flex items-start gap-2 text-muted-foreground text-sm">
+            <li className="flex items-start gap-2 text-mutedWhite text-sm">
               <span className="mt-0.5">•</span>
               Ensure good lighting and steady camera
             </li>
-            <li className="flex items-start gap-2 text-muted-foreground text-sm">
+            <li className="flex items-start gap-2 text-mutedWhite text-sm">
               <span className="mt-0.5">•</span>
               Try scanning from a different angle
             </li>
@@ -69,13 +59,13 @@ export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 py-4 bg-background text-foreground font-semibold rounded-2xl transition-opacity hover:opacity-80 active:opacity-70"
+            className="flex-1 py-4 bg-darkBlack text-foreground font-semibold rounded-2xl transition-opacity hover:opacity-80 active:opacity-70"
           >
             Cancel
           </button>
           <button
             onClick={onRetry}
-            className="flex-1 py-4 bg-foreground text-background font-semibold rounded-2xl transition-opacity hover:opacity-90 active:opacity-80"
+            className="flex-1 py-4 bg-white/65 text-black font-semibold rounded-2xl transition-opacity hover:opacity-90 active:opacity-80"
           >
             Try Again
           </button>

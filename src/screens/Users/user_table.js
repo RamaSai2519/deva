@@ -47,6 +47,7 @@ export function UserTable({ users, onRecharge, pagination, loading }) {
             title: 'Actions',
             key: 'actions',
             align: 'right',
+            fixed: 'right',
             render: (_, record) => (
                 <Button
                     type="default"
@@ -62,6 +63,7 @@ export function UserTable({ users, onRecharge, pagination, loading }) {
 
     return (
         <Table
+        className='overflow-x-scroll'
             columns={columns}
             loading={loading}
             dataSource={users}

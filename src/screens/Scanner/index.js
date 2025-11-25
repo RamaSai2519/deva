@@ -74,24 +74,6 @@ export default function PaymentScannerPage() {
 
     return (
         <main className="min-h-screen bg-background flex flex-col">
-            <header className="px-6 py-4 flex items-center justify-between">
-                <button className="w-10 h-10 flex items-center justify-center rounded-full bg-card">
-                    <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <h1 className="text-foreground text-lg font-medium">Scan to Pay</h1>
-                <button className="w-10 h-10 flex items-center justify-center rounded-full bg-card">
-                    <svg className="w-5 h-5 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                    </svg>
-                </button>
-            </header>
 
             <div className="flex-1 flex flex-col items-center justify-center px-6">
                 <QRScanner

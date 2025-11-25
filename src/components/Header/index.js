@@ -1,74 +1,40 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Octicon from '../../Icons/octicon';
-import SearchIcon from '../../Icons/Searchicon';
-import useScrollPosition from '../../hooks/useScrollPostion';
-import { useHoveredMenu } from '../../contexts/hoveredMenuContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 const Header = () => {
-    const { hoveredMenu, setHoveredMenu } = useHoveredMenu();
-    const { isScrolled } = useScrollPosition('80vh');
-    const navigate = useNavigate();
-
-    const navItem = (text, menu, link) => (
-        <span
-            className='cursor-pointer text-mutedWhite hover:text-white transition-colors'
-            onMouseEnter={() => setHoveredMenu(menu)}
-            onClick={() => link && navigate(link)}
-        >
-            {text}
-        </span>
-    );
-
-    const dropdownMenus = {
-        Events: ['Upcoming Events', 'Past Events', 'Highlights', 'Get Involved'],
-        FAQ: ['General Questions', 'Event Policies', 'Accessibility', 'Contact Support'],
-        About: ['Our Team', 'Mission & Vision', 'Careers', 'Press'],
-        Account: ['Profile', 'Settings', 'Notifications', 'Sign Out', 'Login', 'Sign Up'],
-    };
-
-    const renderDropdown = () => (
-        <div className={`fixed top-10 bottom-0 left-0 right-0 w-full h-screen text-white z-20 ${hoveredMenu ? 'animate-fade-in-bottom' : 'hidden animate-fade-out'}`}>
-            <div className={`w-full mx-auto flex flex-col items-center justify-center py-10 rounded-b-xl gap-5 bg-lightBlack ${hoveredMenu
-                ? 'bg-lightBlack animate-fade-in animate-fade-in-bottom'
-                : 'bg-transparent animate-fade-out'}`
-            }
-                onMouseLeave={() => setHoveredMenu(null)}
-            >
-                {dropdownMenus[hoveredMenu]?.map((item, index) => (
-                    <Link
-                        key={index}
-                        to={item === 'Login' ? '/login' : item === 'Profile' ? '/account' : item === 'Sign Up' ? '/signup' : `/${hoveredMenu.toLowerCase()}/${item.toLowerCase().replace(/ /g, '-')}`}
-                        className='hover:underline text-lg animate-fade-in-bottom'
-                        onClick={() => setHoveredMenu(null)}
-                    >
-                        {item}
-                    </Link>
-                ))}
-            </div>
-        </div>
-    );
+    const { isAuthenticated } = useAuth();
 
     return (
-        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-50 ${hoveredMenu
-            ? 'bg-lightBlack transition-all duration-500'
-            : isScrolled
-                ? 'bg-lightBlack transition-all duration-500 rounded-b-md'
-                : 'bg-black'
-            }`}
+        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-50`}
         >
             <nav className='flex w-full items-center justify-center'>
-                <div className='flex w-full max-w-2xl items-center justify-between'>
+                <div className='flex w-full items-center justify-between'>
                     <Link to="/">
                         <Octicon />
                     </Link>
-                    {navItem('Events', 'Events')}
-                    {navItem('FAQ', 'FAQ')}
-                    {navItem('About Us', 'About')}
-                    {navItem('Account', 'Account')}
-                    {navItem(<SearchIcon />, '', '/search')}
+                    <div className='flex items-center gap-3'>
+                        {!localStorage.getItem('is_admin') && <Link to={isAuthenticated ? "/scanner" : "/login"}>
+                            <div className="w-7 h-7 rounded-full bg-card flex items-center justify-center">
+                                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={1.5}
+                                        d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"
+                                    />
+                                </svg>
+                            </div>
+                        </Link>}
+                        <Link to={isAuthenticated ? "/account" : "/login"}>
+                            <User className="w-7 h-7 md:w-6 md:h-6 text-white" />
+                        </Link>
+                    </div>
+
+
                 </div>
             </nav>
-            {renderDropdown()}
         </header>
     );
 };

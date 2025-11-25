@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
             localStorage.removeItem('is_admin');
             setIsAuthenticated(false);
             setIsAdmin(false);
-            window.location.href = '/';
+            window.location.href = '/login';
         } catch (error) {
             console.error('Error during logout:', error);
             throw error;

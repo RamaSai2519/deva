@@ -1,20 +1,5 @@
 import { useEffect, useState } from "react"
 
-// interface SuccessModalProps {
-//   isOpen: boolean
-//   onClose: () => void
-//   transactionData: {
-// "user_id": "69253f8747bcb2bf00fb3a9a",
-// "amount": 10,
-// "action": "deduct",
-// "timestamp": "2025-11-25T13:04:57.606629Z",
-// "new_balance": 80,
-// "admin_id": "692550abb541532201617cbe",
-// "_id": "69255c2189ecba9e6c6eb333",
-// "admin_name": "Recharge Point 1",
-// "user_name": "Rama Sathya Sai"
-//   } | null
-// }
 
 export function SuccessModal({ isOpen, onClose, transactionData }) {
   const [showCheck, setShowCheck] = useState(false)
@@ -91,7 +76,7 @@ export function SuccessModal({ isOpen, onClose, transactionData }) {
 
         <button
           onClick={onClose}
-          className="w-full py-4 bg-white text-black font-semibold rounded-2xl transition-opacity hover:opacity-90 active:opacity-80"
+          className="w-full py-4 bg-white/65 text-black font-semibold rounded-2xl transition-opacity hover:opacity-90 active:opacity-80"
         >
           Done
         </button>
