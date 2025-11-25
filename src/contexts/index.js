@@ -1,11 +1,12 @@
-
-import React from 'react';
 import { HoveredMenuProvider } from './hoveredMenuContext';
+import { AuthProvider } from './AuthContext';
 
 const AppProviders = ({ children }) => (
-    <HoveredMenuProvider>
-        {children}
-    </HoveredMenuProvider>
+    <AuthProvider>
+        <HoveredMenuProvider>
+            {children}
+        </HoveredMenuProvider>
+    </AuthProvider>
 );
 
 export default AppProviders;
