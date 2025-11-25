@@ -15,7 +15,7 @@ const Header = () => {
                         <Octicon />
                     </Link>
                     <div className='flex items-center gap-3'>
-                        {!localStorage.getItem('is_admin') && <Link to={isAuthenticated ? "/scanner" : "/login"}>
+                        <Link to={isAuthenticated ? "/scanner" : "/login"}>
                             <div className="w-7 h-7 rounded-full bg-card flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path
@@ -26,7 +26,7 @@ const Header = () => {
                                     />
                                 </svg>
                             </div>
-                        </Link>}
+                        </Link>
                         <Link to={isAuthenticated ? "/account" : "/login"}>
                             <User className="w-7 h-7 md:w-6 md:h-6 text-white" />
                         </Link>
