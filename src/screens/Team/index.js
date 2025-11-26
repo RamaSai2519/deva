@@ -4,29 +4,26 @@ import React, { useState } from 'react';
 import teamData from './team.json';
 
 const TeamCard = ({ member }) => (
-    <div className="relative rounded-3xl overflow-hidden group cursor-pointer">
-        <img
-            src={member.image}
-            alt={member.name}
-            className="w-full h-[400px] object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/50 to-black/90 p-8 flex flex-col justify-end">
-            <p className="text-gray-400 text-sm mb-2">{member.department}</p>
-            <h3 className="text-3xl text-white font-semibold mb-2">
-                {member.name}.<br />
-                {member.role}.
+    <div className="relative rounded-3xl overflow-hidden group cursor-pointer bg-lightBlack border border-white/10 shadow-[0_12px_30px_rgba(15,23,42,0.8)]
+        transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-[0_18px_45px_rgba(59,130,246,0.45)]">
+        <div className="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-transparent group-hover:ring-[rgba(56,189,248,0.55)] group-hover:shadow-[0_0_26px_rgba(56,189,248,0.45)] transition-all duration-300" />
+
+        <div className="relative h-64 overflow-hidden">
+            <img
+                src={member.image}
+                alt={member.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+        </div>
+
+        <div className="relative px-5 pt-4 pb-5 flex flex-col gap-1.5">
+            <p className="text-xs font-medium tracking-[0.18em] uppercase text-sky-300/80">
+                {member.department}
+            </p>
+            <h3 className="text-lg font-semibold text-slate-50 leading-snug">
+                {member.name}
             </h3>
-            <a
-                href={member.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 group-hover:text-blue-400 flex items-center"
-            >
-                Connect here
-                <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-            </a>
         </div>
     </div>
 );
@@ -50,10 +47,9 @@ const Team = () => {
     };
 
     return (
-        <div className="bg-black min-h-screen">
-            <div className="max-w-6xl mx-auto px-4 mb-20">
+        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen py-14 sm:py-16">
+            <div className="max-w-6xl mx-auto px-4 mb-16">
                 <h2 className="text-[2.5rem] leading-tight text-center">
-
                     <span className="block md:hidden">
                         <span className="text-gray-400 font-light">{teamData.quote.short.prefix} </span>
                         <span className="text-white font-normal">{teamData.quote.short.highlight} </span>
@@ -68,7 +64,7 @@ const Team = () => {
                 </h2>
             </div>
             <div className="relative max-w-7xl mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
                     {getCurrentMembers().map((member) => (
                         <TeamCard key={member.id} member={member} />
                     ))}

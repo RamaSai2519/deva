@@ -18,21 +18,23 @@ const App = () => {
   return (
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <Header />
-      <div className="text-white min-w-full min-h-screen overflow-clip bg-black flex justify-center items-center">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<AuthPage />} />
-          <Route path="/signup" element={<AuthPage />} />
-          {isAuthenticated && (
-            <>
-              <Route path="/account" element={<Account />} />
-              <Route path="/scanner" element={<Scanner />} />
-              <Route path="/users" element={<UserListPage />} />
-            </>
-          )}
-        </Routes>
+      <div className="pt-14 sm:pt-16">
+        <div className="text-white min-w-full min-h-screen overflow-clip bg-black flex justify-center items-center">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<AuthPage />} />
+            <Route path="/signup" element={<AuthPage />} />
+            {isAuthenticated && (
+              <>
+                <Route path="/account" element={<Account />} />
+                <Route path="/scanner" element={<Scanner />} />
+                <Route path="/users" element={<UserListPage />} />
+              </>
+            )}
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </ConfigProvider>
   );
 };

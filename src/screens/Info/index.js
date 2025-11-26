@@ -26,7 +26,7 @@ const Info = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     function calculateTimeLeft() {
-        const difference = +new Date('2024-12-18') - +new Date();
+        const difference = +new Date('2025-12-29') - +new Date();
         let timeLeft = {};
 
         if (difference > 0) {
