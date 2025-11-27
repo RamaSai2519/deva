@@ -2,21 +2,21 @@
     {
         "title": "Hackathon Arena",
         "description": "Compete with top developers in a 24-hour hackathon. Solve real-world challenges and showcase your coding skills.",
-        "image": "https://via.placeholder.com/400x200"
+        "image": "Assets/images/event_1.webp"
     },
     {
         "title": "AI/ML Workshops",
         "description": "Dive into the world of Artificial Intelligence and Machine Learning with hands-on sessions from industry experts.",
-        "image": "https://via.placeholder.com/400x200"
+        "image": "Assets/images/event_2.webp"
     },
     {
         "title": "Tech Talk Series",
         "description": "Engage with thought leaders and visionaries as they discuss the future of technology and innovation.",
-        "image": "https://via.placeholder.com/400x200"
+        "image": "Assets/images/event_3.png"
     },
     {
         "title": "Robotics Showcase",
         "description": "Witness cutting-edge robotic innovations and interact with creators pushing the boundaries of technology.",
-        "image": "https://via.placeholder.com/400x200"
+        "image": "Assets/images/event_4.webp"
     }
 ]

@@ -50,3 +50,15 @@
     transform: scale(1) translate(var(--x), var(--y));
   }
 }
+
+@keyframes pulse-line {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  40% {
+    opacity: 0.9;
+  }
+}

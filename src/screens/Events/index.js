@@ -19,7 +19,7 @@ const Events = () => {
                     </a>
                 </div>
             </div>
-            <div>
+            <div className="max-w-7xl mx-auto px-4">
                 <Slider events={events} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
             </div>
         </section>
