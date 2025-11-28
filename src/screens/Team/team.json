@@ -1,12 +1,12 @@
 {
     "quote": {
         "full": {
-            "prefix": "Behind every great innovation and transformative experience at Epoch 3.0,",
+            "prefix": "Behind every great innovation and transformative experience at Epoch 4.0,",
             "highlight": "stands a team of passionate individuals who bring their unique strengths together to create something extraordinary",
             "suffix": "— because the greatest achievements aren't built by individuals, but by teams who dare to dream bigger. - Satya Nadella"
         },
         "short": {
-            "prefix": "At Epoch 3.0, passionate teams",
+            "prefix": "At Epoch 4.0, passionate teams",
             "highlight": "unite to create extraordinary innovations",
             "suffix": ", proving that great achievements come from collaborative dreaming."
         }
@@ -23,33 +23,6 @@
         },
         {
             "id": 2,
-            "name": "Amrutha Varsha",
-            "role": "Event Coordinator",
-            "department": "Core Team",
-            "image": "Assets/images/AmruthaVarsha_tech.jpg",
-            "description": "Coordinating and managing all event-related activities",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 3,
-            "name": "Dakshitha Pathipati",
-            "role": "Junior Design Lead",
-            "department": "Design",
-            "image": "Assets/images/Dakshitha_design.jpg",
-            "description": "Managing the design team and ensuring design quality",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 4,
-            "name": "Darshan M",
-            "role": "Logistics Coordinator",
-            "department": "Logistics",
-            "image": "Assets/images/Darshan.jpg",
-            "description": "Overseeing logistics and ensuring smooth operations",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 5,
             "name": "Greeshmitha",
             "role": "Technical Support Specialist",
             "department": "Tech",
@@ -58,7 +31,7 @@
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
-            "id": 6,
+            "id": 3,
             "name": "Harinmayi",
             "role": "Design Project Manager",
             "department": "Design",
@@ -67,43 +40,7 @@
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
-            "id": 7,
-            "name": "Jaya Lakshmi",
-            "role": "Event Management Support",
-            "department": "Event Management",
-            "image": "Assets/images/jayalakshmi_event.jpg",
-            "description": "Supporting event management and coordination",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 8,
-            "name": "Kavya Reddy",
-            "role": "Event Planning Assistant",
-            "department": "Event Management",
-            "image": "Assets/images/Kavya reddy_event.jpg",
-            "description": "Assisting with event planning and execution",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 9,
-            "name": "Naga Sai",
-            "role": "Event Logistics Support",
-            "department": "Event Management",
-            "image": "Assets/images/nagasai_event.jpg",
-            "description": "Providing support for event activities and logistics",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 10,
-            "name": "Navya Nayaka",
-            "role": "Technical Assistance Specialist",
-            "department": "Tech",
-            "image": "Assets/images/Navya_tech.jpg",
-            "description": "Offering technical assistance and support",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 11,
+            "id": 4,
             "name": "Nikhil",
             "role": "Content Manager",
             "department": "Operations",
@@ -112,33 +49,7 @@
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
-            "id": 12,
-            "name": "SP Prudhvi Reddy",
-            "role": "Technical Maintenance Specialist",
-            "image": "Assets/images/P.Prudvi reddy_Technical.jpg",
-            "description": "Providing technical support and maintenance",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 13,
-            "name": "PoornaChand",
-            "role": "Finannce lead",
-            "department": "Finance",
-            "image": "Assets/images/Poornachand.P_ finance.jpg",
-            "description": "Organizing and managing hackathon events",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 14,
-            "name": "Pushpa",
-            "role": "Technical Support Assistant",
-            "department": "Tech",
-            "image": "Assets/images/Pushpa_tech.jpg",
-            "description": "Providing technical support and assistance",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 15,
+            "id": 5,
             "name": "Roshini",
             "role": "Logistics Manager",
             "department": "Logistics",
@@ -146,35 +57,9 @@
             "description": "Managing logistics and ensuring smooth operations",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
+
         {
-            "id": 16,
-            "name": "Sravanthi",
-            "role": "Event Support Coordinator",
-            "department": "Event Management",
-            "image": "Assets/images/Sravanthi_event.jpg",
-            "description": "Leading event support and coordination",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 17,
-            "name": "Varun",
-            "role": "Event Support Assistant",
-            "department": "Event Management",
-            "image": "Assets/images/Varun_event.jpg",
-            "description": "Assisting with event support and logistics",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 18,
-            "name": "Thanmai G",
-            "role": "Event Management Lead",
-            "department": "Event Management",
-            "image": "Assets/images/ThanmaiG_event.jpg",
-            "description": "Leading event management and coordination",
-            "linkedin": "https://linkedin.com/in/aditya-sharma"
-        },
-        {
-            "id": 18,
+            "id": 6,
             "name": "Rohit",
             "role": "Security Lead",
             "department": "Security",

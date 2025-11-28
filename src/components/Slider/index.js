@@ -13,26 +13,34 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
         setCurrentSlide((prev) => (prev === events.length - 1 ? 0 : prev + 1));
     };
 
-    const translateX = isDesktop ? `translateX(${25 - currentSlide * 50}%)` : `translateX(-${currentSlide * 100}%)`;
+    // Desktop: each slide is 70% width, offset to center active slide
+    // Formula: to center slide N, we need offset = (100% - 70%) / 2 - N * 70% = 15% - N * 70%
+    const translateX = isDesktop
+        ? `translateX(calc(15% - ${currentSlide * 70}%))`
+        : `translateX(-${currentSlide * 100}%)`;
 
     return (
         <div className="relative">
             <div className="overflow-hidden relative">
                 <div
                     id="slider"
-                    className="flex transition-transform duration-500 ease-in-out"
+                    className="flex transition-transform duration-500 ease-in-out items-center"
                     style={{ transform: translateX }}
                 >
                     {events.map((event, index) => (
                         <div
                             key={index}
-                            className={`${isDesktop ? "min-w-[50%]" : "w-full"} flex-shrink-0 transform ${currentSlide === index ? "scale-100" : "scale-90 opacity-50"} transition-transform duration-500`}
+                            className={`${isDesktop ? "min-w-[70%]" : "w-full"} flex-shrink-0 transition-all duration-500 px-2`}
+                            style={{
+                                transform: currentSlide === index ? 'scale(1)' : 'scale(0.85)',
+                                opacity: currentSlide === index ? 1 : 0.4,
+                            }}
                         >
                             <div className="relative w-full">
                                 <img
                                     src={event.image}
                                     alt={event.title}
-                                    className="w-full h-auto rounded-lg shadow-lg"
+                                    className="w-full h-auto max-h-[50vh] object-contain rounded-xl shadow-lg"
                                 />
                             </div>
                         </div>
@@ -79,8 +87,14 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                 </button>
             </div>
 
-            <div className="mt-4 text-center">
-                <p className="text-gray-300 max-w-2xl mx-auto">
+            {/* Description with static background image */}
+            <div className="relative mt-10 text-center px-4 min-h-[800px] flex items-start justify-center pt-4">
+                <img
+                    src="/Assets/images/event_description.png"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-contain opacity-70 pointer-events-none"
+                />
+                <p className="relative z-10 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
                     {events[currentSlide]?.description}
                 </p>
             </div>
