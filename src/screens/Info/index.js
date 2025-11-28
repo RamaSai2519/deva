@@ -64,27 +64,27 @@ const Info = () => {
             </div>
 
             {/* Content Section */}
-            <div className="w-full bg-black py-16 px-8">
+            <div className="w-full bg-black py-8 sm:py-16 px-4 sm:px-8">
                 <div className="max-w-6xl mx-auto">
-                    <p className="text-2xl text-gray-400 mb-16">
+                    <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-400 mb-8 sm:mb-16">
                         <span className="text-white font-medium">Epoch 3.0</span> is GITAM University Bengaluru's premier tech fest
                         — organized by the GitHub Community Club — bringing together over 1000+ participants for
                         48 hours of innovation, learning, and collaboration.
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
                         <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">For</p>
-                            <h2 className="text-white text-7xl font-medium mb-4">48 hours</h2>
-                            <p className="text-gray-500 text-lg">Of Non-stop Tech Celebration</p>
+                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 sm:mb-8" />
+                            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-2">For</p>
+                            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium mb-4">48 hours</h2>
+                            <p className="text-gray-500 text-sm sm:text-base md:text-lg">Of Non-stop Tech Celebration</p>
                         </div>
 
                         <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">Over</p>
-                            <h2 className="text-white text-7xl font-medium mb-4">15+ Tech Stalls</h2>
-                            <p className="text-gray-500 text-lg">in prizes and rewards</p>
+                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 sm:mb-8" />
+                            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-2">Over</p>
+                            <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-medium mb-4">15+ Tech Stalls</h2>
+                            <p className="text-gray-500 text-sm sm:text-base md:text-lg">in prizes and rewards</p>
                         </div>
                     </div>
                 </div>

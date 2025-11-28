@@ -51,25 +51,25 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
             {/* Category Scroller */}
             <div className="flex justify-center items-center pt-8 w-full">
                 <button
-                    className={`border-r ${currentSlide !== 0 ? "animate-fade-in" : "animate-fade-out"}`}
+                    className={`border-r flex-shrink-0 px-2 ${currentSlide !== 0 ? "animate-fade-in" : "animate-fade-out"}`}
                     onClick={handlePrev}
                 >
                     <LeftOutlined className="text-white" />
                 </button>
                 <div
-                    className="flex justify-start items-center space-x-8 border-b border-mutedWhite max-w-4xl w-full overflow-hidden"
+                    className="flex justify-start items-center space-x-8 border-b border-mutedWhite max-w-4xl w-full overflow-x-auto scrollbar-hide"
                 >
                     <div
-                        className="flex transition-transform duration-500 w-full gap-5 md:gap-1"
+                        className="flex transition-transform duration-500 w-full gap-3 sm:gap-5 md:gap-1 px-2"
                         style={{
-                            transform: `translateX(-${currentSlide * 100}px)`,
+                            transform: `translateX(-${currentSlide * 80}px)`,
                         }}
                     >
                         {events.map((event, index) => (
                             <button
                                 key={index}
                                 onClick={() => setCurrentSlide(index)}
-                                className={`text-sm text-nowrap w-full pb-1 ${currentSlide === index
+                                className={`text-xs sm:text-sm text-nowrap flex-shrink-0 pb-1 ${currentSlide === index
                                     ? "text-white font-bold border-b"
                                     : "text-mutedWhite hover:text-gray-200"
                                     }`}
@@ -80,7 +80,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                     </div>
                 </div>
                 <button
-                    className={`border-l ${currentSlide !== events.length - 1 ? "animate-fade-in" : "animate-fade-out"}`}
+                    className={`border-l flex-shrink-0 px-2 ${currentSlide !== events.length - 1 ? "animate-fade-in" : "animate-fade-out"}`}
                     onClick={handleNext}
                 >
                     <RightOutlined className="text-white" />
@@ -88,13 +88,13 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
             </div>
 
             {/* Description with static background image */}
-            <div className="relative mt-10 text-center px-4 min-h-[800px] flex items-start justify-center pt-4">
+            <div className="relative mt-10 text-center px-4 min-h-[400px] sm:min-h-[600px] md:min-h-[800px] flex items-start justify-center pt-4">
                 <img
                     src="/Assets/images/event_description.png"
                     alt=""
                     className="absolute inset-0 w-full h-full object-contain opacity-70 pointer-events-none"
                 />
-                <p className="relative z-10 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+                <p className="relative z-10 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
                     {events[currentSlide]?.description}
                 </p>
             </div>

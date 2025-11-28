@@ -89,7 +89,7 @@ const Hero = () => {
             </p>
 
             {/* Sub-headline */}
-            <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg text-slate-300 max-w-xl">
+            <p className="mt-2 sm:mt-3 text-xs sm:text-sm md:text-base lg:text-lg text-slate-300 max-w-xl px-2">
                 48-Hour Tech Innovation Experience by GitHub Community Club
             </p>
 

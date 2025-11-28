@@ -10,17 +10,17 @@ const FAQ = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <div id="faq" className="min-h-screen bg-black p-8 flex flex-col items-center justify-between">
+        <div id="faq" className="min-h-screen bg-black p-4 sm:p-8 flex flex-col items-center justify-between">
             <div className="w-full max-w-2xl">
-                <h1 className="text-3xl font-bold text-white mb-6 text-center">FAQs</h1>
-                <div className="space-y-4">
+                <h1 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 text-center">FAQs</h1>
+                <div className="space-y-3 sm:space-y-4">
                     {faqData.map((item, index) => (
                         <div key={index}>
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full p-4 flex justify-between items-center text-left text-mutedWhite hover:bg-darkBlack transition-colors duration-200"
+                                className="w-full p-3 sm:p-4 flex justify-between items-center text-left text-mutedWhite hover:bg-darkBlack transition-colors duration-200"
                             >
-                                <span className="font-medium">{item.question}</span>
+                                <span className="font-medium text-sm sm:text-base pr-2">{item.question}</span>
                                 <motion.span
                                     animate={{ rotate: activeIndex === index ? 180 : 0 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}

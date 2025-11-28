@@ -48,8 +48,8 @@ const Team = () => {
 
     return (
         <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen py-14 sm:py-16">
-            <div className="max-w-6xl mx-auto px-4 mb-16">
-                <h2 className="text-[2.5rem] leading-tight text-center">
+            <div className="max-w-6xl mx-auto px-4 mb-8 sm:mb-16">
+                <h2 className="text-xl sm:text-2xl md:text-[2.5rem] leading-tight text-center">
                     <span className="block md:hidden">
                         <span className="text-gray-400 font-light">{teamData.quote.short.prefix} </span>
                         <span className="text-white font-normal">{teamData.quote.short.highlight} </span>
@@ -64,7 +64,7 @@ const Team = () => {
                 </h2>
             </div>
             <div className="relative max-w-7xl mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-10">
                     {getCurrentMembers().map((member) => (
                         <TeamCard key={member.id} member={member} />
                     ))}
