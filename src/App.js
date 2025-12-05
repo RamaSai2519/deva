@@ -18,7 +18,7 @@ const App = () => {
   return (
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
       <Header />
-      <div className="text-white min-w-full min-h-screen overflow-clip bg-black flex justify-center items-center">
+      <div className="text-white w-full min-h-screen overflow-clip flex bg-darkBlack justify-center items-center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<AuthPage />} />
