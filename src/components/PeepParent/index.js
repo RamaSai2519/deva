@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Peep from "../Peep";
 
 const PeepParent = ({ children, elementId, onClick }) => {

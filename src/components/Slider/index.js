@@ -13,8 +13,6 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
         setCurrentSlide((prev) => (prev === events.length - 1 ? 0 : prev + 1));
     };
 
-    // Desktop: each slide is 70% width, offset to center active slide
-    // Formula: to center slide N, we need offset = (100% - 70%) / 2 - N * 70% = 15% - N * 70%
     const translateX = isDesktop
         ? `translateX(calc(15% - ${currentSlide * 70}%))`
         : `translateX(-${currentSlide * 100}%)`;
@@ -88,12 +86,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
             </div>
 
             {/* Description with static background image */}
-            <div className="relative mt-10 text-center px-4 min-h-[800px] flex items-start justify-center pt-4">
-                <img
-                    src="/Assets/images/event_description.png"
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-contain opacity-70 pointer-events-none"
-                />
+            <div className="relative mt-2 text-center px-4">
                 <p className="relative z-10 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
                     {events[currentSlide]?.description}
                 </p>
