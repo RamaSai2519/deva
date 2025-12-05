@@ -98,7 +98,7 @@ export function Account() {
 
     if (isLoading) {
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center p-4">
+            <div className="min-h-screen w-full bg-black flex items-center justify-center p-4">
                 <p className="text-white text-lg">Loading profile...</p>
             </div>
         );
@@ -106,7 +106,7 @@ export function Account() {
 
     if (!profileData) {
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center p-4">
+            <div className="min-h-screen w-full bg-black flex items-center justify-center p-4">
                 <p className="text-white text-lg">No profile data available</p>
             </div>
         );
