@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react';
-import useScrollPosition from '../../hooks/useScrollPostion';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../contexts/AuthContext';
+import useScrollPosition from '../../hooks/useScrollPosition';
 
 const Hero = () => {
-    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+    const navigate = useNavigate();
+    const { isAuthenticated } = useAuth();
     const { isScrolled } = useScrollPosition('1vh');
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
     useEffect(() => {
         if (typeof window === 'undefined' || !window.matchMedia) return;
@@ -13,6 +17,11 @@ const Hero = () => {
         mediaQuery.addEventListener('change', handler);
         return () => mediaQuery.removeEventListener('change', handler);
     }, []);
+
+    const onJoinClick = () => {
+        if (isAuthenticated) navigate('/account');
+        else navigate('/login');
+    }
 
     return (
         <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
@@ -70,7 +79,10 @@ const Hero = () => {
             </div>
 
             <div className='lg:mr-14'>
-                <button className="relative bg-lightBlack border border-transparent hover:border-transparent rounded-full px-8 py-3 text-lg font-medium mb-4 group">
+                <button
+                    className="relative bg-lightBlack border border-transparent hover:border-transparent rounded-full px-8 py-3 text-lg font-medium mb-4 group"
+                    onClick={onJoinClick}
+                >
                     <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent group-hover:text-blue-400 bg-clip-text transition-colors duration-300">
                         Join the Epoch
                     </span>

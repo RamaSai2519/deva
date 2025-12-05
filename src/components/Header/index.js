@@ -1,12 +1,30 @@
-import { User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { User, Menu, X } from 'lucide-react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Octicon from '../../Icons/octicon';
 import { useAuth } from '../../contexts/AuthContext';
-import useScrollPosition from '../../hooks/useScrollPostion';
+import useScrollPosition from '../../hooks/useScrollPosition';
 
 const Header = () => {
     const { isAuthenticated } = useAuth();
     const { isScrolled } = useScrollPosition('1vh');
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            if (!mobile) {
+                setIsMobileMenuOpen(false);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const links = [
         { to: '#hero', label: 'Home' },
@@ -17,32 +35,33 @@ const Header = () => {
     ]
 
     const navToHomeIfNotHome = (to) => {
-        if (window.location.pathname !== '/') {
-            window.location.href = `/${to}`;
-        }
+        const isHome = location.pathname === '/';
+        if (!isHome) navigate(`/${to}`); else navigate(to);
+        setIsMobileMenuOpen(false);
     };
 
     return (
-        <header className={`fixed top-0 p-1 md:py-2 md:px-6 lg:px-10 flex justify-between items-center w-full z-50 ${isScrolled ? 'bg-darkBlack bg-opacity-80 backdrop-blur-md shadow-md' : 'bg-transparent'} transition-colors duration-300`}>
+        <header className={`fixed top-0 p-1 md:py-2 md:px-6 lg:px-10 flex justify-between items-center w-full z-50 ${isScrolled || isMobileMenuOpen ? 'bg-darkBlack bg-opacity-80 backdrop-blur-md shadow-md' : 'bg-transparent'} transition-colors duration-300`}>
             <nav className='flex w-full items-center justify-center'>
                 <div className='flex w-full items-center justify-between'>
                     <Link to="/">
                         <Octicon />
                     </Link>
 
-                        <div className="w-7 h-7 rounded-full flex items-center justify-center space-x-2 md:space-x-6">
-                            {links.map((link) => (
-                                <Link
-                                    key={link.to}
-                                    to={link.to}
-                                    onClick={() => navToHomeIfNotHome(link.to)}
-                                    className="text-white text-base md:text-2xl font-medium hover:text-blue-400 transition-colors duration-300 ml-2"
-                                >{link.label}</Link>
-                            )
-                            )}
-                        </div>
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex w-full rounded-full items-center justify-center space-x-6">
+                        {links.map((link) => (
+                            <button
+                                key={link.to}
+                                to={link.to}
+                                onClick={() => navToHomeIfNotHome(link.to)}
+                                className="text-white text-base md:text-2xl font-medium hover:text-blue-400 transition-colors duration-300"
+                            >{link.label}</button>
+                        )
+                        )}
+                    </div>
 
-                    <div className='flex items-center md:gap-3 gap-px'>
+                    <div className='flex items-center md:gap-3 gap-5'>
                         <Link to={isAuthenticated ? "/scanner" : "/login"}>
                             <div className="w-7 h-7 rounded-full bg-card flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,11 +77,35 @@ const Header = () => {
                         <Link to={isAuthenticated ? "/account" : "/login"}>
                             <User className="w-7 h-7 md:w-6 md:h-6 text-white" />
                         </Link>
+                        {isMobile && (
+                        <button
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                            className="md:hidden w-7 h-7 text-white hover:text-blue-400 transition-colors duration-300"
+                            aria-label="Toggle menu"
+                        >
+                            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    )}
                     </div>
-
-
                 </div>
             </nav>
+
+            {/* Mobile Menu Dropdown */}
+            {isMobile && isMobileMenuOpen && (
+                <div className="absolute top-full left-0 w-full bg-darkBlack bg-opacity-95 backdrop-blur-md shadow-lg md:hidden">
+                    <div className="flex flex-col py-4 px-6 space-y-4">
+                        {links.map((link) => (
+                            <button
+                                key={link.to}
+                                onClick={() => navToHomeIfNotHome(link.to)}
+                                className="text-white text-lg font-medium hover:text-blue-400 transition-colors duration-300 text-left py-2 border-b border-gray-700 last:border-b-0"
+                            >
+                                {link.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
         </header>
     );
 };

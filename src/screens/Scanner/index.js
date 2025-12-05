@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { QRScanner } from "./scanner";
 import { FailureModal } from "./failure_modal";
 import { SuccessModal } from "./success_modal";
@@ -6,12 +7,13 @@ import Raxios from '../../services/axiosHelper';
 import { message } from "antd";
 
 export default function PaymentScannerPage() {
+    const navigate = useNavigate();
     const [scanState, setScanState] = useState("idle");
     const [transactionData, setTransactionData] = useState(null);
     const [errorData, setErrorData] = useState(null);
 
     if (localStorage.getItem('is_admin') === 'true') {
-        window.location.href = '/account';
+        navigate('/account');
     }
 
     const handleStartScan = () => {
@@ -64,7 +66,7 @@ export default function PaymentScannerPage() {
 
     const onSuccessClose = () => {
         handleReset();
-        window.location.href = '/account';
+        navigate('/account');
     };
 
     const handleRetry = () => {

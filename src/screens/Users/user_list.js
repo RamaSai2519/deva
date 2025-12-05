@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import { Card, Typography, Space, message } from 'antd'
 import { RechargeModal } from "./recharge_modal"
 import { UserOutlined } from '@ant-design/icons'
@@ -9,6 +10,7 @@ import { UserTable } from "./user_table"
 const { Title, Text } = Typography
 
 export function UserListPage() {
+    const navigate = useNavigate();
     const [page, setPage] = useState(1)
     const [size, setSize] = useState(10)
     const [users, setUsers] = useState([])
@@ -20,7 +22,7 @@ export function UserListPage() {
     const [isRechargeModalOpen, setIsRechargeModalOpen] = useState(false)
 
     if (!localStorage.getItem('is_admin') || localStorage.getItem('is_admin') !== 'true') {
-        window.location.href = '/account';
+        navigate('/account');
     }
 
     const fetchUsers = async () => {
@@ -108,8 +110,8 @@ export function UserListPage() {
                                 setSize(pageSize)
                             }
                         }
-                    } 
-                    loading={loading}
+                    }
+                        loading={loading}
                     />
                 </Card>
 

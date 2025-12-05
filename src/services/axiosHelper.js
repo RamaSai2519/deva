@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { navigateTo } from './navigationService';
 
 const LOCAL_URL = 'http://localhost:8000/api';
 const PROD_URL = 'https://19qn5c5l3h.execute-api.us-east-1.amazonaws.com/master/api';
@@ -21,7 +22,7 @@ Raxios.interceptors.request.use(
 
 const logout_user = () => {
     localStorage.clear();
-    window.location.href = '/';
+    navigateTo('/');
 };
 
 const refreshFaxiosAccessToken = async () => {

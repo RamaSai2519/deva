@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext(undefined);
 
@@ -11,6 +12,7 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }) => {
+    const navigate = useNavigate();
     const [isAuthenticated, setIsAuthenticated] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false);
 
@@ -46,7 +48,7 @@ export const AuthProvider = ({ children }) => {
             localStorage.removeItem('is_admin');
             setIsAuthenticated(false);
             setIsAdmin(false);
-            window.location.href = '/login';
+            navigate('/login');
         } catch (error) {
             console.error('Error during logout:', error);
             throw error;

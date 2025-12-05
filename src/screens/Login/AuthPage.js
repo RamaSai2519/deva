@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import TermsModal from './TermsModal';
 import ForgotPasswordModal from './ForgotPasswordModal';
 import { Form, Input, Button, Alert, Checkbox } from 'antd';
@@ -10,6 +10,7 @@ import Raxios from '../../services/axiosHelper';
 
 export function AuthPage() {
     const location = useLocation();
+    const navigate = useNavigate();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -57,7 +58,7 @@ export function AuthPage() {
                     setGeneralError(response.msg || 'Signup failed. Please try again.');
                 } else {
                     login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
-                    window.location.href = '/account';
+                    navigate('/account');
                 }
             } else {
                 const payload = { ...values, action: 'login' };
@@ -66,7 +67,7 @@ export function AuthPage() {
                     setGeneralError(response.msg || 'Login failed. Please try again.');
                 } else {
                     login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
-                    window.location.href = '/account';
+                    navigate('/account');
                 }
             }
         } catch (error) {
@@ -242,13 +243,12 @@ export function AuthPage() {
                                     >
                                         <Checkbox className="text-gray-300">
                                             I agree to the{' '}
-                                            <span
-                                                type="button"
+                                            <button
                                                 onClick={() => setIsModalOpen(true)}
                                                 className="text-[#3533cd] underline"
                                             >
                                                 Terms and Conditions
-                                            </span>
+                                            </button>
                                         </Checkbox>
                                     </Form.Item>
                                 )}
