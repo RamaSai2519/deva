@@ -2,19 +2,47 @@ import { User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Octicon from '../../Icons/octicon';
 import { useAuth } from '../../contexts/AuthContext';
+import useScrollPosition from '../../hooks/useScrollPostion';
 
 const Header = () => {
     const { isAuthenticated } = useAuth();
+    const { isScrolled } = useScrollPosition('1vh');
+
+    const links = [
+        { to: '#hero', label: 'Home' },
+        { to: '#events', label: 'Events' },
+        { to: '#team', label: 'Team' },
+        { to: '#about', label: 'About' },
+        { to: '#faq', label: 'FAQ' },
+    ]
+
+    const navToHomeIfNotHome = (to) => {
+        if (window.location.pathname !== '/') {
+            window.location.href = `/${to}`;
+        }
+    };
 
     return (
-        <header className={`fixed top-0 p-1 md:py-2 px-4 md:px-6 lg:px-10 flex justify-between items-center w-full z-50`}
-        >
+        <header className={`fixed top-0 p-1 md:py-2 md:px-6 lg:px-10 flex justify-between items-center w-full z-50 ${isScrolled ? 'bg-darkBlack bg-opacity-80 backdrop-blur-md shadow-md' : 'bg-transparent'} transition-colors duration-300`}>
             <nav className='flex w-full items-center justify-center'>
                 <div className='flex w-full items-center justify-between'>
                     <Link to="/">
                         <Octicon />
                     </Link>
-                    <div className='flex items-center gap-3'>
+
+                        <div className="w-7 h-7 rounded-full flex items-center justify-center space-x-2 md:space-x-6">
+                            {links.map((link) => (
+                                <Link
+                                    key={link.to}
+                                    to={link.to}
+                                    onClick={() => navToHomeIfNotHome(link.to)}
+                                    className="text-white text-base md:text-2xl font-medium hover:text-blue-400 transition-colors duration-300 ml-2"
+                                >{link.label}</Link>
+                            )
+                            )}
+                        </div>
+
+                    <div className='flex items-center md:gap-3 gap-px'>
                         <Link to={isAuthenticated ? "/scanner" : "/login"}>
                             <div className="w-7 h-7 rounded-full bg-card flex items-center justify-center">
                                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
