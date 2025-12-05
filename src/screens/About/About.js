@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import PropTypes from 'prop-types';
 import useDeviceType from "../../hooks/useDeviceType";
 
@@ -15,24 +15,27 @@ const About = ({
     const isDesktop = useDeviceType();
 
     return (
-        <div id="core-team" className="w-full h-full min-h-screen bg-black flex items-center justify-center">
-            <Suspense fallback={<div>Loading...</div>}>
-                {isDesktop ? (
-                    <AboutDesktop
-                        teamMembers={teamMembers}
-                        mainImage={mainImage}
-                        animationDelay={desktopAnimationDelay}
-                        intersectionThreshold={intersectionThreshold}
-                    />
-                ) : (
-                    <AboutMobile
-                        teamMembers={teamMembers}
-                        mainImage={mainImage}
-                        animationDelay={mobileAnimationDelay}
-                        intersectionThreshold={intersectionThreshold}
-                    />
-                )}
-            </Suspense>
+        <div className="relative" id="about">
+            <div id="core-team" className="w-full h-full min-h-screen flex items-center justify-center">
+                <Suspense fallback={<div>Loading...</div>}>
+                    {isDesktop ? (
+                        <AboutDesktop
+                            teamMembers={teamMembers}
+                            mainImage={mainImage}
+                            animationDelay={desktopAnimationDelay}
+                            intersectionThreshold={intersectionThreshold}
+                        />
+                    ) : (
+                        <AboutMobile
+                            teamMembers={teamMembers}
+                            mainImage={mainImage}
+                            animationDelay={mobileAnimationDelay}
+                            intersectionThreshold={intersectionThreshold}
+                        />
+                    )}
+                </Suspense>
+            </div>
+            <div className="bg-[linear-gradient(to_bottom,_transparent_0%,_black_100%)] w-full h-20 absolute bottom-0 ring-0 left-0 z-10" />
         </div>
     );
 };

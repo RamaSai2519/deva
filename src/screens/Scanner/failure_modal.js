@@ -3,11 +3,14 @@ import { useEffect, useState } from "react"
 export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
   const [shake, setShake] = useState(false)
 
+  const shakeModal = () => {
+    setTimeout(() => setShake(true), 1000)
+    setTimeout(() => setShake(false), 500)
+  }
+
   useEffect(() => {
     if (isOpen) {
-      setShake(true)
-      const timer = setTimeout(() => setShake(false), 500)
-      return () => clearTimeout(timer)
+      shakeModal()
     }
   }, [isOpen])
 
