@@ -57,8 +57,7 @@ const Header = () => {
                                 onClick={() => navToHomeIfNotHome(link.to)}
                                 className="text-white text-base md:text-2xl font-medium hover:text-blue-400 transition-colors duration-300"
                             >{link.label}</button>
-                        )
-                        )}
+                        ))}
                     </div>
 
                     <div className='flex items-center md:gap-3 gap-5'>
@@ -78,14 +77,14 @@ const Header = () => {
                             <User className="w-7 h-7 md:w-6 md:h-6 text-white" />
                         </Link>
                         {isMobile && (
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="md:hidden w-7 h-7 text-white hover:text-blue-400 transition-colors duration-300"
-                            aria-label="Toggle menu"
-                        >
-                            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    )}
+                            <button
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className="md:hidden w-7 h-7 text-white hover:text-blue-400 transition-colors duration-300"
+                                aria-label="Toggle menu"
+                            >
+                                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                            </button>
+                        )}
                     </div>
                 </div>
             </nav>
