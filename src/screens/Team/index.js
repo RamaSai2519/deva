@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import teamData from './team.json';
 
 const TeamCard = ({ member }) => (
@@ -12,7 +10,7 @@ const TeamCard = ({ member }) => (
             <img
                 src={member.image}
                 alt={member.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-top object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
         </div>
@@ -47,12 +45,12 @@ const Team = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen py-14 sm:py-16">
+        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen py-14 sm:py-16" id='team'>
             <div className="max-w-6xl mx-auto px-4 mb-16">
-                <h2 className="text-[2.5rem] leading-tight text-center">
+                <h2 className="text-2xl md:text-[2.5rem] leading-tight text-center">
                     <span className="block md:hidden">
                         <span className="text-gray-400 font-light">{teamData.quote.short.prefix} </span>
-                        <span className="text-white font-normal">{teamData.quote.short.highlight} </span>
+                        <span className="text-white font-normal">{teamData.quote.short.highlight}</span>
                         <span className="text-gray-400 font-light">{teamData.quote.short.suffix}</span>
                     </span>
 
