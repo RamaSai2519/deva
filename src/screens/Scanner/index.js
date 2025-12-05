@@ -20,7 +20,7 @@ export default function PaymentScannerPage() {
 
     const handleScanResult = async (result) => {
         if (!result) return;
-        setScanState("idle");
+        setScanState("loading");
 
         result = JSON.parse(result);
         const payload = {
@@ -73,11 +73,12 @@ export default function PaymentScannerPage() {
     };
 
     return (
-        <main className="min-h-screen bg-background flex flex-col">
+        <main className="min-h-screen flex flex-col">
 
             <div className="flex-1 flex flex-col items-center justify-center px-6">
                 <QRScanner
                     isScanning={scanState === "scanning"}
+                    isLoading={scanState === "loading"}
                     onStartScan={handleStartScan}
                     onScanResult={handleScanResult}
                 />
