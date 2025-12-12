@@ -2,7 +2,7 @@ import axios from 'axios';
 import { navigateTo } from './navigationService';
 import { message } from 'antd';
 
-const LOCAL_URL = 'http://localhost:8000/api';
+const LOCAL_URL = 'http://192.168.1.8:8000/api';
 const PROD_URL = 'https://19qn5c5l3h.execute-api.us-east-1.amazonaws.com/master/api';
 
 const ENV = process.env.NODE_ENV || 'development';

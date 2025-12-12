@@ -1,9 +1,10 @@
 import Home from "./Home";
-import { useEffect, useState } from "react";
 import Scanner from "./screens/Scanner";
 import Account from "./screens/Account";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import { useEffect, useState } from "react";
+import LotteryQR from "./screens/LotteryQR";
 import { ConfigProvider, theme } from "antd";
 import useScrollTo from "./hooks/useScrollTo";
 import AuthPage from "./screens/Login/AuthPage";
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/account" element={isAuthenticated ? <Account /> : <Navigate to="/login" replace />} />
           <Route path="/scanner" element={isAuthenticated ? <Scanner /> : <Navigate to="/login" replace />} />
           <Route path="/users" element={isAuthenticated ? <UserListPage /> : <Navigate to="/login" replace />} />
+          <Route path="/lotqr" element={isAuthenticated ? <LotteryQR /> : <Navigate to="/login" replace />} />
         </Routes>
       </div>
       <Footer />

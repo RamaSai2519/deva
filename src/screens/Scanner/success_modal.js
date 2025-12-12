@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 
 
-export function SuccessModal({ isOpen, onClose, transactionData }) {
+export function SuccessModal({ isOpen, onClose, transactionData, transactionType = "payment" }) {
   const [showCheck, setShowCheck] = useState(false)
+  const isCoupon = transactionType === "coupon";
 
   useEffect(() => {
     if (isOpen) {
@@ -37,29 +38,43 @@ export function SuccessModal({ isOpen, onClose, transactionData }) {
           </div>
         </div>
 
-        <h2 className="text-foreground text-xl font-semibold text-center mb-2">Payment Successful</h2>
-        <p className="text-mutedWhite text-sm text-center mb-8">Your transaction has been completed</p>
+        <h2 className="text-foreground text-xl font-semibold text-center mb-2">
+          {isCoupon ? "Lottery Entry Successful" : "Payment Successful"}
+        </h2>
+        <p className="text-mutedWhite text-sm text-center mb-8">
+          {isCoupon ? "You have successfully entered the lottery contest!" : "Your transaction has been completed"}
+        </p>
 
-        <div className="text-center mb-8">
-          <span className="text-foreground text-4xl font-bold">${transactionData.amount}.00</span>
-        </div>
+        {!isCoupon && (
+          <div className="text-center mb-8">
+            <span className="text-foreground text-4xl font-bold">${transactionData.amount}.00</span>
+          </div>
+        )}
 
         <div className="bg-darkBlack rounded-2xl p-4 space-y-4 mb-8">
-          <div className="flex justify-between items-center">
-            <span className="text-mutedWhite text-sm">Recipient</span>
-            <span className="text-foreground text-sm font-medium">{transactionData.admin_name}</span>
-          </div>
-          <div className="h-px bg-lightBlack  " />
+          {!isCoupon && (
+            <>
+              <div className="flex justify-between items-center">
+                <span className="text-mutedWhite text-sm">Recipient</span>
+                <span className="text-foreground text-sm font-medium">{transactionData.admin_name}</span>
+              </div>
+              <div className="h-px bg-lightBlack  " />
+            </>
+          )}
           <div className="flex justify-between items-center">
             <span className="text-mutedWhite text-sm">Transaction ID</span>
             <span className="text-foreground text-sm font-mono">{transactionData._id}</span>
           </div>
           <div className="h-px bg-lightBlack  " />
-          <div className="flex justify-between items-center">
-            <span className="text-mutedWhite text-sm">Curent Balance</span>
-            <span className="text-foreground text-sm">{transactionData.new_balance}</span>
-          </div>
-          <div className="h-px bg-lightBlack  " />
+          {!isCoupon && (
+            <>
+              <div className="flex justify-between items-center">
+                <span className="text-mutedWhite text-sm">Curent Balance</span>
+                <span className="text-foreground text-sm">{transactionData.new_balance}</span>
+              </div>
+              <div className="h-px bg-lightBlack  " />
+            </>
+          )}
           <div className="flex justify-between items-center">
             <span className="text-mutedWhite text-sm">Date</span>
             <span className="text-foreground text-sm">

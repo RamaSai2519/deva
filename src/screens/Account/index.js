@@ -127,7 +127,7 @@ export function Account() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Profile Section */}
-                    <div className="bg-black border border-gray-800 rounded-2xl p-8 shadow-sm">
+                    <div className="bg-black border border-gray-800 rounded-2xl p-4 md:p-8 shadow-sm">
                         <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-2">
                                 <User className="w-5 h-5 text-white" />
@@ -265,7 +265,7 @@ export function Account() {
                     </div>
 
                     {/* Wallet Section */}
-                    <div className="bg-black border border-gray-800 rounded-2xl p-8 shadow-sm">
+                    <div className="bg-black border border-gray-800 rounded-2xl p-4 md:p-8 shadow-sm">
                         <div className="flex items-center gap-2 mb-8">
                             <Wallet className="w-5 h-5 text-white" />
                             <h2 className="text-xl font-semibold text-white">Wallet</h2>
