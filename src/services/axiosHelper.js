@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { navigateTo } from './navigationService';
+import { message } from 'antd';
 
 const LOCAL_URL = 'http://localhost:8000/api';
 const PROD_URL = 'https://19qn5c5l3h.execute-api.us-east-1.amazonaws.com/master/api';
@@ -33,11 +34,15 @@ const refreshFaxiosAccessToken = async () => {
             headers: { Authorization: `Bearer ${refreshToken}` }
         });
         response = await format_response(response);
-        if (response.status !== 200) logout_user();
+        if (response.status !== 200) {
+            message.error('Session expired. Please log in again.');
+            logout_user();
+        }
         const newAccessToken = response.data.access_token;
         localStorage.setItem('access_token', newAccessToken);
         return newAccessToken;
     } catch (error) {
+        message.error('Session expired. Please log in again.');
         logout_user();
     }
 };

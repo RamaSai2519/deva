@@ -2,11 +2,9 @@ import { User, Menu, X } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Octicon from '../../Icons/octicon';
-import { useAuth } from '../../contexts/AuthContext';
 import useScrollPosition from '../../hooks/useScrollPosition';
 
-const Header = () => {
-    const { isAuthenticated } = useAuth();
+const Header = ({ isAuthenticated }) => {
     const { isScrolled } = useScrollPosition('1vh');
     const navigate = useNavigate();
     const location = useLocation();
@@ -73,7 +71,7 @@ const Header = () => {
                                 </svg>
                             </div>
                         </Link>
-                        <Link to={isAuthenticated ? "/account" : "/login"}>
+                        <Link to={"/account"}>
                             <User className="w-7 h-7 md:w-6 md:h-6 text-white" />
                         </Link>
                         {isMobile && (

@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
-import { useNavigate } from 'react-router-dom';
+import { logout } from "../../utils/auth";
 import { message, Form, Input } from "antd";
+import { useNavigate } from 'react-router-dom';
 import Raxios from "../../services/axiosHelper";
-import { useAuth } from "../../contexts/AuthContext";
 import { User, Mail, Hash, ArrowUpRight, ArrowDownRight, Wallet, Phone } from "lucide-react";
 
 export function Account() {
@@ -11,7 +11,6 @@ export function Account() {
     const [isLoading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
-    const { logout } = useAuth();
     const [form] = Form.useForm();
 
     const fetchProfileData = useCallback(async () => {

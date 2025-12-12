@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
-import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
 import TermsModal from './TermsModal';
+import { login } from '../../utils/auth';
+import { Eye, EyeOff } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import Raxios from '../../services/axiosHelper';
 import ForgotPasswordModal from './ForgotPasswordModal';
 import { Form, Input, Button, Alert, Checkbox } from 'antd';
-import { useAuth } from '../../contexts/AuthContext';
-import Raxios from '../../services/axiosHelper';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
 
-export function AuthPage() {
+export function AuthPage({ setIsAuthenticated }) {
     const location = useLocation();
     const navigate = useNavigate();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -18,7 +18,6 @@ export function AuthPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
     const [form] = Form.useForm();
-    const { login } = useAuth();
 
     const isSignupMode = location.pathname === '/signup';
 
@@ -58,6 +57,7 @@ export function AuthPage() {
                     setGeneralError(response.msg || 'Signup failed. Please try again.');
                 } else {
                     login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
+                    setIsAuthenticated(true);
                     navigate('/account');
                 }
             } else {
@@ -67,6 +67,7 @@ export function AuthPage() {
                     setGeneralError(response.msg || 'Login failed. Please try again.');
                 } else {
                     login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
+                    setIsAuthenticated(true);
                     navigate('/account');
                 }
             }
