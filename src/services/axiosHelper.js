@@ -23,7 +23,7 @@ Raxios.interceptors.request.use(
 
 const logout_user = () => {
     localStorage.clear();
-    navigateTo('/');
+    navigateTo('/login');
 };
 
 const refreshFaxiosAccessToken = async () => {
