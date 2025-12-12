@@ -22,7 +22,7 @@ export function QRScanner({ isScanning, isLoading, onStartScan, onScanResult }) 
                     </div>
                 ) : isLoading ? (
                     <div className="w-72 h-72 relative cursor-pointer flex items-center justify-center bg-card/50 rounded-2xl" >
-                        <div className="ease-linear rounded-full border-4 border-transparent border-t-4 h-16 w-16 border-t-white animate-spin"/>
+                        <div className="ease-linear rounded-full border-4 border-transparent border-t-4 h-16 w-16 border-t-white animate-spin" />
                         <style jsx>{`
                             .loader {
                                 border-top-color: #white;

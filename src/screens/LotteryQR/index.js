@@ -1,9 +1,9 @@
 import { RefreshCw, Copy, Check } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
+import Raxios from "../../services/axiosHelper";
 import { useNavigate } from "react-router-dom"
 import { Button, Card, message } from "antd";
 import QRCode from "qrcode"
-import Raxios from "../../services/axiosHelper";
 
 export default function LotteryQR() {
     const navigate = useNavigate();
@@ -11,9 +11,7 @@ export default function LotteryQR() {
     const [oid, setOid] = useState("")
     const [copied, setCopied] = useState(false)
 
-    if (!localStorage.getItem('is_admin') || localStorage.getItem('is_admin') !== 'true') {
-        navigate('/account');
-    }
+    if (!localStorage.getItem('is_admin') || localStorage.getItem('is_admin') !== 'true') navigate('/account');
 
     const getOID = async () => {
         try {
@@ -39,10 +37,9 @@ export default function LotteryQR() {
 
     useEffect(() => {
         if (oid && canvasRef.current) {
-            QRCode.toCanvas(canvasRef.current, oid, {
-                width: 300,
-                margin: 2,
-                color: { dark: "#22d3ee", light: "#0f172a", },
+            QRCode.toCanvas(canvasRef.current, JSON.stringify({ coupon: oid }), {
+                width: 300, margin: 2,
+                color: { dark: "#000", light: "#fff", },
             })
         }
     }, [oid])
@@ -57,9 +54,9 @@ export default function LotteryQR() {
                 <Card className="p-4 md:p-12 space-y-8 bg-lightBlack">
                     <div className="flex flex-col items-center space-y-6">
                         <div className="relative">
-                            <div className="absolute inset-0 bg-[#0f172a] blur-3xl rounded-full" />
-                            <div className="relative bg-[#0f172a] p-2 rounded-lg border-2 border-[#4d4d4d]">
-                                <canvas ref={canvasRef} className="w-full h-auto" />
+                            <div className="absolute inset-0 bg-black blur-3xl rounded-full" />
+                            <div className="relative bg-[#0f172a] p-2 rounded-lg border-2 shadow-lg shadow-black border-[#4d4d4d]">
+                                <canvas ref={canvasRef} className="w-full h-auto rounded-md" />
                             </div>
                         </div>
 
@@ -72,8 +69,7 @@ export default function LotteryQR() {
                                 >
                                     {copied ? (
                                         <>
-                                            <Check className="h-4 w-4" />
-                                            <span>Copied</span>
+                                            <Check className="h-4 w-4" /><span>Copied</span>
                                         </>
                                     ) : (
                                         <>

@@ -78,7 +78,7 @@ export function SuccessModal({ isOpen, onClose, transactionData, transactionType
           <div className="flex justify-between items-center">
             <span className="text-mutedWhite text-sm">Date</span>
             <span className="text-foreground text-sm">
-              {new Date(transactionData.timestamp).toLocaleDateString("en-US", {
+              {new Date(transactionData?.timestamp || transactionData?.created_at).toLocaleDateString("en-US", {
                 month: "short",
                 day: "numeric",
                 year: "numeric",

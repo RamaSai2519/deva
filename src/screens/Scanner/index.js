@@ -25,11 +25,23 @@ export default function PaymentScannerPage() {
         if (!result) return;
         setScanState("loading");
 
-        // Check if result is a coupon code (12 characters)
-        if (result.length === 12) {
+        try {
+            result = JSON.parse(result);
+        } catch (parseError) {
+            message.info(result);
+            message.error("Invalid QR code format. Please scan a valid payment QR code.");
+            setErrorData({
+                message: "The scanned QR code is not in the correct format.",
+                code: "ERR_INVALID_QR",
+            });
+            setScanState("failure");
+            return;
+        }
+
+        if (result.coupon) {
             setTransactionType("coupon");
             const payload = {
-                coupon_id: result,
+                coupon_id: result.coupon,
                 user_id: localStorage.getItem("user_id")
             };
 
@@ -60,7 +72,17 @@ export default function PaymentScannerPage() {
         } else {
             // Handle as payment QR code
             setTransactionType("payment");
-            result = JSON.parse(result);
+
+            if (!result.charge || !result.stall_id) {
+                message.error("Invalid payment QR code. Missing required information.");
+                setErrorData({
+                    message: "The payment QR code is missing required information.",
+                    code: "ERR_INVALID_PAYMENT_DATA",
+                });
+                setScanState("failure");
+                return;
+            }
+
             const payload = {
                 action: "deduct",
                 coins: result.charge,
