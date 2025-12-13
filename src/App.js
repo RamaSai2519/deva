@@ -10,6 +10,7 @@ import useScrollTo from "./hooks/useScrollTo";
 import AuthPage from "./screens/Login/AuthPage";
 import { UserListPage } from "./screens/Users/user_list";
 import { setNavigate } from "./services/navigationService";
+import { requestNotificationPermission } from "./utils/firebase";
 import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
 
@@ -22,6 +23,10 @@ const App = () => {
     setNavigate(navigate);
     setIsAuthenticated(localStorage.getItem('is_logged_in') === 'true');
   }, [navigate]);
+
+  useEffect(() => {
+    if (isAuthenticated) requestNotificationPermission()
+  }, [isAuthenticated]);
 
   return (
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>

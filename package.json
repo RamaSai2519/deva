@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.22.2",
     "axios": "^1.7.9",
+    "firebase": "^12.6.0",
     "framer-motion": "^11.11.17",
     "lucide-react": "^0.554.0",
     "qrcode": "^1.5.4",
