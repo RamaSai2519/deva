@@ -1,17 +1,16 @@
 import { RefreshCw, Copy, Check } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 import Raxios from "../../services/axiosHelper";
-import { useNavigate } from "react-router-dom"
+import { checkAccess } from "../../utils/auth";
 import { Button, Card, message } from "antd";
 import QRCode from "qrcode"
 
 export default function LotteryQR() {
-    const navigate = useNavigate();
     const canvasRef = useRef(null)
     const [oid, setOid] = useState("")
     const [copied, setCopied] = useState(false)
 
-    if (!localStorage.getItem('is_admin') || localStorage.getItem('is_admin') !== 'true') navigate('/account');
+    checkAccess('admin');
 
     const getOID = async () => {
         try {

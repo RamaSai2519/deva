@@ -1,4 +1,5 @@
 import Home from "./Home";
+import Stalls from "./screens/Stalls";
 import Scanner from "./screens/Scanner";
 import Account from "./screens/Account";
 import Footer from "./components/Footer";
@@ -13,16 +14,18 @@ import { setNavigate } from "./services/navigationService";
 import { requestNotificationPermission } from "./utils/firebase";
 import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 
-
 const App = () => {
+  const version = '1.4.0';
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
   useScrollTo();
 
+  if (localStorage.getItem('version') !== version) { localStorage.clear(); localStorage.setItem('version', version); }
+
   useEffect(() => {
     setNavigate(navigate);
     setIsAuthenticated(localStorage.getItem('is_logged_in') === 'true');
-  }, [navigate]);
+  }, [navigate, version]);
 
   useEffect(() => {
     if (isAuthenticated) requestNotificationPermission()
@@ -36,10 +39,11 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<AuthPage setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/signup" element={<AuthPage setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path="/stalls" element={isAuthenticated ? <Stalls /> : <Navigate to="/login" replace />} />
           <Route path="/account" element={isAuthenticated ? <Account /> : <Navigate to="/login" replace />} />
           <Route path="/scanner" element={isAuthenticated ? <Scanner /> : <Navigate to="/login" replace />} />
-          <Route path="/users" element={isAuthenticated ? <UserListPage /> : <Navigate to="/login" replace />} />
           <Route path="/lotqr" element={isAuthenticated ? <LotteryQR /> : <Navigate to="/login" replace />} />
+          <Route path="/users" element={isAuthenticated ? <UserListPage /> : <Navigate to="/login" replace />} />
         </Routes>
       </div>
       <Footer />
