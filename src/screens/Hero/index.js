@@ -72,6 +72,9 @@ const Hero = () => {
             </div>
 
             <div className='lg:mr-14'>
+                <p className="text-[11px] sm:text-xs font-semibold tracking-[0.24em] uppercase text-slate-400 mb-3">
+                    GitHub Community Club presents
+                </p>
                 <button
                     className="relative bg-lightBlack border border-transparent hover:border-transparent rounded-full px-8 py-3 text-lg font-medium mb-4 group"
                     onClick={() => navigate('/account')}
@@ -85,17 +88,23 @@ const Hero = () => {
                 </button>
                 {/* Microcopy under CTA */}
                 <p className="mt-1 text-xs sm:text-sm text-slate-400">
-                    Limited seats  x Free entry
+                    Limited seats · Free entry · Open to all students
                 </p>
                 {/* Sub-headline */}
-                <p className="mt-2 sm:mt-3 text-base sm:text-lg md:text-xl font-semibold text-slate-200 max-w-2xl leading-relaxed">
-                    48 Hours. Builders. Code. Innovation.
+                <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl font-semibold text-slate-200 max-w-2xl leading-relaxed">
+                    48 Hours. Learn. Compete. Build. Play. — Powered by github Community
                 </p>
                 <p className="mt-1.5 text-sm sm:text-base text-slate-400 max-w-xl">
-                    The flagship tech fest by GitHub Community Club
+                    A two-day campus-wide tech experience with workshops, competitions, gaming, and interactive zones.
                 </p>
+                <a
+                    href="#events"
+                    className="inline-block mt-2 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                    Explore Events →
+                </a>
                 {/* Dates */}
-                <p className="text-lg sm:text-xl md:text-2xl relative mt-2.5 sm:mt-3">
+                <p className="text-lg sm:text-xl md:text-2xl relative mt-3 sm:mt-4">
                     <span className="absolute inset-0 blur-[10px] text-blue-400/65">29th - 30th December 2025</span>
                     <span className="absolute inset-0 blur-[5px] text-blue-300/80">29th - 30th December 2025</span>
                     <span className="relative text-white font-medium tracking-wide">29th - 30th December 2025</span>

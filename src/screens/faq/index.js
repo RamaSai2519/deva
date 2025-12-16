@@ -6,7 +6,7 @@ import PeepParent from "../../components/PeepParent";
 import GiantPopup from "../../components/Popups/GiantPopup";
 
 const FAQ = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(0); // First FAQ open by default
     const [showPopup, setShowPopup] = useState(false);
 
     return (
@@ -18,10 +18,12 @@ const FAQ = () => {
                         <div key={index}>
                             <button
                                 onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                                className="w-full p-4 flex justify-between items-center text-left text-mutedWhite hover:bg-darkBlack transition-colors duration-200"
+                                className={`w-full p-4 flex justify-between items-center text-left hover:bg-darkBlack transition-colors duration-200 ${activeIndex === index ? 'bg-darkBlack' : ''
+                                    }`}
                             >
                                 <div className="flex items-start gap-3">
-                                    <div className="mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-lightBlack text-mutedWhite">
+                                    <div className={`mt-[2px] flex h-7 w-7 shrink-0 items-center justify-center rounded-full transition-colors ${activeIndex === index ? 'bg-blue-500/20 text-blue-400' : 'bg-lightBlack text-mutedWhite'
+                                        }`}>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 24 24"
@@ -37,29 +39,27 @@ const FAQ = () => {
                                             />
                                         </svg>
                                     </div>
-                                    <span className="font-medium">
+                                    <span className={`text-base transition-colors ${activeIndex === index ? 'font-semibold text-white' : 'font-medium text-mutedWhite'
+                                        }`}>
                                         {item.question}
                                     </span>
                                 </div>
-                                <motion.span
+                                <motion.div
                                     animate={{ rotate: activeIndex === index ? 180 : 0 }}
                                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                                    className="transform"
+                                    className={`flex items-center justify-center w-6 h-6 transition-colors ${activeIndex === index ? 'text-blue-400' : 'text-mutedWhite'
+                                        }`}
                                 >
-                                    <svg
-                                        className="w-5 h-5 text-mutedWhite"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M19 9l-7 7-7-7"
-                                        />
-                                    </svg>
-                                </motion.span>
+                                    {activeIndex === index ? (
+                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                                        </svg>
+                                    ) : (
+                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                                        </svg>
+                                    )}
+                                </motion.div>
                             </button>
 
                             <AnimatePresence>

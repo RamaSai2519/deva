@@ -41,28 +41,39 @@ const AboutDesktop = ({
                 <img src={mainImage} alt="Team" className="w-full h-full object-cover" aria-label="Team image" />
             </div>
 
-            {teamMembers.map((member, i) => (
-                <div
-                    key={member.id}
-                    className="card"
-                    style={{
-                        "--x": `${positions[i]?.x}px`,
-                        "--y": `${positions[i]?.y}px`,
-                        animationDelay: `${i * animationDelay}s`,
-                    }}
-                >
-                    <div className="flex items-start gap-4">
-                        <img src={member.image} alt={member.name} className="w-16 h-16 rounded-lg object-cover" aria-label={`${member.name}'s profile picture`} />
-                        <div>
-                            <h3 className="text-lg font-semibold">{member.name}</h3>
-                            <p className="text-blue-400 text-sm">{member.role}</p>
+            {/* GitHub Community Club credit */}
+            <div className="absolute top-[280px] md:top-[320px] lg:top-[380px] z-30 text-center">
+                <p className="text-xs text-slate-500">
+                    Powered by the GitHub Community Club
+                </p>
+            </div>
+
+            {teamMembers.map((member, i) => {
+                const isCoreTeam = member.role === "Core Team";
+                return (
+                    <div
+                        key={member.id}
+                        className={`card group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] ${isCoreTeam ? "ring-1 ring-blue-500/30" : ""
+                            }`}
+                        style={{
+                            "--x": `${positions[i]?.x}px`,
+                            "--y": `${positions[i]?.y}px`,
+                            animationDelay: `${i * animationDelay}s`,
+                        }}
+                    >
+                        <div className="flex items-start gap-4">
+                            <img src={member.image} alt={member.name} className="w-16 h-16 rounded-lg object-cover" aria-label={`${member.name}'s profile picture`} />
+                            <div>
+                                <h3 className="text-lg font-semibold group-hover:text-white transition-colors">{member.name}</h3>
+                                <p className="text-blue-400 text-sm group-hover:text-blue-300 transition-colors">{member.role}</p>
+                            </div>
                         </div>
+                        <p className="text-gray-400 text-sm mt-4 group-hover:text-gray-300 transition-colors">
+                            {member.description}
+                        </p>
                     </div>
-                    <p className="text-gray-400 text-sm mt-4">
-                        {member.description}
-                    </p>
-                </div>
-            ))}
+                );
+            })}
         </div>
     );
 };

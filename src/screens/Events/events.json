@@ -1,7 +1,7 @@
 [
     {
         "title": "GeeksforGeeks Coding Contest",
-        "description": "Solve interview-style problems in a GeeksforGeeks powered coding contest and sharpen your DSA skills.",
+        "description": "Solve interview-style problems in a GeeksforGeeks-powered coding contest and test yourself in a real competitive environment.",
         "image": "Assets/images/event_1.webp",
         "tagline": "A GFG-backed contest to test and grow your DSA skills.",
         "highlights": [
@@ -13,7 +13,7 @@
     },
     {
         "title": "GitHub Actions Workshop",
-        "description": "Learn how GitHub and GitHub Actions power real-world developer workflows with a hands-on -led session.",
+        "description": "Learn how GitHub Actions power real-world developer workflows and ship code faster through hands-on automation.",
         "image": "Assets/images/event_2.webp",
         "tagline": "Ship faster by automating your GitHub workflows.",
         "highlights": [
@@ -25,7 +25,7 @@
     },
     {
         "title": "DSA for Interviews",
-        "description": "Understand core data structures and algorithms and how to approach technical interview problems with confidence.",
+        "description": "Master core data structures and algorithms and approach technical interview problems with confidence that lasts.",
         "image": "Assets/images/event_3.png",
         "tagline": "Master fundamentals that repeatedly show up in interviews.",
         "highlights": [
@@ -37,7 +37,7 @@
     },
     {
         "title": "Gaming Tournament & VR Zone",
-        "description": "Compete in high-energy gaming tournaments and experience immersive VR setups powered by Epoch Coins.",
+        "description": "Compete in high-energy gaming tournaments, experience immersive VR setups, and explore with Epoch Coins.",
         "image": "Assets/images/event_4.webp",
         "tagline": "Arcade, VR, and friendly competition powered by Epoch Coins.",
         "highlights": [

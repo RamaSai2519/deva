@@ -49,8 +49,11 @@ const Info = () => {
 
     return (
         <div className='relative' id='info'>
-            <div className="bg-black flex flex-col w-full pb-20">
-                <div className="w-full min-h-[150px] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+            <div className="bg-black flex flex-col w-full pb-14 sm:pb-16">
+                <div className="w-full min-h-[120px] flex flex-col items-center justify-center pt-3 sm:pt-4 md:pt-5 pb-4 sm:pb-5 md:pb-6 px-4">
+                    <p className="text-xs sm:text-sm uppercase tracking-[0.20em] text-slate-400 mb-3 sm:mb-4">
+                        Event starts in
+                    </p>
                     <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                         <TimeUnit value={timeLeft.days} label="Days" />
                         <Separator />
@@ -63,11 +66,9 @@ const Info = () => {
                 </div>
                 {/* Content Section */}
                 <div className="max-w-6xl px-4 mx-auto text-center">
-                    <p className="text-base sm:text-lg md:text-2xl text-gray-400 mb-10 sm:mb-14 md:mb-16 leading-relaxed">
-                        <span className="text-white font-semibold">Epoch 4.0</span> is GITAM University Bengaluru's flagship
-                        2-day tech fest by the GitHub Community Club & DoSL — powered by Epoch Coins, workshops,
-                        contests, gaming tournaments, and experience zones designed to bring together
-                        <span className="text-white font-semibold"> 1000+ participants</span> for innovation, learning, and play.
+                    <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 sm:mb-12 md:mb-14 leading-relaxed">
+                        <span className="text-white font-semibold">Epoch 4.0</span> is <span className="text-white font-semibold">GITAM University Bengaluru's</span> flagship 2-day tech fest, organized by the <span className="text-white font-semibold">GitHub Community Club & DoSL</span>.
+                        <span className="block mt-2">Powered by <span className="text-white font-semibold">GitHub Community</span>, workshops, contests, gaming tournaments, and experience zones — bringing together <span className="text-white font-semibold">1000+ participants</span> for learning, innovation, and play.</span>
                     </p>
 
                     {/* Stats / Social Proof */}
@@ -75,7 +76,7 @@ const Info = () => {
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Duration</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">48 Hours</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Non-stop tech, games & builds</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Non-stop learning, competition & experiences</p>
                         </div>
 
                         <div className="flex flex-col items-center">
@@ -87,15 +88,18 @@ const Info = () => {
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Events & Zones</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">15+</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Contests, workshops, stalls & VR zones</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Contests, workshops, gaming, stalls & VR zones</p>
                         </div>
 
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Mentors & Speakers</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">50+</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Community leads, mentors & volunteers</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Industry & community mentors, speakers & volunteers</p>
                         </div>
                     </div>
+                    <p className="mt-4 sm:mt-5 text-[10px] sm:text-xs text-gray-500/80 text-center">
+                        Based on previous editions and current planning.
+                    </p>
                 </div>
             </div>
             <div className="bg-[linear-gradient(to_bottom,_transparent_0%,_#141414_100%)] w-full h-20 absolute bottom-0 ring-0 left-0 z-10" />

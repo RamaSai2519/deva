@@ -13,20 +13,21 @@ const TeamCard = ({ member }) => (
                 alt={member.name}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-top object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-top object-cover transition-transform duration-500 group-hover:scale-110 grayscale-[15%]"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
+            {/* Stronger unified overlay for photo consistency */}
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/20 group-hover:from-black/75 group-hover:via-black/35 transition-all duration-300" />
         </div>
 
         <div className="relative px-5 pt-4 pb-5 flex flex-col gap-1.5">
-            <p className="text-[10px] font-medium tracking-[0.18em] uppercase text-sky-300/80">
+            <p className="text-[10px] font-medium tracking-[0.18em] uppercase text-sky-300/80 group-hover:text-sky-200 transition-colors">
                 {member.department}
             </p>
-            <h3 className="text-lg font-semibold text-slate-50 leading-snug">
+            <h3 className="text-lg font-semibold text-slate-50 leading-snug group-hover:text-white transition-colors">
                 {member.name}
             </h3>
             {member.role && (
-                <p className="text-sm text-slate-400 group-hover:text-sky-200 transition-colors">
+                <p className="text-sm font-medium text-slate-400 group-hover:text-sky-100 transition-colors">
                     {member.role}
                 </p>
             )}
@@ -102,11 +103,16 @@ const Team = () => {
                 </h2>
             </div>
             <div className="relative max-w-7xl mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-10">
                     {getCurrentMembers().map((member) => (
                         <TeamCard key={member.id} member={member} />
                     ))}
                 </div>
+
+                {/* Volunteer credit */}
+                <p className="text-center text-sm text-slate-500 mt-8 mb-6">
+                    And many more volunteers who make Epoch possible.
+                </p>
 
                 <div className="flex justify-center items-center gap-2 mt-4 relative">
                     <button

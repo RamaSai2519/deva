@@ -1,22 +1,26 @@
 [
     {
         "question": "What is Epoch 4.0?",
-        "answer": "Epoch 4.0 is a two-day tech fest organized by the GitHub Community Club and DoSL at GITAM University, Bengaluru. It blends workshops, coding contests, gaming, and experience zones to help students learn, build, and have fun."
+        "answer": "Epoch 4.0 is a two-day tech fest at GITAM Bengaluru where you'll learn, compete, build, and explore through workshops, coding contests, gaming, and experience zones. It's 48 hours of tech, community, and fun."
     },
     {
         "question": "When and where is Epoch 4.0 happening?",
-        "answer": "Epoch 4.0 will be held on 29th and 30th December 2025 at the GITAM University Bengaluru campus."
+        "answer": "You'll find us on campus at GITAM University, Bengaluru on December 29th and 30th, 2025. Mark your calendar!"
     },
     {
         "question": "What are the main events at Epoch 4.0?",
-        "answer": "The fest features a GeeksforGeeks coding contest, a GitHub Actions workshop, a DSA-focused tech workshop, a Prompt to Prototype AI session, gaming tournaments, VR experiences, and interactive stalls powered by Epoch Coins."
+        "answer": "You can join a GeeksforGeeks coding contest, learn GitHub Actions in a hands-on workshop, sharpen your DSA skills, explore AI with Prompt to Prototype, compete in gaming tournaments, experience VR, and explore interactive stalls — all powered by Epoch Coins."
     },
     {
         "question": "How does the Epoch Coins system work?",
-        "answer": "Every registered participant receives Epoch Coins in their event account. Coins can be used at game zones, VR booths, and activity stalls, and more coins can be earned through recharge stations, attending workshops and sessions, and participating in flagship events."
+        "answer": "You'll get Epoch Coins when you register. Use them at game zones, VR booths, and activity stalls. You can earn more by completing challenges at recharge stations, attending workshops, and participating in events."
     },
     {
-        "question": "Who can attend Epoch 4.0 and how do I get more info?",
-        "answer": "Epoch 4.0 is open to students from all schools at GITAM who are interested in technology, gaming, and innovation. For more information, you can reach out to the organizing team via epoch@gitam.edu or through the GitHub Community Club channels."
+        "question": "Is there a registration fee?",
+        "answer": "No. Entry to Epoch 4.0 is completely free for students. Some events may have limited seats, so early registration is recommended."
+    },
+    {
+        "question": "Who can attend Epoch 4.0 and how do I register?",
+        "answer": "Epoch 4.0 is open to students from all schools at GITAM University. For updates, schedules, and registrations, explore the events section or register directly on this page. Register now to be part of Epoch 4.0!"
     }
 ]

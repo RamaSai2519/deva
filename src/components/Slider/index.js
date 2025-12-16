@@ -72,9 +72,9 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                             <button
                                 key={index}
                                 onClick={() => setCurrentSlide(index)}
-                                className={`text-sm text-nowrap w-full pb-1 ${currentSlide === index
-                                    ? "text-white font-bold border-b"
-                                    : "text-mutedWhite hover:text-gray-200"
+                                className={`text-sm text-nowrap w-full pb-1 transition-all duration-300 ${currentSlide === index
+                                    ? "text-white font-bold border-b-2 border-blue-400 shadow-[0_2px_8px_rgba(59,130,246,0.4)]"
+                                    : "text-slate-500 hover:text-slate-300"
                                     }`}
                             >
                                 {event.title}
@@ -99,8 +99,11 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                     <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2 sm:mb-3">
                         {events[currentSlide]?.title}
                     </h3>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-3 sm:mb-4">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-2">
                         {events[currentSlide]?.description}
+                    </p>
+                    <p className="text-xs sm:text-sm text-sky-300/80 mb-3 sm:mb-4">
+                        Earn Epoch Coins by participating in this event.
                     </p>
                     <button
                         type="button"
@@ -110,7 +113,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                         }}
                         className="inline-flex items-center text-xs sm:text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                        <span className="mr-1">View details</span>
+                        <span className="mr-1">Explore this event</span>
                         <span className="text-base sm:text-lg">→</span>
                     </button>
                 </div>

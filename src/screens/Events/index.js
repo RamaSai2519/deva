@@ -20,6 +20,14 @@ const Events = () => {
                 </div>
             </div>
             <div className="max-w-7xl mx-auto px-4">
+                <div className="mb-6 md:mb-8 text-left">
+                    <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-slate-400 uppercase mb-1">
+                        Inside Epoch 4.0
+                    </p>
+                    <p className="text-sm sm:text-base text-slate-300 max-w-xl">
+                        Learn, compete, and explore through coding contests, workshops, gaming tournaments, and VR experiences.
+                    </p>
+                </div>
                 <Slider events={events} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
             </div>
             <div className="pointer-events-none bg-[linear-gradient(to_bottom,_transparent_0%,_#141414_100%)] w-full h-14 absolute bottom-0 ring-0 left-0 z-0" />

@@ -15,46 +15,46 @@
         {
             "id": 1,
             "name": "Afreen",
-            "role": "Senior Design Lead",
+            "role": "Design Lead",
             "department": "Design",
             "image": "Assets/images/Afreen_tech.jpg",
-            "description": "Leading the design team and overseeing all design projects",
+            "description": "Shapes the visual identity of Epoch across posters, socials, and on-ground experiences",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 2,
             "name": "Greeshmitha",
-            "role": "Technical Support Specialist",
+            "role": "Technical Support Lead",
             "department": "Tech",
             "image": "Assets/images/Greeshmitha_tech.jpg",
-            "description": "Providing technical support and troubleshooting",
+            "description": "Keeps the tech infrastructure running smoothly throughout the fest",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 3,
             "name": "Harinmayi",
-            "role": "Design Project Manager",
+            "role": "Design Manager",
             "department": "Design",
             "image": "Assets/images/Harinmayi _Design.jpg",
-            "description": "Leading the design team and managing design projects",
+            "description": "Brings creative ideas to life across all visual touchpoints",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 4,
             "name": "Nikhil",
-            "role": "Content Manager",
+            "role": "Content Lead",
             "department": "Operations",
             "image": "Assets/images/Nikhil_content.jpg",
-            "description": "Leading content creation and management",
+            "description": "Crafts the story and messaging that brings Epoch to the campus",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 5,
             "name": "Roshini",
-            "role": "Logistics Manager",
+            "role": "Logistics Lead",
             "department": "Logistics",
             "image": "Assets/images/Roshini_logistics.jpg",
-            "description": "Managing logistics and ensuring smooth operations",
+            "description": "Ensures every piece is in the right place at the right time",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
@@ -63,7 +63,7 @@
             "role": "Security Lead",
             "department": "Security",
             "image": "Assets/images/Rohit_security.jpg",
-            "description": "Overseeing security measures and ensuring the safety of all events",
+            "description": "Keeps everyone safe so the fest runs smoothly",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
@@ -72,52 +72,52 @@
             "role": "Core Team Lead",
             "department": "Core",
             "image": "Assets/images/Deeksha_core.jpg",
-            "description": "Coordinating cross-team efforts and keeping the entire Epoch 4.0 execution on track.",
+            "description": "Drives the vision and execution — brings everything together seamlessly",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 8,
             "name": "Lakshmi",
-            "role": "Community & Outreach Lead",
+            "role": "Outreach Lead",
             "department": "Outreach",
             "image": "Assets/images/lakshmi_core.jpg",
-            "description": "Driving campus outreach, community engagement, and registrations for Epoch 4.0.",
+            "description": "Connects with the campus and builds the Epoch community",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 9,
             "name": "Core Member A",
-            "role": "Event Operations Coordinator",
+            "role": "Operations Coordinator",
             "department": "Operations",
             "image": "Assets/images/test.jpg",
-            "description": "Supporting on-ground event operations and ensuring each zone runs smoothly.",
+            "description": "On the ground making sure every zone runs without a hitch",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 10,
             "name": "Core Member B",
-            "role": "Stalls & Experience Zones Lead",
+            "role": "Experience Zones Lead",
             "department": "Experiences",
             "image": "Assets/images/test.jpg",
-            "description": "Curating and managing stalls, fun zones, and interactive experiences across the campus.",
+            "description": "Curates the stalls and zones that make Epoch memorable",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 11,
             "name": "Core Member C",
-            "role": "Gaming & VR Coordinator",
+            "role": "Gaming Lead",
             "department": "Gaming",
             "image": "Assets/images/test.jpg",
-            "description": "Overseeing gaming tournaments, VR setups, and nostalgia-themed gaming experiences.",
+            "description": "Builds the gaming and VR experiences people talk about",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 12,
             "name": "Core Member D",
-            "role": "Workshops & Learning Lead",
+            "role": "Learning Lead",
             "department": "Learning",
             "image": "Assets/images/test.jpg",
-            "description": "Coordinating workshops, sessions, and learning tracks with mentors and speakers.",
+            "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         }
     ]
