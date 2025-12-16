@@ -4,7 +4,7 @@ const Coins = () => {
             <div className="max-w-6xl mx-auto rounded-2xl border border-white/5 bg-gradient-to-r from-slate-900/70 via-black to-slate-900/60 px-5 sm:px-10 py-6 sm:py-10 flex flex-col gap-5 sm:gap-6">
                 <div>
                     <p className="text-xs sm:text-sm font-semibold tracking-[0.25em] uppercase text-sky-300/90 mb-1">
-                        Powered by Epoch Coins
+                        Powered by GitHub Community
                     </p>
                     <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2">
                         A unified digital reward system that turns participation into experience.

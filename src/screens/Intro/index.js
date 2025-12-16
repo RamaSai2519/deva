@@ -39,7 +39,7 @@ const Intro = () => {
                     {/* Epoch Coins — one line, not a manual */}
                     <div className="mt-12 sm:mt-16">
                         <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-sky-300/80 mb-2">
-                            Powered by Epoch Coins
+                            Powered by GitHub Community
                         </p>
                         <p className="text-sm sm:text-base text-slate-400 max-w-xl">
                             Earn Epoch Coins by participating. Use them to play, explore VR, and unlock experiences across campus.
