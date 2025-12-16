@@ -63,23 +63,37 @@ const Info = () => {
                 </div>
                 {/* Content Section */}
                 <div className="max-w-6xl px-4 mx-auto text-center">
-                    <p className="text-xl md:text-2xl text-gray-400 mb-16">
-                        <span className="text-white font-medium">Epoch 3.0</span> is GITAM University Bengaluru's premier tech fest
-                        — organized by the GitHub Community Club — bringing together over 1000+ participants for
-                        48 hours of innovation, learning, and collaboration.
+                    <p className="text-base sm:text-lg md:text-2xl text-gray-400 mb-10 sm:mb-14 md:mb-16 leading-relaxed">
+                        <span className="text-white font-semibold">Epoch 4.0</span> is GITAM University Bengaluru's flagship
+                        2-day tech fest by the GitHub Community Club & DoSL — powered by Epoch Coins, workshops,
+                        contests, gaming tournaments, and experience zones designed to bring together
+                        <span className="text-white font-semibold"> 1000+ participants</span> for innovation, learning, and play.
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 md:mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">For</p>
-                            <h2 className="text-white text-4xl md:text-7xl font-medium mb-4">48 hours</h2>
-                            <p className="text-gray-500 text-lg">Of Non-stop Tech Celebration</p>
+
+                    {/* Stats / Social Proof */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Duration</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">48 Hours</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Non-stop tech, games & builds</p>
                         </div>
-                        <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 md:mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">Over</p>
-                            <h2 className="text-white text-4xl md:text-7xl font-medium mb-4">15+ Tech Stalls</h2>
-                            <p className="text-gray-500 text-lg">in prizes and rewards</p>
+
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Participants</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">1000+</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Students from all schools at GITAM</p>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Events & Zones</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">15+</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Contests, workshops, stalls & VR zones</p>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Mentors & Speakers</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">50+</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Community leads, mentors & volunteers</p>
                         </div>
                     </div>
                 </div>

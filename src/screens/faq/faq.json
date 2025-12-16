@@ -1,22 +1,22 @@
 [
     {
-        "question": "What is Epoch Tech Fest?",
-        "answer": "Epoch Tech Fest is an annual technology festival that showcases the latest in tech innovations and provides a platform for tech enthusiasts to connect and learn."
+        "question": "What is Epoch 4.0?",
+        "answer": "Epoch 4.0 is a two-day tech fest organized by the GitHub Community Club and DoSL at GITAM University, Bengaluru. It blends workshops, coding contests, gaming, and experience zones to help students learn, build, and have fun."
     },
     {
-        "question": "When and where is Epoch Tech Fest held?",
-        "answer": "Epoch Tech Fest is held annually in the month of November at the Gitam University campus in Bengaluru, India."
+        "question": "When and where is Epoch 4.0 happening?",
+        "answer": "Epoch 4.0 will be held on 29th and 30th December 2025 at the GITAM University Bengaluru campus."
     },
     {
-        "question": "How can I participate in Epoch Tech Fest?",
-        "answer": "You can participate by registering on our official website. There are various events and workshops you can join."
+        "question": "What are the main events at Epoch 4.0?",
+        "answer": "The fest features a GeeksforGeeks coding contest, a GitHub Actions workshop, a DSA-focused tech workshop, a Prompt to Prototype AI session, gaming tournaments, VR experiences, and interactive stalls powered by Epoch Coins."
     },
     {
-        "question": "Are there any fees to attend Epoch Tech Fest?",
-        "answer": "Yes, there is a nominal fee for attending the festival. Details about the fee structure can be found on our website."
+        "question": "How does the Epoch Coins system work?",
+        "answer": "Every registered participant receives Epoch Coins in their event account. Coins can be used at game zones, VR booths, and activity stalls, and more coins can be earned through recharge stations, attending workshops and sessions, and participating in flagship events."
     },
     {
-        "question": "Who can I contact for more information?",
-        "answer": "For more information, you can contact our support team at support@epochtechfest.com."
+        "question": "Who can attend Epoch 4.0 and how do I get more info?",
+        "answer": "Epoch 4.0 is open to students from all schools at GITAM who are interested in technology, gaming, and innovation. For more information, you can reach out to the organizing team via epoch@gitam.edu or through the GitHub Community Club channels."
     }
 ]

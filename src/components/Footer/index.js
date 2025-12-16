@@ -27,7 +27,7 @@ const Footer = () => {
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-sm font-semibold tracking-[0.22em] uppercase text-slate-100">Epoch 4.0</span>
-                                <span className="text-xs text-slate-400">GITAM × GitHub Community</span>
+                                <span className="text-xs text-slate-400">GitHub Community Club · GITAM Bengaluru</span>
                             </div>
                         </div>
                         <p className="text-sm text-slate-400 max-w-sm">
@@ -52,21 +52,36 @@ const Footer = () => {
                     <div className="flex flex-col gap-4 text-sm">
                         <h3 className="text-xs font-semibold tracking-[0.25em] uppercase text-slate-400">Support & Socials</h3>
                         <div className="flex flex-wrap gap-3 text-slate-300">
-                            <a href="#" aria-label="GitHub" className="hover:text-white">GitHub</a>
-                            <a href="#" aria-label="LinkedIn" className="hover:text-white">LinkedIn</a>
-                            <a href="#" aria-label="Instagram" className="hover:text-white">Instagram</a>
-                            <a href="#" aria-label="Discord" className="hover:text-white">Discord</a>
+                            <a href="#" aria-label="GitHub Community Club on GitHub" className="hover:text-white">GitHub</a>
+                            <a href="#" aria-label="GitHub Community Club on LinkedIn" className="hover:text-white">LinkedIn</a>
+                            <a href="#" aria-label="GitHub Community Club on Instagram" className="hover:text-white">Instagram</a>
+                            <a href="#" aria-label="GitHub Community Club on Discord" className="hover:text-white">Discord</a>
                         </div>
                         <div className="space-y-1 text-xs text-slate-400">
-                            <p>Support: epoch@gitam.edu</p>
-                            <p>Venue: GITAM University, Bengaluru</p>
+                            <p>Support: <a href="mailto:github_community@gitam.in" className="hover:text-slate-200">github_community@gitam.in</a></p>
+                            <p>Location: GITAM University, Bengaluru Campus</p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Sponsors strip */}
+                <div className="border-t border-white/5 pt-5 mt-4 flex flex-col gap-3">
+                    <div className="flex items-center justify-between flex-wrap gap-3">
+                        <div className="flex items-center gap-2">
+                            <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-400">Sponsors</span>
+                            <span className="text-[11px] text-slate-500">Announcements coming soon</span>
+                        </div>
+                        <div className="flex items-center gap-2 sm:gap-3">
+                            <div className="h-8 w-20 rounded-md border border-dashed border-slate-700/80 bg-black/40" />
+                            <div className="h-8 w-20 rounded-md border border-dashed border-slate-700/80 bg-black/40" />
+                            <div className="hidden sm:block h-8 w-20 rounded-md border border-dashed border-slate-700/80 bg-black/40" />
                         </div>
                     </div>
                 </div>
 
                 {/* Legal strip */}
-                <div className="border-t border-white/5 pt-4 mt-2 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
-                    <p>© {currentYear} GitHub Community GITAM. All rights reserved.</p>
+                <div className="border-t border-white/5 pt-4 mt-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+                    <p>© {currentYear} GitHub Community Club · GITAM Bengaluru. All rights reserved.</p>
                     <p>Built by the GitHub Community Club for Epoch 4.0.</p>
                 </div>
             </div>

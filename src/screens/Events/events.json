@@ -1,22 +1,50 @@
 [
     {
-        "title": "Hackathon Arena",
-        "description": "Compete with top developers in a 24-hour hackathon. Solve real-world challenges and showcase your coding skills.",
-        "image": "Assets/images/event_1.webp"
+        "title": "GeeksforGeeks Coding Contest",
+        "description": "Solve interview-style problems in a GeeksforGeeks powered coding contest and sharpen your DSA skills.",
+        "image": "Assets/images/event_1.webp",
+        "tagline": "A GFG-backed contest to test and grow your DSA skills.",
+        "highlights": [
+            "Timed coding rounds with interview-style problems.",
+            "Focus on core Data Structures and Algorithms.",
+            "Great prep for technical interviews and online assessments."
+        ],
+        "registrationUrl": "https://lu.ma/epoch-gfg-contest"
     },
     {
-        "title": "AI/ML Workshops",
-        "description": "Dive into the world of Artificial Intelligence and Machine Learning with hands-on sessions from industry experts.",
-        "image": "Assets/images/event_2.webp"
+        "title": "GitHub Actions Workshop",
+        "description": "Learn how GitHub and GitHub Actions power real-world developer workflows with a hands-on -led session.",
+        "image": "Assets/images/event_2.webp",
+        "tagline": "Ship faster by automating your GitHub workflows.",
+        "highlights": [
+            "Understand the basics of GitHub Actions.",
+            "Create and run simple CI/CD workflows.",
+            "See how automation fits into real developer teams."
+        ],
+        "registrationUrl": "https://lu.ma/epoch-github-actions"
     },
     {
-        "title": "Tech Talk Series",
-        "description": "Engage with thought leaders and visionaries as they discuss the future of technology and innovation.",
-        "image": "Assets/images/event_3.png"
+        "title": "DSA for Interviews",
+        "description": "Understand core data structures and algorithms and how to approach technical interview problems with confidence.",
+        "image": "Assets/images/event_3.png",
+        "tagline": "Master fundamentals that repeatedly show up in interviews.",
+        "highlights": [
+            "Refresh core DSA concepts with examples.",
+            "Learn patterns for approaching problem statements.",
+            "Get tips on presenting your thought process to interviewers."
+        ],
+        "registrationUrl": "https://lu.ma/epoch-dsa-interviews"
     },
     {
-        "title": "Robotics Showcase",
-        "description": "Witness cutting-edge robotic innovations and interact with creators pushing the boundaries of technology.",
-        "image": "Assets/images/event_4.webp"
+        "title": "Gaming Tournament & VR Zone",
+        "description": "Compete in high-energy gaming tournaments and experience immersive VR setups powered by Epoch Coins.",
+        "image": "Assets/images/event_4.webp",
+        "tagline": "Arcade, VR, and friendly competition powered by Epoch Coins.",
+        "highlights": [
+            "Face off in tournaments with your friends.",
+            "Try immersive VR experiences and nostalgia-themed setups.",
+            "Use Epoch Coins to access different games and experiences."
+        ],
+        "registrationUrl": "https://lu.ma/epoch-gaming-vr"
     }
 ]

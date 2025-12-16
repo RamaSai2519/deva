@@ -1,6 +1,6 @@
 {
     "peepParent": {
-        "text": "Wondering how Epoch Coins work?",
-        "popupContent": "Welcome to Epoch Tech Fest, an exciting annual technology festival organized by Gitam Bengaluru! This event showcases cutting-edge innovations, hosts engaging workshops, and brings together tech enthusiasts from across the country.\n## Epoch Coins System\n\nWe've incorporated a special Epoch Coins system to enhance your experience:\n\n1. Initial Allocation: Upon purchasing your ticket (e.g., ₹199), you'll receive 398 Epoch Coins (1 INR = 2 Epoch Coins).\n\n2. Usage: Use these coins to:\n - Access various booths (e.g., 40 coins for VR booth)\n - Participate in games (e.g., 60 coins)\n - Buy exclusive merchandise (e.g., 80 coins)\n\n3. Recharge Points: If you run low on coins, earn more at Recharge Points:\n - Complete quick activities like tech trivia or mini-coding puzzles\n - Each Recharge Point allows one recharge per participant\n - Earn around 20 Epoch Coins per recharge\n\n4. Real-time Tracking: Your coin balance and transactions are tracked on your event profile.\n\nThis system provides flexibility and choice in tailoring your Epoch Tech Fest experience, ensuring a memorable journey into the world of technology!"
+        "text": "New to Epoch Coins? Tap to learn how they work.",
+        "popupContent": ""
     }
-}   
+}

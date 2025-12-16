@@ -1,14 +1,14 @@
 {
     "quote": {
         "full": {
-            "prefix": "Behind every great innovation and transformative experience at Epoch 4.0,",
-            "highlight": "stands a team of passionate individuals who bring their unique strengths together to create something extraordinary",
-            "suffix": "— because the greatest achievements aren't built by individuals, but by teams who dare to dream bigger. - Satya Nadella"
+            "prefix": "Built by students.",
+            "highlight": " Powered by community.",
+            "suffix": " Driven by innovation."
         },
         "short": {
-            "prefix": "At Epoch 4.0, passionate teams",
-            "highlight": "unite to create extraordinary innovations",
-            "suffix": ", proving that great achievements come from collaborative dreaming."
+            "prefix": "Built by students.",
+            "highlight": " Powered by community.",
+            "suffix": " Driven by innovation."
         }
     },
     "teamMembers": [
@@ -57,7 +57,6 @@
             "description": "Managing logistics and ensuring smooth operations",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
-
         {
             "id": 6,
             "name": "Rohit",
@@ -65,6 +64,60 @@
             "department": "Security",
             "image": "Assets/images/Rohit_security.jpg",
             "description": "Overseeing security measures and ensuring the safety of all events",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 7,
+            "name": "Deeksha",
+            "role": "Core Team Lead",
+            "department": "Core",
+            "image": "Assets/images/Deeksha_core.jpg",
+            "description": "Coordinating cross-team efforts and keeping the entire Epoch 4.0 execution on track.",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 8,
+            "name": "Lakshmi",
+            "role": "Community & Outreach Lead",
+            "department": "Outreach",
+            "image": "Assets/images/lakshmi_core.jpg",
+            "description": "Driving campus outreach, community engagement, and registrations for Epoch 4.0.",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 9,
+            "name": "Core Member A",
+            "role": "Event Operations Coordinator",
+            "department": "Operations",
+            "image": "Assets/images/test.jpg",
+            "description": "Supporting on-ground event operations and ensuring each zone runs smoothly.",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 10,
+            "name": "Core Member B",
+            "role": "Stalls & Experience Zones Lead",
+            "department": "Experiences",
+            "image": "Assets/images/test.jpg",
+            "description": "Curating and managing stalls, fun zones, and interactive experiences across the campus.",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 11,
+            "name": "Core Member C",
+            "role": "Gaming & VR Coordinator",
+            "department": "Gaming",
+            "image": "Assets/images/test.jpg",
+            "description": "Overseeing gaming tournaments, VR setups, and nostalgia-themed gaming experiences.",
+            "linkedin": "https://linkedin.com/in/aditya-sharma"
+        },
+        {
+            "id": 12,
+            "name": "Core Member D",
+            "role": "Workshops & Learning Lead",
+            "department": "Learning",
+            "image": "Assets/images/test.jpg",
+            "description": "Coordinating workshops, sessions, and learning tracks with mentors and speakers.",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         }
     ]

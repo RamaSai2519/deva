@@ -17,7 +17,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+        <div id='hero' className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-16 md:py-20 overflow-hidden">
             {/* Soft vignette behind content for readability */}
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
 
@@ -77,7 +77,7 @@ const Hero = () => {
                     onClick={() => navigate('/account')}
                 >
                     <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent group-hover:text-blue-400 bg-clip-text transition-colors duration-300">
-                        Join the Epoch
+                        Register Now
                     </span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-100 p-[1px]">
                         <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
@@ -88,8 +88,11 @@ const Hero = () => {
                     Limited seats  x Free entry
                 </p>
                 {/* Sub-headline */}
-                <p className="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg text-slate-300 max-w-xl">
-                    48-Hour Tech Innovation Experience by GitHub Community Club
+                <p className="mt-2 sm:mt-3 text-base sm:text-lg md:text-xl font-semibold text-slate-200 max-w-2xl leading-relaxed">
+                    48 Hours. Builders. Code. Innovation.
+                </p>
+                <p className="mt-1.5 text-sm sm:text-base text-slate-400 max-w-xl">
+                    The flagship tech fest by GitHub Community Club
                 </p>
                 {/* Dates */}
                 <p className="text-lg sm:text-xl md:text-2xl relative mt-2.5 sm:mt-3">

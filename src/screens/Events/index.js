@@ -22,7 +22,7 @@ const Events = () => {
             <div className="max-w-7xl mx-auto px-4">
                 <Slider events={events} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
             </div>
-            <div className="bg-[linear-gradient(to_bottom,_transparent_0%,_#141414_100%)] w-full h-14 absolute bottom-0 ring-0 left-0 z-10" />
+            <div className="pointer-events-none bg-[linear-gradient(to_bottom,_transparent_0%,_#141414_100%)] w-full h-14 absolute bottom-0 ring-0 left-0 z-0" />
         </section>
     );
 };
