@@ -30,49 +30,49 @@
             "id": 1,
             "name": "1",
             "role": "Core Team",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/Greeshmitha_tech.jpg",
             "description": "Driving the vision and execution — making sure everything comes together seamlessly."
         },
         {
             "id": 2,
             "name": "2",
             "role": "Tech Team",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/lechakrawarthy.jpeg",
             "description": "Building the tech backbone — from workshops to competitions to keeping everything running smoothly."
         },
         {
             "id": 3,
             "name": "3",
             "role": "Design Team",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/lechakrawarthy.jpeg",
             "description": "Shaping the visual identity you see across posters, social media, and the campus."
         },
         {
             "id": 4,
             "name": "4",
             "role": "Management",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/lakshmi_core.jpg",
             "description": "Making sure every event, stall, and zone runs without a hitch — from logistics to permissions."
         },
         {
             "id": 5,
             "name": "5",
             "role": "Outreach Team",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/Afreen_tech.jpg",
             "description": "Spreading the word and bringing the campus into Epoch 4.0."
         },
         {
             "id": 6,
             "name": "6",
             "role": "Media Team",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/Roshini_logistics.jpg",
             "description": "Capturing the moments and keeping the community updated throughout the fest."
         },
         {
             "id": 7,
             "name": "7",
             "role": "Partnership Team",
-            "image": "/assets/images/test.jpg",
+            "image": "/assets/images/Rohit_security.jpg",
             "description": "Building partnerships that bring more value to everyone at Epoch."
         }
     ]

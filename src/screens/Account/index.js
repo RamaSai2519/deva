@@ -116,12 +116,15 @@ export function Account() {
     return (
         <div className="min-h-screen bg-black p-8 pt-12 w-full">
             <div className="max-w-7xl h-full mx-auto">
-                <div className="flex w-full justify-between items-center">
-                    <h1 className="text-4xl font-bold text-white mb-8">My Account <span className="text-mutedWhite text-lg">{profileData.is_admin ? "Admin" : ""}</span></h1>
+                <div className="flex w-full justify-between items-start">
+                    <div>
+                        <h1 className="text-4xl font-bold text-white mb-2">My Account <span className="text-mutedWhite text-lg">{profileData.is_admin ? "Admin" : ""}</span></h1>
+                        <p className="text-gray-400 text-sm mb-8">Manage your profile and track your Epoch Coins activity.</p>
+                    </div>
                     {/* Recharge User Button */}
                     <div className="flex gap-4">
                         {profileData.is_admin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge User</button>}
-                        <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
+                        <button onClick={logout} className="mb-4 px-3 py-1.5 text-sm bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
                     </div>
                 </div>
 
@@ -135,12 +138,12 @@ export function Account() {
                             </div>
                             <button
                                 onClick={handleEditToggle}
-                                className="flex items-center gap-2 text-sm text-gray-400 hover:text-gray-200"
+                                className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-700 text-sm text-gray-300 hover:text-white hover:border-gray-500 transition-all"
                             >
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.334 2.00004C11.5091 1.82494 11.7169 1.68605 11.9457 1.59129C12.1745 1.49653 12.4197 1.44775 12.6673 1.44775C12.9149 1.44775 13.1601 1.49653 13.3889 1.59129C13.6177 1.68605 13.8256 1.82494 14.0007 2.00004C14.1758 2.17513 14.3147 2.383 14.4094 2.61178C14.5042 2.84055 14.553 3.08575 14.553 3.33337C14.553 3.58099 14.5042 3.82619 14.4094 4.05497C14.3147 4.28374 14.1758 4.49161 14.0007 4.66671L5.00065 13.6667L1.33398 14.6667L2.33398 11L11.334 2.00004Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                                Edit
+                                <span className="font-medium">Edit Profile</span>
                                 <div className={`w-10 h-6 rounded-full transition-colors ${isEditing ? 'bg-white' : 'bg-gray-700'} relative cursor-pointer`}>
                                     <div className={`w-4 h-4 rounded-full absolute top-1 transition-transform ${isEditing ? 'bg-black translate-x-5' : 'bg-white translate-x-1'}`}></div>
                                 </div>
@@ -273,8 +276,9 @@ export function Account() {
 
                         {/* Balance Card */}
                         {!profileData.is_admin && <div className="bg-lightBlack rounded-2xl p-6 mb-6">
-                            <p className="text-sm text-gray-400 mb-2">Current Balance</p>
-                            <p className="text-4xl font-bold">${(profileData.balance ?? 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                            <p className="text-sm text-gray-400 mb-3">Current Balance</p>
+                            <p className="text-5xl font-bold text-white mb-2">{(profileData.balance ?? 0).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}</p>
+                            <p className="text-sm text-gray-500">Available Epoch Coins</p>
                         </div>}
 
                         {/* Recent Transactions */}
