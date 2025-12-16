@@ -56,7 +56,7 @@ export function AuthPage({ setIsAuthenticated }) {
                 if (response.status !== 200) {
                     setGeneralError(response.msg || 'Signup failed. Please try again.');
                 } else {
-                    login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
+                    login(response.data.access_token, response.data.refresh_token, response.data.user._id);
                     setIsAuthenticated(true);
                     navigate('/account');
                 }
@@ -66,7 +66,7 @@ export function AuthPage({ setIsAuthenticated }) {
                 if (response.status !== 200) {
                     setGeneralError(response.msg || 'Login failed. Please try again.');
                 } else {
-                    login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
+                    login(response.data.access_token, response.data.refresh_token, response.data.user._id);
                     setIsAuthenticated(true);
                     navigate('/account');
                 }

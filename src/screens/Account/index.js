@@ -4,6 +4,7 @@ import { message, Form, Input } from "antd";
 import { useNavigate } from 'react-router-dom';
 import Raxios from "../../services/axiosHelper";
 import { User, Mail, Hash, ArrowUpRight, ArrowDownRight, Wallet, Phone } from "lucide-react";
+import GitCoin from "../../Icons/gitcoin";
 
 export function Account() {
     const navigate = useNavigate();
@@ -11,6 +12,7 @@ export function Account() {
     const [isLoading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
+    const [isAdmin, setIsAdmin] = useState(false);
     const [form] = Form.useForm();
 
     const fetchProfileData = useCallback(async () => {
@@ -19,6 +21,7 @@ export function Account() {
             const response = await Raxios.get('/user', { params: { user_id: localStorage.getItem('user_id') } });
             if (response.status === 200) {
                 setProfileData(response.data);
+                setIsAdmin(response.data.user_type === 'admin');
                 form.setFieldsValue({
                     name: response.data.name,
                     email: response.data.email,
@@ -117,10 +120,11 @@ export function Account() {
         <div className="min-h-screen bg-black p-8 pt-12 w-full">
             <div className="max-w-7xl h-full mx-auto">
                 <div className="flex w-full justify-between items-center">
-                    <h1 className="text-4xl font-bold text-white mb-8">My Account <span className="text-mutedWhite text-lg">{profileData.is_admin ? "Admin" : ""}</span></h1>
+                    {!isAdmin ? <h1 className="text-4xl font-bold text-white mb-8">My Account</h1> : <h1 className="text-lg font-bold text-mutedWhite">Admin</h1>}
                     {/* Recharge User Button */}
                     <div className="flex gap-4">
-                        {profileData.is_admin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge User</button>}
+                        {isAdmin && <button onClick={() => navigate('/stalls')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Stall QR</button>}
+                        {isAdmin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge</button>}
                         <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
                     </div>
                 </div>
@@ -272,9 +276,12 @@ export function Account() {
                         </div>
 
                         {/* Balance Card */}
-                        {!profileData.is_admin && <div className="bg-lightBlack rounded-2xl p-6 mb-6">
-                            <p className="text-sm text-gray-400 mb-2">Current Balance</p>
-                            <p className="text-4xl font-bold">${(profileData.balance ?? 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                        {!isAdmin && <div className="bg-lightBlack rounded-2xl p-6 mb-6 flex items-center justify-between">
+                            <p className="text-xl text-mutedWhite">Current Balance</p>
+                            <p className="text-4xl font-bold flex items-center gap-2 text-white">
+                                {(profileData.balance ?? 0).toLocaleString('en-US')}
+                                <GitCoin className="h-full w-auto" />
+                            </p>
                         </div>}
 
                         {/* Recent Transactions */}
@@ -283,10 +290,7 @@ export function Account() {
                             <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
                                 {profileData.transactions && profileData.transactions.length > 0 ? (
                                     profileData.transactions.map((transaction, index) => {
-                                        const effectiveAction = profileData.is_admin
-                                            ? (transaction.action === 'add' ? 'remove' : 'add')
-                                            : transaction.action;
-
+                                        const effectiveAction = isAdmin ? (transaction.action === 'add' ? 'remove' : 'add') : transaction.action;
                                         return (
                                             <div
                                                 key={index}
@@ -305,13 +309,13 @@ export function Account() {
                                                             {effectiveAction === 'add' ? 'Credit' : 'Debit'}
                                                         </p>
                                                         <p className="text-sm text-gray-400">
-                                                            by {profileData.is_admin ? transaction.user_name : transaction.admin_name}
+                                                            by {isAdmin ? transaction.user_name : transaction.admin_name}
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div className="text-right">
-                                                    <p className={`font-semibold ${effectiveAction === 'add' ? 'text-green-500' : 'text-red-500'}`}>
-                                                        {effectiveAction === 'add' ? '+' : '-'}${Math.abs(transaction.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                                    <p className={`font-semibold flex items-center justify-end gap-1 text-xl ${effectiveAction === 'add' ? 'text-green-500' : 'text-red-500'}`}>
+                                                        {effectiveAction === 'add' ? '+' : '-'}{Math.abs(transaction.amount).toLocaleString('en-US', { maximumFractionDigits: 0 })} <GitCoin className={'w-8'} />
                                                     </p>
                                                     <p className="text-xs text-gray-500 mt-1">
                                                         {formatTimestamp(transaction.timestamp)}

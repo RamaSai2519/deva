@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react"
-import { useNavigate } from 'react-router-dom'
-import { Card, Typography, Space, message } from 'antd'
+import { UserTable } from "./user_table"
+import { UserFilters } from "./user_filters"
+import { checkAccess } from "../../utils/auth"
+import Raxios from "../../services/axiosHelper"
 import { RechargeModal } from "./recharge_modal"
 import { UserOutlined } from '@ant-design/icons'
-import Raxios from "../../services/axiosHelper"
-import { UserFilters } from "./user_filters"
-import { UserTable } from "./user_table"
+import { Card, Typography, Space, message } from 'antd'
 
 const { Title, Text } = Typography
 
 export function UserListPage() {
-    const navigate = useNavigate();
     const [page, setPage] = useState(1)
     const [size, setSize] = useState(10)
     const [users, setUsers] = useState([])
@@ -21,9 +20,7 @@ export function UserListPage() {
     const [selectedUser, setSelectedUser] = useState(null)
     const [isRechargeModalOpen, setIsRechargeModalOpen] = useState(false)
 
-    if (!localStorage.getItem('is_admin') || localStorage.getItem('is_admin') !== 'true') {
-        navigate('/account');
-    }
+    checkAccess('admin');
 
     const fetchUsers = async () => {
         setLoading(true)

@@ -1,4 +1,4 @@
-import { Table, Button, Tag, Empty } from 'antd'
+import { Table, Button, Empty } from 'antd'
 import { WalletOutlined } from '@ant-design/icons'
 
 export function UserTable({ users, onRecharge, pagination, loading }) {
@@ -22,15 +22,8 @@ export function UserTable({ users, onRecharge, pagination, loading }) {
         },
         {
             title: 'Role',
-            dataIndex: 'is_admin',
+            dataIndex: 'user_type',
             key: 'role',
-            render: (is_admin) => (
-                is_admin ? (
-                    <Tag color="blue">Admin</Tag>
-                ) : (
-                    <Tag>User</Tag>
-                )
-            ),
         },
         {
             title: 'Balance',
@@ -63,7 +56,7 @@ export function UserTable({ users, onRecharge, pagination, loading }) {
 
     return (
         <Table
-        className='overflow-x-scroll'
+            className='overflow-x-scroll'
             columns={columns}
             loading={loading}
             dataSource={users}

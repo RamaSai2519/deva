@@ -1,10 +1,11 @@
+import { message } from "antd";
 import { useState } from "react";
-import { useNavigate } from 'react-router-dom';
 import { QRScanner } from "./scanner";
+import { useNavigate } from "react-router-dom";
+import { checkAccess } from "../../utils/auth";
 import { FailureModal } from "./failure_modal";
 import { SuccessModal } from "./success_modal";
 import Raxios from '../../services/axiosHelper';
-import { message } from "antd";
 
 export default function PaymentScannerPage() {
     const navigate = useNavigate();
@@ -13,9 +14,7 @@ export default function PaymentScannerPage() {
     const [errorData, setErrorData] = useState(null);
     const [transactionType, setTransactionType] = useState("payment");
 
-    if (localStorage.getItem('is_admin') === 'true') {
-        navigate('/account');
-    }
+    checkAccess('user');
 
     const handleStartScan = () => {
         setScanState("scanning");
