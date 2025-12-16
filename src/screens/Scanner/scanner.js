@@ -1,9 +1,9 @@
 import { QrReader } from 'react-qr-reader';
 
-export function QRScanner({ isScanning, onStartScan, onScanResult }) {
+export function QRScanner({ isScanning, isLoading, onStartScan, onScanResult }) {
     return (
         <div className="relative">
-            <div className="w-72 h-72 relative">
+            <div className="w-72 h-72 relative bg-black rounded-2xl">
                 {isScanning ? (
                     <div className="absolute inset-0 rounded-2xl overflow-hidden">
                         <QrReader
@@ -19,6 +19,25 @@ export function QRScanner({ isScanning, onStartScan, onScanResult }) {
                             videoStyle={{ width: '100%', height: '100%', objectFit: 'cover' }}
                             containerStyle={{ width: '100%', height: '100%' }}
                         />
+                    </div>
+                ) : isLoading ? (
+                    <div className="w-72 h-72 relative cursor-pointer flex items-center justify-center bg-card/50 rounded-2xl" >
+                        <div className="ease-linear rounded-full border-4 border-transparent border-t-4 h-16 w-16 border-t-white animate-spin" />
+                        <style jsx>{`
+                            .loader {
+                                border-top-color: #white;
+                                animation: spin 1s linear infinite;
+                            }
+
+                            @keyframes spin {
+                                0% {
+                                    transform: rotate(0deg);
+                                }
+                                100% {
+                                    transform: rotate(360deg);
+                                }
+                            }
+                        `}</style>
                     </div>
                 ) : (
                     <div className="w-72 h-72 relative cursor-pointer" onClick={onStartScan}>

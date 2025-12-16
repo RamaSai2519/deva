@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react"
 
-export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
+export function FailureModal({ isOpen, onClose, onRetry, errorData, transactionType = "payment" }) {
   const [shake, setShake] = useState(false)
+  const isCoupon = transactionType === "coupon";
+
+  const shakeModal = () => {
+    setTimeout(() => setShake(true), 1000)
+    setTimeout(() => setShake(false), 500)
+  }
 
   useEffect(() => {
     if (isOpen) {
-      setShake(true)
-      const timer = setTimeout(() => setShake(false), 500)
-      return () => clearTimeout(timer)
+      shakeModal()
     }
   }, [isOpen])
 
@@ -28,7 +32,9 @@ export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
           </div>
         </div>
 
-        <h2 className="text-foreground text-xl font-semibold text-center mb-2">Payment Failed</h2>
+        <h2 className="text-foreground text-xl font-semibold text-center mb-2">
+          {isCoupon ? "Coupon Redemption Failed" : "Payment Failed"}
+        </h2>
         <p className="text-mutedWhite text-sm text-center mb-8">{errorData.message}</p>
 
         <div className="bg-darkBlack rounded-2xl p-4 mb-8">
@@ -41,18 +47,37 @@ export function FailureModal({ isOpen, onClose, onRetry, errorData }) {
         <div className="mb-8 space-y-3">
           <p className="text-mutedWhite text-xs uppercase tracking-wider">Suggestions</p>
           <ul className="space-y-2">
-            <li className="flex items-start gap-2 text-mutedWhite text-sm">
-              <span className="mt-0.5">•</span>
-              Check if the QR code is valid and not expired
-            </li>
-            <li className="flex items-start gap-2 text-mutedWhite text-sm">
-              <span className="mt-0.5">•</span>
-              Ensure good lighting and steady camera
-            </li>
-            <li className="flex items-start gap-2 text-mutedWhite text-sm">
-              <span className="mt-0.5">•</span>
-              Try scanning from a different angle
-            </li>
+            {isCoupon ? (
+              <>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Verify the coupon code is valid and not expired
+                </li>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Check if the coupon has already been redeemed
+                </li>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Ensure you have an active account
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Check if the QR code is valid and not expired
+                </li>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Ensure good lighting and steady camera
+                </li>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Try scanning from a different angle
+                </li>
+              </>
+            )}
           </ul>
         </div>
 

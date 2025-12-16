@@ -81,7 +81,7 @@ body {
 
 
 .card-mobile {
-  background-color: #1A1A1A;
+  background-color: #000;
   border-radius: 16px;
   padding: 16px;
   width: 280px;
@@ -96,7 +96,7 @@ body {
 .card {
   transform: scale(0.9);
   position: absolute;
-  background-color: #1A1A1A;
+  background-color: #000;
   border-radius: 16px;
   padding: 16px;
   width: 280px;

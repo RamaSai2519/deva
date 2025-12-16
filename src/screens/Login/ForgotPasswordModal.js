@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Modal, Form, Input, Button, message } from 'antd';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import RaxiosPost from '../../services/raxios';
+import Raxios from '../../services/axiosHelper';
+import { Modal, Form, Input, Button, message } from 'antd';
 
 const ForgotPasswordModal = ({ isOpen, onClose }) => {
     const [form] = Form.useForm();
@@ -11,7 +11,7 @@ const ForgotPasswordModal = ({ isOpen, onClose }) => {
     const handleSubmit = async (values) => {
         setIsLoading(true);
         try {
-            const response = await RaxiosPost('/forgot', { reg_no: values.reg_no });
+            const response = await Raxios.post('/forgot', { reg_no: values.reg_no });
 
             if (response.status !== 200 && response.msg === 'User not found') {
                 message.warning('User not found. Please sign up first.');

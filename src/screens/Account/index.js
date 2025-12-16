@@ -1,15 +1,16 @@
 import { useEffect, useState, useCallback } from "react";
+import { logout } from "../../utils/auth";
 import { message, Form, Input } from "antd";
+import { useNavigate } from 'react-router-dom';
 import Raxios from "../../services/axiosHelper";
-import { useAuth } from "../../contexts/AuthContext";
 import { User, Mail, Hash, ArrowUpRight, ArrowDownRight, Wallet, Phone } from "lucide-react";
 
 export function Account() {
+    const navigate = useNavigate();
     const [profileData, setProfileData] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);
     const [isSaving, setIsSaving] = useState(false);
-    const { logout } = useAuth();
     const [form] = Form.useForm();
 
     const fetchProfileData = useCallback(async () => {
@@ -98,7 +99,7 @@ export function Account() {
 
     if (isLoading) {
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center p-4">
+            <div className="min-h-screen w-full bg-black flex items-center justify-center p-4">
                 <p className="text-white text-lg">Loading profile...</p>
             </div>
         );
@@ -106,7 +107,7 @@ export function Account() {
 
     if (!profileData) {
         return (
-            <div className="min-h-screen bg-black flex items-center justify-center p-4">
+            <div className="min-h-screen w-full bg-black flex items-center justify-center p-4">
                 <p className="text-white text-lg">No profile data available</p>
             </div>
         );
@@ -119,14 +120,14 @@ export function Account() {
                     <h1 className="text-4xl font-bold text-white mb-8">My Account <span className="text-mutedWhite text-lg">{profileData.is_admin ? "Admin" : ""}</span></h1>
                     {/* Recharge User Button */}
                     <div className="flex gap-4">
-                        {profileData.is_admin && <button onClick={() => {window.location.href = '/users'}} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge User</button>}
+                        {profileData.is_admin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge User</button>}
                         <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Profile Section */}
-                    <div className="bg-black border border-gray-800 rounded-2xl p-8 shadow-sm">
+                    <div className="bg-black border border-gray-800 rounded-2xl p-4 md:p-8 shadow-sm">
                         <div className="flex items-center justify-between mb-8">
                             <div className="flex items-center gap-2">
                                 <User className="w-5 h-5 text-white" />
@@ -264,7 +265,7 @@ export function Account() {
                     </div>
 
                     {/* Wallet Section */}
-                    <div className="bg-black border border-gray-800 rounded-2xl p-8 shadow-sm">
+                    <div className="bg-black border border-gray-800 rounded-2xl p-4 md:p-8 shadow-sm">
                         <div className="flex items-center gap-2 mb-8">
                             <Wallet className="w-5 h-5 text-white" />
                             <h2 className="text-xl font-semibold text-white">Wallet</h2>

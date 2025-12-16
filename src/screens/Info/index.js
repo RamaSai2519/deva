@@ -1,6 +1,4 @@
-'use client'
-
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const TimeUnit = ({ value, label }) => (
     <div className="relative group">
@@ -50,47 +48,45 @@ const Info = () => {
     });
 
     return (
-        <div className="bg-black">
-            <div className="w-full min-h-[300px] sm:min-h-[400px] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
-                <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
-                    <TimeUnit value={timeLeft.days} label="Days" />
-                    <Separator />
-                    <TimeUnit value={timeLeft.hours} label="Hours" />
-                    <Separator />
-                    <TimeUnit value={timeLeft.minutes} label="Minutes" />
-                    <Separator />
-                    <TimeUnit value={timeLeft.seconds} label="Seconds" />
+        <div className='relative' id='info'>
+            <div className="bg-black flex flex-col w-full pb-20">
+                <div className="w-full min-h-[150px] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+                    <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+                        <TimeUnit value={timeLeft.days} label="Days" />
+                        <Separator />
+                        <TimeUnit value={timeLeft.hours} label="Hours" />
+                        <Separator />
+                        <TimeUnit value={timeLeft.minutes} label="Minutes" />
+                        <Separator />
+                        <TimeUnit value={timeLeft.seconds} label="Seconds" />
+                    </div>
                 </div>
-            </div>
-
-            {/* Content Section */}
-            <div className="w-full bg-black py-16 px-8">
-                <div className="max-w-6xl mx-auto">
-                    <p className="text-2xl text-gray-400 mb-16">
+                {/* Content Section */}
+                <div className="max-w-6xl px-4 mx-auto text-center">
+                    <p className="text-xl md:text-2xl text-gray-400 mb-16">
                         <span className="text-white font-medium">Epoch 3.0</span> is GITAM University Bengaluru's premier tech fest
                         — organized by the GitHub Community Club — bringing together over 1000+ participants for
                         48 hours of innovation, learning, and collaboration.
                     </p>
-
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
                         <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8" />
+                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 md:mb-8" />
                             <p className="text-gray-400 text-lg mb-2">For</p>
-                            <h2 className="text-white text-7xl font-medium mb-4">48 hours</h2>
+                            <h2 className="text-white text-4xl md:text-7xl font-medium mb-4">48 hours</h2>
                             <p className="text-gray-500 text-lg">Of Non-stop Tech Celebration</p>
                         </div>
-
                         <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-8" />
+                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 md:mb-8" />
                             <p className="text-gray-400 text-lg mb-2">Over</p>
-                            <h2 className="text-white text-7xl font-medium mb-4">15+ Tech Stalls</h2>
+                            <h2 className="text-white text-4xl md:text-7xl font-medium mb-4">15+ Tech Stalls</h2>
                             <p className="text-gray-500 text-lg">in prizes and rewards</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <div className="bg-[linear-gradient(to_bottom,_transparent_0%,_#141414_100%)] w-full h-20 absolute bottom-0 ring-0 left-0 z-10" />
         </div>
-    )
+    );
 };
 
 export default Info;

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import PropTypes from 'prop-types';
 
 const AboutMobile = ({
@@ -40,7 +40,7 @@ const AboutMobile = ({
             className="w-full h-full flex flex-col items-center justify-center"
             ref={containerRef}
         >
-            <div className="w-[200px] h-[100px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-20 rounded-lg overflow-hidden my-10">
+            <div className="w-[250px] h-[150px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-20 rounded-lg overflow-hidden my-5">
                 <img
                     src={mainImage}
                     alt="Team"
@@ -53,8 +53,8 @@ const AboutMobile = ({
                     <div
                         key={member.id}
                         className={`card-mobile flex items-center gap-4 mb-8 transform transition-all duration-500 ease-out ${animatedCards.includes(index)
-                                ? "opacity-100 translate-y-0"
-                                : "opacity-0 -translate-y-10"
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 -translate-y-10"
                             }`}
                         style={{
                             transitionDelay: `${index * 300}ms`,

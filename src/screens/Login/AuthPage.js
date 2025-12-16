@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Eye, EyeOff } from 'lucide-react';
-import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
-import { Link, useLocation } from 'react-router-dom';
 import TermsModal from './TermsModal';
+import { login } from '../../utils/auth';
+import { Eye, EyeOff } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import Raxios from '../../services/axiosHelper';
 import ForgotPasswordModal from './ForgotPasswordModal';
 import { Form, Input, Button, Alert, Checkbox } from 'antd';
-import { useAuth } from '../../contexts/AuthContext';
-import Raxios from '../../services/axiosHelper';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AnimatedCharacters as AnimatedScene } from './AnimatedScene';
 
-export function AuthPage() {
+export function AuthPage({ setIsAuthenticated }) {
     const location = useLocation();
+    const navigate = useNavigate();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +18,6 @@ export function AuthPage() {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
     const [form] = Form.useForm();
-    const { login } = useAuth();
 
     const isSignupMode = location.pathname === '/signup';
 
@@ -57,7 +57,8 @@ export function AuthPage() {
                     setGeneralError(response.msg || 'Signup failed. Please try again.');
                 } else {
                     login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
-                    window.location.href = '/account';
+                    setIsAuthenticated(true);
+                    navigate('/account');
                 }
             } else {
                 const payload = { ...values, action: 'login' };
@@ -66,7 +67,8 @@ export function AuthPage() {
                     setGeneralError(response.msg || 'Login failed. Please try again.');
                 } else {
                     login(response.data.access_token, response.data.refresh_token, response.data.user._id, response.data.user.is_admin);
-                    window.location.href = '/account';
+                    setIsAuthenticated(true);
+                    navigate('/account');
                 }
             }
         } catch (error) {
@@ -101,26 +103,26 @@ export function AuthPage() {
     };
 
     return (
-        <div className="min-h-screen bg-black flex items-center justify-center p-4 mt-5">
-            <div className="rounded-[32px] border border-gray-800 w-full max-w-[1000px] overflow-hidden">
+        <div className={`flex items-center justify-center md:p-4 ${isSignupMode ? "mt-10" : ""}`}>
+            <div className="rounded-[32px] border border-gray-800 w-full overflow-hidden">
                 <div className="grid md:grid-cols-2">
-                    <div className="bg-gray-50 p-6 flex items-center justify-center">
+                    <div className="bg-gray-50 md:p-6 flex items-center justify-center">
                         <div className="w-full max-w-[400px]">
                             <AnimatedScene mousePosition={mousePosition} isPasswordVisible={isPasswordVisible} />
                         </div>
                     </div>
-                    <div className="p-6 relative bg-black text-white">
-                        <div className="space-y-8">
+                    <div className="p-6 py-2 md:py-6 relative bg-black text-white">
+                        <div className="md:space-y-8">
                             <div>
-                                <h1 className="text-2xl font-semibold mb-1">
+                                <h1 className="text-xl md:text-2xl font-semibold">
                                     {isSignupMode ? 'Create Account' : 'Welcome Back'}
                                 </h1>
-                                <p className="text-gray-400">Please enter your details</p>
+                                <p className="text-gray-400 mb-2">Please enter your details</p>
                             </div>
                             {generalError && <Alert message={generalError} type="error" showIcon />}
                             <Form
                                 form={form}
-                                className="space-y-5"
+                                className="m-0"
                                 onFinish={handleSubmit}
                                 layout="vertical"
                                 requiredMark={false}
@@ -233,17 +235,6 @@ export function AuthPage() {
                                     </Form.Item>
                                 )}
 
-                                {!isSignupMode && (
-                                    <Form.Item>
-                                        <Button
-                                            type="link"
-                                            onClick={() => setIsForgotPasswordModalOpen(true)}
-                                            className="float-right text-gray-300 hover:text-white p-0"
-                                        >
-                                            Forgot password?
-                                        </Button>
-                                    </Form.Item>
-                                )}
 
                                 {isSignupMode && (
                                     <Form.Item
@@ -254,9 +245,8 @@ export function AuthPage() {
                                         <Checkbox className="text-gray-300">
                                             I agree to the{' '}
                                             <button
-                                                type="button"
                                                 onClick={() => setIsModalOpen(true)}
-                                                className="text-[#3533cd] hover:underline"
+                                                className="text-[#3533cd] underline"
                                             >
                                                 Terms and Conditions
                                             </button>
@@ -278,24 +268,35 @@ export function AuthPage() {
                                         }
                                     </Button>
                                 </Form.Item>
+                                <div className='flex flex-col items-center justify-center'>
+                                    {!isSignupMode && (
+                                        <Button
+                                            type="link"
+                                            onClick={() => setIsForgotPasswordModalOpen(true)}
+                                            className="text-gray-300 hover:underline p-0"
+                                        >
+                                            Forgot password?
+                                        </Button>
+                                    )}
+                                    <p className="text-center text-sm text-gray-400">
+                                        {isSignupMode ? (
+                                            <>
+                                                Already have an account?{" "}
+                                                <Link to="/login" className="text-white hover:underline">
+                                                    Log in
+                                                </Link>
+                                            </>
+                                        ) : (
+                                            <>
+                                                Don't have an account?{" "}
+                                                <Link to="/signup" className="text-white hover:underline">
+                                                    Sign up
+                                                </Link>
+                                            </>
+                                        )}
+                                    </p>
+                                </div>
                             </Form>
-                            <p className="text-center text-sm text-gray-400">
-                                {isSignupMode ? (
-                                    <>
-                                        Already have an account?{" "}
-                                        <Link to="/login" className="text-white hover:underline">
-                                            Log in
-                                        </Link>
-                                    </>
-                                ) : (
-                                    <>
-                                        Don't have an account?{" "}
-                                        <Link to="/signup" className="text-white hover:underline">
-                                            Sign up
-                                        </Link>
-                                    </>
-                                )}
-                            </p>
                         </div>
                     </div>
                 </div>
