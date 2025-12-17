@@ -9,7 +9,7 @@ const AboutMobile = lazy(() => import("./AboutMobile"));
 const About = () => {
     const parentRef = useRef(null);
     const isDesktop = useDeviceType();
-    const mainImage = "/assets/images/test.jpg";
+    const mainImage = "/Assets/images/test.jpg";
     const {
         teamMembers,
     } = aboutData;
