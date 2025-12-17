@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState, useMemo } from "react";
+import { useEffect,  useState, useMemo } from "react";
 import PropTypes from 'prop-types';
 
 const AboutDesktop = ({
-    teamMembers,
+    parentRef,
     mainImage,
+    teamMembers,
     animationDelay = 0.4,
     intersectionThreshold = 0.1
 }) => {
-    const parentRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -20,6 +20,8 @@ const AboutDesktop = ({
         if (currentRef) observer.observe(currentRef);
 
         return () => { if (currentRef) observer.unobserve(currentRef) };
+    
+    // eslint-disable-next-line
     }, [intersectionThreshold]);
 
     const positions = useMemo(() => [
@@ -49,12 +51,10 @@ const AboutDesktop = ({
             </div>
 
             {teamMembers.map((member, i) => {
-                const isCoreTeam = member.role === "Core Team";
                 return (
                     <div
                         key={member.id}
-                        className={`card group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] ${isCoreTeam ? "ring-1 ring-blue-500/30" : ""
-                            }`}
+                        className={`card group transition-all duration-300 hover:scale-105 shadow-[0_0_20px_rgba(59,130,246,0.3)] `}
                         style={{
                             "--x": `${positions[i]?.x}px`,
                             "--y": `${positions[i]?.y}px`,

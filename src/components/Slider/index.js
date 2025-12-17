@@ -111,7 +111,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                             setActiveEvent(events[currentSlide]);
                             setShowPopup(true);
                         }}
-                        className="inline-flex items-center text-xs sm:text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                        className="md:mb-10 mb-5 inline-flex items-center text-xs sm:text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
                     >
                         <span className="mr-1">Explore this event</span>
                         <span className="text-base sm:text-lg">→</span>
