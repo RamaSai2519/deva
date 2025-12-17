@@ -6,9 +6,8 @@ const Intro = () => {
     const [showPopup, setShowPopup] = useState(false);
     return (
         <div className="relative">
-            <div id="intro" className="min-h-screen flex flex-col items-center justify-between px-4 py-16 sm:py-20">
-                {/* Cinematic open section — no box, just breathing space */}
-                <div className="flex-1 flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
+            <div id="intro" className="flex flex-col items-center justify-between p-5">
+                    <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8">
                         What is Epoch 4.0?
                     </h2>
@@ -49,7 +48,7 @@ const Intro = () => {
                     {/* Soft CTA */}
                     <a
                         href="#events"
-                        className="mt-8 sm:mt-10 inline-flex items-center gap-2 text-sm sm:text-base text-blue-400 hover:text-blue-300 transition-colors"
+                        className="mt-8 mb-8 sm:mt-10 inline-flex items-center gap-2 text-sm sm:text-base text-blue-400 hover:text-blue-300 transition-colors"
                     >
                         <span>See what's happening at Epoch</span>
                         <span>→</span>

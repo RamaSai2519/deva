@@ -72,7 +72,7 @@ const Info = () => {
                     </p>
 
                     {/* Stats / Social Proof */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 mb-5">
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Duration</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">48 Hours</h2>
@@ -97,9 +97,6 @@ const Info = () => {
                             <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Industry & community mentors, speakers & volunteers</p>
                         </div>
                     </div>
-                    <p className="mt-4 sm:mt-5 text-[10px] sm:text-xs text-gray-500/80 text-center">
-                        Based on previous editions and current planning.
-                    </p>
                 </div>
             </div>
             <div className="bg-[linear-gradient(to_bottom,_transparent_0%,_#141414_100%)] w-full h-20 absolute bottom-0 ring-0 left-0 z-10" />
