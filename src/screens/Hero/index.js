@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useScrollPosition from '../../hooks/useScrollPosition';
+import useDeviceType from '../../hooks/useDeviceType';
+import StarfieldBG from '../../components/Backgrounds/StarField';
+import ParticleNetworkBG from '../../components/Backgrounds/ParticleNetwork';
 
 const Hero = () => {
     const navigate = useNavigate();
     const { isScrolled } = useScrollPosition('1vh');
+    const isDesktop = useDeviceType();
     const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
     useEffect(() => {
@@ -17,11 +21,11 @@ const Hero = () => {
     }, []);
 
     return (
-        <div id='hero' className="relative min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center text-center px-4 py-16 md:py-20 overflow-hidden">
-            {/* Soft vignette behind content for readability */}
+        <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
+            {isDesktop ? <ParticleNetworkBG /> : <StarfieldBG />}
 
-            <div className="relative mb-6 sm:mb-8 flex flex-col items-center">
+            <div className="relative mb-6 sm:mb-8 flex flex-col items-center z-10">
                 <h1 className="text-[3.2rem] sm:text-[4.8rem] md:text-[6.5rem] lg:text-[15rem] font-bold flex items-center justify-center w-full">
                     {/* E */}
                     <span className="relative hidden md:inline-block">
@@ -71,7 +75,7 @@ const Hero = () => {
                 </h1>
             </div>
 
-            <div className='lg:mr-14'>
+            <div className='lg:mr-14 flex flex-col items-center max-w-3xl z-10'>
                 <p className="text-[11px] sm:text-xs font-semibold tracking-[0.24em] uppercase text-slate-400 mb-3">
                     GitHub Community Club presents
                 </p>
@@ -110,7 +114,7 @@ const Hero = () => {
                     <span className="relative text-white font-medium tracking-wide">29th - 30th December 2025</span>
                 </p>
             </div>
-            <div className={`bg-[linear-gradient(to_bottom,_transparent_0%,_black_100%)] ${isScrolled ? "animate-fade-in" : "animate-fade-out"} w-full h-20 absolute bottom-0 ring-0 left-0 z-10`} />
+            <div className={`bg-[linear-gradient(to_bottom,_transparent_0%,_black_100%)] ${isScrolled ? "animate-fade-in" : "animate-fade-out"} w-full h-20 absolute bottom-0 ring-0 left-0 z-20`} />
         </div>
     );
 };
