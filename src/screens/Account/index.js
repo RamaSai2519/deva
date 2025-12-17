@@ -124,7 +124,7 @@ export function Account() {
                     <div className="flex gap-4 flex-wrap justify-end">
                         {profileData.user_type !== 'user' && <button onClick={() => navigate('/stalls')} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Stalls</button>}
                         {isAdmin && <button onClick={() => navigate('/users')} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge</button>}
-                        {profileData.user_type !== 'user' && <button onClick={() => navigate('/lotqr')} className="px-4 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-600 transition">Contest</button>}
+                        {isAdmin && <button onClick={() => navigate('/notify')} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Notify</button>}
                         <button onClick={logout} className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
                     </div>
                 </div>

@@ -14,6 +14,7 @@ import { setNavigate } from "./services/navigationService";
 import { requestNotificationPermission } from "./utils/firebase";
 import { Route, Routes, useNavigate } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Notify from "./screens/Notify";
 
 const protectedRoutes = [
   { path: "/stalls", component: Stalls },
@@ -21,10 +22,11 @@ const protectedRoutes = [
   { path: "/scanner", component: Scanner },
   { path: "/lotqr", component: LotteryQR },
   { path: "/users", component: UserListPage },
+  { path: "/notify", component: Notify }
 ];
 
 const App = () => {
-  const version = '1.4.0';
+  const version = '1.5.7';
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
   useScrollTo();
