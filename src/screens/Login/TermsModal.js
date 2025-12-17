@@ -1,4 +1,3 @@
-import React from 'react';
 import { IoClose } from 'react-icons/io5';
 
 const TermsModal = ({ isOpen, onClose }) => {
@@ -14,7 +13,7 @@ const TermsModal = ({ isOpen, onClose }) => {
                 </div>
                 <div className="w-full h-full max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">Terms and Conditions</h2>
-                    <p className="text-gray-400 text-sm mb-8">Last updated: January 2025</p>
+                    <p className="text-gray-400 text-sm mb-8">Last updated: December 2025</p>
 
                     <div className="text-gray-300 space-y-6">
                         <div>
