@@ -12,7 +12,16 @@ import AuthPage from "./screens/Login/AuthPage";
 import { UserListPage } from "./screens/Users/user_list";
 import { setNavigate } from "./services/navigationService";
 import { requestNotificationPermission } from "./utils/firebase";
-import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute";
+
+const protectedRoutes = [
+  { path: "/stalls", component: Stalls },
+  { path: "/account", component: Account },
+  { path: "/scanner", component: Scanner },
+  { path: "/lotqr", component: LotteryQR },
+  { path: "/users", component: UserListPage },
+];
 
 const App = () => {
   const version = '1.4.0';
@@ -39,11 +48,16 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<AuthPage setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/signup" element={<AuthPage setIsAuthenticated={setIsAuthenticated} />} />
-          <Route path="/stalls" element={isAuthenticated ? <Stalls /> : <Navigate to="/login" replace />} />
-          <Route path="/account" element={isAuthenticated ? <Account /> : <Navigate to="/login" replace />} />
-          <Route path="/scanner" element={isAuthenticated ? <Scanner /> : <Navigate to="/login" replace />} />
-          <Route path="/lotqr" element={isAuthenticated ? <LotteryQR /> : <Navigate to="/login" replace />} />
-          <Route path="/users" element={isAuthenticated ? <UserListPage /> : <Navigate to="/login" replace />} />
+          {protectedRoutes.map(({ path, component: Component }) => (
+            <Route
+              key={path} path={path}
+              element={
+                <ProtectedRoute isAuthenticated={isAuthenticated}>
+                  <Component />
+                </ProtectedRoute>
+              }
+            />
+          ))}
         </Routes>
       </div>
       <Footer />

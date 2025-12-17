@@ -119,12 +119,13 @@ export function Account() {
     return (
         <div className="min-h-screen bg-black p-8 pt-12 w-full">
             <div className="max-w-7xl h-full mx-auto">
-                <div className="flex w-full justify-between items-center">
-                    {!isAdmin ? <h1 className="text-4xl font-bold text-white mb-8">My Account</h1> : <h1 className="text-lg font-bold text-mutedWhite">Admin</h1>}
-                    <div className="flex gap-4">
-                        {(profileData.user_type === 'stall' || isAdmin) && <button onClick={() => navigate('/stalls')} className="mb-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Stalls</button>}
-                        {isAdmin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge</button>}
-                        <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
+                <div className="flex w-full justify-between items-center my-4">
+                    <h1 className="text-4xl font-bold text-white">My Account</h1>
+                    <div className="flex gap-4 flex-wrap justify-end">
+                        {profileData.user_type !== 'user' && <button onClick={() => navigate('/stalls')} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Stalls</button>}
+                        {isAdmin && <button onClick={() => navigate('/users')} className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge</button>}
+                        {profileData.user_type !== 'user' && <button onClick={() => navigate('/lotqr')} className="px-4 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-600 transition">Contest</button>}
+                        <button onClick={logout} className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
                     </div>
                 </div>
 
@@ -275,7 +276,7 @@ export function Account() {
                         </div>
 
                         {/* Balance Card */}
-                        {!isAdmin && <div className="bg-lightBlack rounded-2xl p-6 mb-6 flex items-center justify-between">
+                        {profileData.user_type === 'user' && <div className="bg-lightBlack rounded-2xl p-6 mb-6 flex items-center justify-between">
                             <p className="text-xl text-mutedWhite">Current Balance</p>
                             <p className="text-4xl font-bold flex items-center gap-2 text-white">
                                 {(profileData.balance ?? 0).toLocaleString('en-US')}

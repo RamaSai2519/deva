@@ -41,10 +41,10 @@ const getUserAcessLevel = async () => {
     }
 }
 
-const checkAccess = async (requiredLevel) => {
+const checkAccess = async (requiredLevel, redirectPath = '/account') => {
     const accessLevel = await getUserAcessLevel();
     if (accessLevel !== requiredLevel) {
-        window.location.href = '/account';
+        window.location.href = redirectPath;
     }
 };
 

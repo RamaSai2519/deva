@@ -14,7 +14,7 @@ export default function PaymentScannerPage() {
     const [errorData, setErrorData] = useState(null);
     const [transactionType, setTransactionType] = useState("payment");
 
-    checkAccess('user');
+    checkAccess('user', '/lotqr');
 
     const handleStartScan = () => {
         setScanState("scanning");
