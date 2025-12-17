@@ -96,7 +96,7 @@ const Hero = () => {
                 </p>
                 {/* Sub-headline */}
                 <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl font-semibold text-slate-200 max-w-2xl leading-relaxed">
-                    48 Hours. Learn. Compete. Build. Play. — Powered by github Community
+                    48 Hours. Learn. Compete. Build. Play. — Powered by Github Community
                 </p>
                 <p className="mt-1.5 text-sm sm:text-base text-slate-400 max-w-xl">
                     A two-day campus-wide tech experience with workshops, competitions, gaming, and interactive zones.

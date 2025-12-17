@@ -275,9 +275,12 @@ export function Account() {
                         </div>
 
                         {/* Balance Card */}
-                        {!profileData.is_admin && <div className="bg-lightBlack rounded-2xl p-6 mb-6">
-                            <p className="text-sm text-gray-400 mb-2">Current Balance</p>
-                            <p className="text-4xl font-bold">${(profileData.balance ?? 0).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>
+                        {!isAdmin && <div className="bg-lightBlack rounded-2xl p-6 mb-6 flex items-center justify-between">
+                            <p className="text-xl text-mutedWhite">Current Balance</p>
+                            <p className="text-4xl font-bold flex items-center gap-2 text-white">
+                                {(profileData.balance ?? 0).toLocaleString('en-US')}
+                                <GitCoin className="h-full w-auto" />
+                            </p>
                         </div>}
 
                         {/* Recent Transactions */}
