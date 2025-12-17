@@ -5,7 +5,6 @@ import Team from "../screens/Team";
 import Intro from "../screens/Intro";
 import Events from "../screens/Events";
 import About from "../screens/About/About";
-import aboutData from "../screens/About/about.json";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { useHoveredMenu } from "../contexts/hoveredMenuContext";
 
@@ -19,7 +18,7 @@ const Home = () => {
             <Intro />
             <Events />
             <ErrorBoundary>
-                <About teamMembers={aboutData.teamMembers} mainImage="/assets/images/test.jpg" />
+                <About />
             </ErrorBoundary>
             <Team />
             <FAQ />

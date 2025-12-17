@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import useDeviceType from "../../hooks/useDeviceType";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import GiantPopup from "../Popups/GiantPopup";
 
 const Slider = ({ events, currentSlide, setCurrentSlide }) => {
     const isDesktop = useDeviceType();
+    const [showPopup, setShowPopup] = useState(false);
+    const [activeEvent, setActiveEvent] = useState(null);
 
     const handlePrev = () => {
         setCurrentSlide((prev) => (prev === 0 ? events.length - 1 : prev - 1));
@@ -38,6 +41,8 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                                 <img
                                     src={event.image}
                                     alt={event.title}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-auto max-h-[50vh] object-contain rounded-xl shadow-lg"
                                 />
                             </div>
@@ -67,9 +72,9 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                             <button
                                 key={index}
                                 onClick={() => setCurrentSlide(index)}
-                                className={`text-sm text-nowrap w-full pb-1 ${currentSlide === index
-                                    ? "text-white font-bold border-b"
-                                    : "text-mutedWhite hover:text-gray-200"
+                                className={`text-sm text-nowrap w-full pb-1 transition-all duration-300 ${currentSlide === index
+                                    ? "text-white font-bold border-b-2 border-blue-400 shadow-[0_2px_8px_rgba(59,130,246,0.4)]"
+                                    : "text-slate-500 hover:text-slate-300"
                                     }`}
                             >
                                 {event.title}
@@ -85,12 +90,83 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                 </button>
             </div>
 
-            {/* Description with static background image */}
-            <div className="relative mt-2 text-center px-4">
-                <p className="relative z-10 text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
-                    {events[currentSlide]?.description}
-                </p>
+            {/* Event meta: title, outcome, micro CTA */}
+            <div className="relative mt-4 px-4">
+                <div className="relative z-10 max-w-3xl mx-auto text-center sm:text-left">
+                    <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-slate-400 mb-1">
+                        Featured Event
+                    </p>
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-white mb-2 sm:mb-3">
+                        {events[currentSlide]?.title}
+                    </h3>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-2">
+                        {events[currentSlide]?.description}
+                    </p>
+                    <p className="text-xs sm:text-sm text-sky-300/80 mb-3 sm:mb-4">
+                        Earn Epoch Coins by participating in this event.
+                    </p>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            setActiveEvent(events[currentSlide]);
+                            setShowPopup(true);
+                        }}
+                        className="md:mb-10 mb-5 inline-flex items-center text-xs sm:text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                        <span className="mr-1">Explore this event</span>
+                        <span className="text-base sm:text-lg">→</span>
+                    </button>
+                </div>
             </div>
+
+            <GiantPopup visible={showPopup} setVisible={setShowPopup}>
+                {activeEvent && (
+                    <div className="max-w-3xl mx-auto py-6 sm:py-10 space-y-4 sm:space-y-6 text-mutedWhite">
+                        <p className="text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-slate-400">
+                            Event spotlight
+                        </p>
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+                            {activeEvent.title}
+                        </h2>
+                        {activeEvent.tagline && (
+                            <p className="text-xs sm:text-sm md:text-base text-sky-300/90">
+                                {activeEvent.tagline}
+                            </p>
+                        )}
+                        <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed">
+                            {activeEvent.longDescription || activeEvent.description}
+                        </p>
+                        {Array.isArray(activeEvent.highlights) && activeEvent.highlights.length > 0 && (
+                            <div className="space-y-2">
+                                <p className="text-xs sm:text-sm font-semibold text-slate-300 uppercase tracking-[0.16em]">
+                                    What to expect
+                                </p>
+                                <ul className="list-disc list-inside text-xs sm:text-sm md:text-base text-slate-200 space-y-1.5">
+                                    {activeEvent.highlights.map((point, index) => (
+                                        <li key={index}>{point}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                        <p className="text-xs sm:text-sm text-slate-400">
+                            Part of Epoch 4.0 at GITAM University, Bengaluru.
+                        </p>
+                        {activeEvent.registrationUrl && (
+                            <div className="pt-2">
+                                <a
+                                    href={activeEvent.registrationUrl}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-400 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_30px_rgba(37,99,235,0.6)] transition-colors"
+                                >
+                                    <span>Register now on Luma</span>
+                                    <span className="ml-2 text-base">↗</span>
+                                </a>
+                            </div>
+                        )}
+                    </div>
+                )}
+            </GiantPopup>
         </div>
     );
 };

@@ -49,8 +49,11 @@ const Info = () => {
 
     return (
         <div className='relative' id='info'>
-            <div className="bg-black flex flex-col w-full pb-20">
-                <div className="w-full min-h-[150px] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+            <div className="bg-black flex flex-col w-full pb-14 sm:pb-16">
+                <div className="w-full min-h-[120px] flex flex-col items-center justify-center pt-3 sm:pt-4 md:pt-5 pb-4 sm:pb-5 md:pb-6 px-4">
+                    <p className="text-xs sm:text-sm uppercase tracking-[0.20em] text-slate-400 mb-3 sm:mb-4">
+                        Event starts in
+                    </p>
                     <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
                         <TimeUnit value={timeLeft.days} label="Days" />
                         <Separator />
@@ -63,23 +66,35 @@ const Info = () => {
                 </div>
                 {/* Content Section */}
                 <div className="max-w-6xl px-4 mx-auto text-center">
-                    <p className="text-xl md:text-2xl text-gray-400 mb-16">
-                        <span className="text-white font-medium">Epoch 3.0</span> is GITAM University Bengaluru's premier tech fest
-                        — organized by the GitHub Community Club — bringing together over 1000+ participants for
-                        48 hours of innovation, learning, and collaboration.
+                    <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 sm:mb-12 md:mb-14 leading-relaxed">
+                        <span className="text-white font-semibold">Epoch 4.0</span> is <span className="text-white font-semibold">GITAM University Bengaluru's</span> flagship 2-day tech fest, organized by the <span className="text-white font-semibold">GitHub Community Club & DoSL</span>.
+                        <span className="block mt-2">Powered by <span className="text-white font-semibold">GitHub Community</span>, workshops, contests, gaming tournaments, and experience zones — bringing together <span className="text-white font-semibold">1000+ participants</span> for learning, innovation, and play.</span>
                     </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 md:mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">For</p>
-                            <h2 className="text-white text-4xl md:text-7xl font-medium mb-4">48 hours</h2>
-                            <p className="text-gray-500 text-lg">Of Non-stop Tech Celebration</p>
+
+                    {/* Stats / Social Proof */}
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 md:gap-10 mb-5">
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Duration</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">48 Hours</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Non-stop learning, competition & experiences</p>
                         </div>
-                        <div>
-                            <div className="h-0.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mb-4 md:mb-8" />
-                            <p className="text-gray-400 text-lg mb-2">Over</p>
-                            <h2 className="text-white text-4xl md:text-7xl font-medium mb-4">15+ Tech Stalls</h2>
-                            <p className="text-gray-500 text-lg">in prizes and rewards</p>
+
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Participants</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">1000+</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Students from all schools at GITAM</p>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Events & Zones</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">15+</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Contests, workshops, gaming, stalls & VR zones</p>
+                        </div>
+
+                        <div className="flex flex-col items-center">
+                            <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Mentors & Speakers</p>
+                            <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">50+</h2>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Industry & community mentors, speakers & volunteers</p>
                         </div>
                     </div>
                 </div>

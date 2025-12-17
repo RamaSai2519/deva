@@ -1,22 +1,26 @@
 [
     {
-        "question": "What is Epoch Tech Fest?",
-        "answer": "Epoch Tech Fest is an annual technology festival that showcases the latest in tech innovations and provides a platform for tech enthusiasts to connect and learn."
+        "question": "What is Epoch 4.0?",
+        "answer": "Epoch 4.0 is a two-day tech fest at GITAM Bengaluru where you'll learn, compete, build, and explore through workshops, coding contests, gaming, and experience zones. It's 48 hours of tech, community, and fun."
     },
     {
-        "question": "When and where is Epoch Tech Fest held?",
-        "answer": "Epoch Tech Fest is held annually in the month of November at the Gitam University campus in Bengaluru, India."
+        "question": "When and where is Epoch 4.0 happening?",
+        "answer": "You'll find us on campus at GITAM University, Bengaluru on December 29th and 30th, 2025. Mark your calendar!"
     },
     {
-        "question": "How can I participate in Epoch Tech Fest?",
-        "answer": "You can participate by registering on our official website. There are various events and workshops you can join."
+        "question": "What are the main events at Epoch 4.0?",
+        "answer": "You can join a GeeksforGeeks coding contest, learn GitHub Actions in a hands-on workshop, sharpen your DSA skills, explore AI with Prompt to Prototype, compete in gaming tournaments, experience VR, and explore interactive stalls — all Powered by GitHub Community."
     },
     {
-        "question": "Are there any fees to attend Epoch Tech Fest?",
-        "answer": "Yes, there is a nominal fee for attending the festival. Details about the fee structure can be found on our website."
+        "question": "How does the Epoch Coins system work?",
+        "answer": "You'll get Epoch Coins when you register. Use them at game zones, VR booths, and activity stalls. You can earn more by completing challenges at recharge stations, attending workshops, and participating in events."
     },
     {
-        "question": "Who can I contact for more information?",
-        "answer": "For more information, you can contact our support team at support@epochtechfest.com."
+        "question": "Is there a registration fee?",
+        "answer": "No. Entry to Epoch 4.0 is completely free for students. Some events may have limited seats, so early registration is recommended."
+    },
+    {
+        "question": "Who can attend Epoch 4.0 and how do I register?",
+        "answer": "Epoch 4.0 is open to students from all schools at GITAM University. For updates, schedules, and registrations, explore the events section or register directly on this page. Register now to be part of Epoch 4.0!"
     }
 ]

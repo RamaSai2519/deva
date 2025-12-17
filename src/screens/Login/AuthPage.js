@@ -106,18 +106,40 @@ export function AuthPage({ setIsAuthenticated }) {
         <div className={`flex items-center justify-center md:p-4 ${isSignupMode ? "mt-10" : ""}`}>
             <div className="rounded-[32px] border border-gray-800 w-full overflow-hidden">
                 <div className="grid md:grid-cols-2">
-                    <div className="bg-gray-50 md:p-6 flex items-center justify-center">
+                    <div className="bg-gray-50 md:p-6 flex items-center justify-center relative">
+                        <div className="absolute top-6 left-6">
+                            <div className="flex items-center gap-2">
+                                <div className="h-8 w-8 rounded-lg bg-black/10 border border-black/20 flex items-center justify-center">
+                                    <img
+                                        src="Assets/images/githubLogo.png"
+                                        alt="Epoch 4.0"
+                                        className="h-5 w-5 object-contain opacity-70"
+                                    />
+                                </div>
+                                <div className="flex flex-col">
+                                    <span className="text-xs font-semibold tracking-wider uppercase text-gray-800">Epoch 4.0</span>
+                                    <span className="text-[10px] text-gray-500">GitHub Community Club</span>
+                                </div>
+                            </div>
+                        </div>
                         <div className="w-full max-w-[400px]">
                             <AnimatedScene mousePosition={mousePosition} isPasswordVisible={isPasswordVisible} />
+                        </div>
+                        <div className="absolute bottom-6 left-6 right-6 text-center">
+                            <p className="text-sm text-gray-600">
+                                Access your Epoch Coins & events
+                            </p>
                         </div>
                     </div>
                     <div className="p-6 py-2 md:py-6 relative bg-black text-white">
                         <div className="md:space-y-8">
                             <div>
                                 <h1 className="text-xl md:text-2xl font-semibold">
-                                    {isSignupMode ? 'Create Account' : 'Welcome Back'}
+                                    {isSignupMode ? 'Join Epoch 4.0' : 'Welcome back to Epoch 4.0'}
                                 </h1>
-                                <p className="text-gray-400 mb-2">Please enter your details</p>
+                                <p className="text-gray-400 mb-2">
+                                    {isSignupMode ? 'Create your account to get started' : 'Log in to manage your events and Epoch Coins'}
+                                </p>
                             </div>
                             {generalError && <Alert message={generalError} type="error" showIcon />}
                             <Form
@@ -159,13 +181,14 @@ export function AuthPage({ setIsAuthenticated }) {
                                 )}
 
                                 <Form.Item
-                                    label={<span className="text-gray-300">Registration Number</span>}
+                                    label={<span className="text-gray-300">Registration Number (GITAM ID)</span>}
                                     name="reg_no"
                                     rules={[{ required: true, message: 'Registration Number is required' }]}
                                 >
                                     <Input
-                                        placeholder="Enter your registration number"
+                                        placeholder="Enter your GITAM registration number"
                                         className="w-full px-4 py-3 rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#3533cd]"
+                                        autoFocus={!isSignupMode}
                                     />
                                 </Form.Item>
 
@@ -194,6 +217,8 @@ export function AuthPage({ setIsAuthenticated }) {
                                             onClick={() => setIsPasswordVisible(!isPasswordVisible)}
                                             className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-300"
                                             icon={isPasswordVisible ? <EyeOff size={20} /> : <Eye size={20} />}
+                                            title={isPasswordVisible ? 'Hide password' : 'Show password'}
+                                            aria-label={isPasswordVisible ? 'Hide password' : 'Show password'}
                                         />
                                     </div>
                                 </Form.Item>
@@ -254,6 +279,11 @@ export function AuthPage({ setIsAuthenticated }) {
                                     </Form.Item>
                                 )}
 
+                                {/* Trust reassurance */}
+                                <p className="text-xs text-gray-500 text-center -mt-4 mb-4">
+                                    Official access for registered Epoch participants only.
+                                </p>
+
                                 <Form.Item>
                                     <Button
                                         type="primary"
@@ -268,12 +298,12 @@ export function AuthPage({ setIsAuthenticated }) {
                                         }
                                     </Button>
                                 </Form.Item>
-                                <div className='flex flex-col items-center justify-center'>
+                                <div className='flex flex-col items-center justify-center gap-2'>
                                     {!isSignupMode && (
                                         <Button
                                             type="link"
                                             onClick={() => setIsForgotPasswordModalOpen(true)}
-                                            className="text-gray-300 hover:underline p-0"
+                                            className="text-gray-500 hover:text-gray-300 hover:underline p-0 text-xs"
                                         >
                                             Forgot password?
                                         </Button>
@@ -282,14 +312,14 @@ export function AuthPage({ setIsAuthenticated }) {
                                         {isSignupMode ? (
                                             <>
                                                 Already have an account?{" "}
-                                                <Link to="/login" className="text-white hover:underline">
+                                                <Link to="/login" className="text-white hover:underline font-medium">
                                                     Log in
                                                 </Link>
                                             </>
                                         ) : (
                                             <>
                                                 Don't have an account?{" "}
-                                                <Link to="/signup" className="text-white hover:underline">
+                                                <Link to="/signup" className="text-white hover:underline font-medium">
                                                     Sign up
                                                 </Link>
                                             </>
