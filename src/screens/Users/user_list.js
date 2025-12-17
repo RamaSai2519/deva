@@ -61,7 +61,7 @@ export function UserListPage() {
             }
             const response = await Raxios.post('/wallet', payload)
             if (response.status === 200) {
-                message.success(`Successfully recharged ₹${amount} to ${selectedUser.name}`)
+                message.success(`Successfully recharged ${amount} GitCoins to ${selectedUser.name}`)
                 fetchUsers()
             } else {
                 message.error(response.msg || "Failed to recharge balance")

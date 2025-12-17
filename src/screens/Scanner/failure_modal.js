@@ -35,7 +35,7 @@ export function FailureModal({ isOpen, onClose, onRetry, errorData, transactionT
         <h2 className="text-foreground text-xl font-semibold text-center mb-2">
           {isCoupon ? "Coupon Redemption Failed" : "Payment Failed"}
         </h2>
-        <p className="text-mutedWhite text-sm text-center mb-8">{errorData.message}</p>
+        <p className="text-mutedWhite text-xl text-center mb-8">{errorData.message}</p>
 
         <div className="bg-darkBlack rounded-2xl p-4 mb-8">
           <div className="flex justify-between items-center">
@@ -64,6 +64,10 @@ export function FailureModal({ isOpen, onClose, onRetry, errorData, transactionT
               </>
             ) : (
               <>
+                <li className="flex items-start gap-2 text-mutedWhite text-sm">
+                  <span className="mt-0.5">•</span>
+                  Check if you sufficient balance is available
+                </li>
                 <li className="flex items-start gap-2 text-mutedWhite text-sm">
                   <span className="mt-0.5">•</span>
                   Check if the QR code is valid and not expired

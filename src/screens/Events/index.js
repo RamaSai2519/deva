@@ -8,7 +8,7 @@ const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     return (
-        <section className="bg-black text-white min-h-screen w-full pt-16 md:pt-px relative" id="events">
+        <section className="bg-black text-white min-h-screen w-full pt-px relative" id="events">
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-3xl mx-auto text-left">
                     <h2 className="text-xl text-gray-400 mb-2 uppercase tracking-wide">GITAM</h2>

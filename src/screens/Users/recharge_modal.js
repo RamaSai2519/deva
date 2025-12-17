@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Modal, Button, InputNumber, Space, Typography, Card } from 'antd'
 import { WalletOutlined } from '@ant-design/icons'
+import GitCoin from "../../Icons/gitcoin"
 
 const { Text } = Typography
 
@@ -66,9 +67,10 @@ export function RechargeModal({ isOpen, onClose, user, onSubmit }) {
               </div>
               <div className="flex justify-between">
                 <Text type="secondary">Current Balance</Text>
-                <Text strong className="font-mono">
-                  ₹{user.balance.toLocaleString()}
-                </Text>
+                <div className="font-mono flex items-center justify-end gap-1">
+                  {user.balance?.toLocaleString() || '0'}
+                  <GitCoin className={'h-5 w-fit'} />
+                </div>
               </div>
             </Space>
           </Card>
@@ -83,8 +85,8 @@ export function RechargeModal({ isOpen, onClose, user, onSubmit }) {
               onChange={setAmount}
               min={1}
               step={1}
-              prefix="₹"
               size="large"
+              suffix={<GitCoin className={'h-5 w-fit'} />}
             />
 
             {/* Quick Amount Buttons */}
@@ -95,7 +97,8 @@ export function RechargeModal({ isOpen, onClose, user, onSubmit }) {
                   onClick={() => setAmount(quickAmount)}
                   className="font-mono"
                 >
-                  ₹{quickAmount}
+                  {quickAmount}
+                  <GitCoin className={'h-5 w-fit'} />
                 </Button>
               ))}
             </Space>
@@ -106,9 +109,10 @@ export function RechargeModal({ isOpen, onClose, user, onSubmit }) {
             <Card size="small">
               <div className="flex justify-between">
                 <Text type="secondary">New Balance</Text>
-                <Text strong className="font-mono text-blue-500">
-                  ₹{(user.balance + amount).toLocaleString()}
-                </Text>
+                <div className="font-mono text-blue-500 flex items-center justify-end gap-1">
+                  {(user.balance + amount).toLocaleString()}
+                  <GitCoin className={'h-5 w-fit'} />
+                </div>
               </div>
             </Card>
           )}

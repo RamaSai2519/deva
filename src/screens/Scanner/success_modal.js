@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import GitCoin from "../../Icons/gitcoin";
 
 
 export function SuccessModal({ isOpen, onClose, transactionData, transactionType = "payment" }) {
@@ -47,7 +48,9 @@ export function SuccessModal({ isOpen, onClose, transactionData, transactionType
 
         {!isCoupon && (
           <div className="text-center mb-8">
-            <span className="text-foreground text-4xl font-bold">${transactionData.amount}.00</span>
+            <GitCoin />
+            <span className="text-foreground text-4xl font-bold">
+              {transactionData.amount}</span>
           </div>
         )}
 

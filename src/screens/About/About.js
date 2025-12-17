@@ -41,7 +41,7 @@ const About = () => {
                     )}
                 </Suspense>
             </div>
-            <div className="pointer-events-none bg-[linear-gradient(to_bottom,_transparent_0%,_#000_100%)] w-full h-14 absolute bottom-0 ring-0 left-0 z-20" />
+            {!isDesktop && <div className="pointer-events-none bg-[linear-gradient(to_bottom,_transparent_0%,_#000_100%)] w-full h-14 absolute bottom-0 ring-0 left-0 z-20" />}
         </div>
     );
 };

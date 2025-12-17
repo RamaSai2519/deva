@@ -121,9 +121,9 @@ export function Account() {
             <div className="max-w-7xl h-full mx-auto">
                 <div className="flex w-full justify-between items-center">
                     {!isAdmin ? <h1 className="text-4xl font-bold text-white mb-8">My Account</h1> : <h1 className="text-lg font-bold text-mutedWhite">Admin</h1>}
-                    {/* Recharge User Button */}
                     <div className="flex gap-4">
-                        {profileData.is_admin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge User</button>}
+                        {(profileData.user_type === 'stall' || isAdmin) && <button onClick={() => navigate('/stalls')} className="mb-4 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">Stalls</button>}
+                        {isAdmin && <button onClick={() => navigate('/users')} className="mb-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">Recharge</button>}
                         <button onClick={logout} className="mb-4 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">Logout</button>
                     </div>
                 </div>

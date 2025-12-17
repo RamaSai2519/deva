@@ -86,7 +86,7 @@ const Team = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen sm:my-0 md:my-14 sm:py-16" id='team'>
+        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen sm:mt-0 md:mt-14 sm:py-16" id='team'>
             <div className="max-w-6xl mx-auto px-4 mb-16">
                 <h2 className="text-2xl md:text-[2.5rem] leading-tight text-center">
                     <span className="block md:hidden">

@@ -1,5 +1,6 @@
 import { Table, Button, Empty } from 'antd'
 import { WalletOutlined } from '@ant-design/icons'
+import GitCoin from '../../Icons/gitcoin'
 
 export function UserTable({ users, onRecharge, pagination, loading }) {
     const columns = [
@@ -31,8 +32,9 @@ export function UserTable({ users, onRecharge, pagination, loading }) {
             key: 'balance',
             align: 'right',
             render: (balance) => (
-                <span className="font-mono font-medium">
-                    ₹{balance.toLocaleString()}
+                <span className="font-mono font-medium flex items-center justify-end gap-1">
+                    {balance?.toLocaleString() || '0'}
+                    <GitCoin className={'h-5 w-fit'} />
                 </span>
             ),
         },

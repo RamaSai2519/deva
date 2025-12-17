@@ -17,21 +17,21 @@ const Intro = () => {
 
                     {/* Experience-driven lines — no borders, just text + subtle glow */}
                     <div className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-slate-300">
-                        <p className="flex items-center justify-center gap-3">
+                        <p className="flex items-center justify-center gap-1">
                             <span className="text-blue-400 font-semibold">Learn</span>
                             <span className="text-slate-500">in workshops & hands-on sessions</span>
                         </p>
-                        <p className="flex items-center justify-center gap-3">
-                            <span className="text-purple-400 font-semibold">Compete</span>
-                            <span className="text-slate-500">in coding contests & gaming tournaments</span>
-                        </p>
-                        <p className="flex items-center justify-center gap-3">
+                        <p className="flex items-center justify-center gap-1">
                             <span className="text-pink-400 font-semibold">Build</span>
                             <span className="text-slate-500">ideas into working prototypes</span>
                         </p>
-                        <p className="flex items-center justify-center gap-3">
+                        <p className="flex items-center justify-center gap-1">
                             <span className="text-sky-400 font-semibold">Play</span>
                             <span className="text-slate-500">explore & earn with Epoch Coins</span>
+                        </p>
+                        <p className="flex items-center justify-center gap-1">
+                            <span className="text-purple-400 font-semibold">Compete</span>
+                            <span className="text-slate-500">in coding contests & gaming tournaments</span>
                         </p>
                     </div>
 
