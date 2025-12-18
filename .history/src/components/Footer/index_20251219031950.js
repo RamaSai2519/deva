@@ -19,7 +19,7 @@ const Footer = () => {
                             <img
                                 src="Assets/images/epoch_logo.png"
                                 alt="Epoch"
-                                className="h-10 w-10 object-contain"
+                                className="h-10 w-80 object-contain"
                             />
                             <div className="flex flex-col">
                                 <span className="text-sm font-semibold tracking-[0.22em] uppercase text-slate-100">Epoch 4.0</span>

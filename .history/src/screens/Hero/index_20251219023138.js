@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useScrollPosition from '../../hooks/useScrollPosition';
 import useDeviceType from '../../hooks/useDeviceType';
 import StarfieldBG from '../../components/Backgrounds/StarField';
-import UniverseBG from '../../components/Backgrounds/Universe';
+import CircuitLinesBG from '../../components/Backgrounds/CircuitLines';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -21,9 +21,9 @@ const Hero = () => {
     }, []);
 
     return (
-        <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 md:pt-28 overflow-hidden">
+        <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
-            {isDesktop ? <UniverseBG paused={prefersReducedMotion} /> : <StarfieldBG />}
+            {isDesktop ? <CircuitLinesBG paused={prefersReducedMotion} /> : <StarfieldBG />}
 
             <div className="relative mb-6 sm:mb-8 flex flex-col items-center z-10">
                 <h1 className="text-[3.2rem] sm:text-[4.8rem] md:text-[6.5rem] lg:text-[15rem] font-bold flex items-center justify-center w-full">
@@ -40,7 +40,7 @@ const Hero = () => {
                         <span className="relative text-white">P</span>
                     </span>
                     {/* GitHub Logo and 4.0 */}
-                    <span className="inline-flex items-center justify-center w-[4.6em] h-[4.6em] sm:w-[2.4em] sm:h-[2.4em] md:w-[2.6em] md:h-[2.6em] lg:w-[1.85em] lg:h-[1.85em] relative">
+                    <span className="inline-flex items-center justify-center w-[5em] h-[5em] sm:w-[2.6em] sm:h-[2.6em] md:w-[2.8em] md:h-[2.8em] lg:w-[2em] lg:h-[2em] relative">
                         {!prefersReducedMotion && (
                             <span className="absolute inset-0 rounded-full bg-blue-500/25 blur-[22px] animate-[pulse_3s_ease-in-out_infinite]" />
                         )}

@@ -16,11 +16,15 @@ const Footer = () => {
                     {/* Column 1: Brand / About */}
                     <div className="space-y-4">
                         <div className="inline-flex items-center gap-3">
-                            <img
-                                src="Assets/images/epoch_logo.png"
-                                alt="Epoch"
-                                className="h-10 w-10 object-contain"
-                            />
+                            {/* Mini GitHub cat hologram */}
+                            <div className="relative h-10 w-10 rounded-2xl bg-black/70 border border-white/10 flex items-center justify-center overflow-hidden shadow-[0_0_26px_rgba(56,189,248,0.45)]">
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(248,250,252,0.22),_transparent_60%)] opacity-70" />
+                                <img
+                                    src="Assets/images/githubLogo.png"
+                                    alt="GitHub"
+                                    className="relative h-6 w-6 object-contain opacity-95 mix-blend-screen"
+                                />
+                            </div>
                             <div className="flex flex-col">
                                 <span className="text-sm font-semibold tracking-[0.22em] uppercase text-slate-100">Epoch 4.0</span>
                                 <span className="text-xs text-slate-400">GitHub Community Club & DoSL · GITAM Bengaluru</span>
@@ -74,7 +78,7 @@ const Footer = () => {
                             <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-400">Sponsors</span>
                             <div className="flex items-center gap-2">
                                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Official Coding Partner</span>
-                                <span className="text-[11px] text-slate-500">GeeksforGeeks | DosL | Gitam & more.</span>
+                                <span className="text-[11px] text-slate-500">GeeksforGeeks | DosL | GITAM</span>
                             </div>
                         </div>
                         <div className="flex items-center gap-2 sm:gap-3">

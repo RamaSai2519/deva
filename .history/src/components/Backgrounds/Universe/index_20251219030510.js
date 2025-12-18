@@ -35,7 +35,7 @@ export default function UniverseBG({ paused = false }) {
             centerAvoidR: 0,
         };
 
-        const pointer = { x: 0.5, y: 0.5 };
+        const mouse = { x: 0.5, y: 0.5 };
 
         const resize = () => {
             const dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
@@ -119,11 +119,6 @@ export default function UniverseBG({ paused = false }) {
 
             const dt = state.dt || 1 / 60;
 
-            // Interactivity: subtle parallax pull (stronger for bigger stars).
-            const px = pointer.x - 0.5;
-            const py = pointer.y - 0.5;
-            const parallax = clamp(Math.min(w, h) * 0.02, 10, 26);
-
             ctx.save();
             ctx.globalCompositeOperation = "source-over";
 
@@ -145,12 +140,8 @@ export default function UniverseBG({ paused = false }) {
                 const tw = 0.85 + 0.15 * Math.sin(state.t * s.twSpeed + s.twPhase);
                 const alpha = clamp(s.a * tw, 0.05, 1);
 
-                const par = (0.55 + s.r * 0.35);
-                const rx = s.x + px * parallax * par;
-                const ry = s.y + py * parallax * par;
-
                 ctx.beginPath();
-                ctx.arc(rx, ry, s.r, 0, Math.PI * 2);
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
                 ctx.fillStyle = rgbaFromRgb(STAR_RGB, alpha);
                 ctx.fill();
             }
@@ -172,24 +163,16 @@ export default function UniverseBG({ paused = false }) {
             rafId = window.requestAnimationFrame(tick);
         };
 
-        const onPointerMove = (event) => {
-            if (paused) return;
-            pointer.x = clamp(event.clientX / Math.max(1, window.innerWidth), 0, 1);
-            pointer.y = clamp(event.clientY / Math.max(1, window.innerHeight), 0, 1);
-        };
-
-        const onPointerLeave = () => {
-            if (paused) return;
-            pointer.x = 0.5;
-            pointer.y = 0.5;
+        const onMouseMove = (event) => {
+            mouse.x = clamp(event.clientX / Math.max(1, window.innerWidth), 0, 1);
+            mouse.y = clamp(event.clientY / Math.max(1, window.innerHeight), 0, 1);
         };
 
         resize();
         init();
 
         window.addEventListener("resize", resize);
-        window.addEventListener("pointermove", onPointerMove, { passive: true });
-        window.addEventListener("pointerleave", onPointerLeave, { passive: true });
+        window.addEventListener("mousemove", onMouseMove);
 
         // First paint
         ctx.fillStyle = "rgba(0,0,0,1)";
@@ -202,8 +185,7 @@ export default function UniverseBG({ paused = false }) {
 
         return () => {
             window.removeEventListener("resize", resize);
-            window.removeEventListener("pointermove", onPointerMove);
-            window.removeEventListener("pointerleave", onPointerLeave);
+            window.removeEventListener("mousemove", onMouseMove);
             window.cancelAnimationFrame(rafId);
         };
     }, [paused]);
