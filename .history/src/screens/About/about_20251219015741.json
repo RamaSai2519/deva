@@ -1,0 +1,79 @@
+{
+    "overview": {
+        "title": "Epoch 4.0: Unleashing Tech Creativity and Innovation",
+        "summary": "Epoch 4.0 is a two-day tech fest by the GitHub Community Club and DoSL at GITAM University, Bengaluru. It brings together developers, designers, gamers, and innovators for hands-on workshops, coding contests, gaming tournaments, and experience zones.",
+        "objectives": [
+            "Promote technology by helping students explore, learn, and innovate across different domains.",
+            "Build teamwork and collaboration through group activities and flagship contests.",
+            "Encourage creative expression via tech challenges, games, and experience-based stalls.",
+            "Strengthen the GitHub Community at GITAM as a hub for tech enthusiasts.",
+            "Blend learning and fun so participants leave inspired, confident, and connected."
+        ]
+    },
+    "eventDetails": {
+        "dates": "29th & 30th December 2025",
+        "venue": "GITAM University, Bengaluru Campus",
+        "organizedBy": "GitHub Community Club @ GITAM University & DoSL",
+        "targetAudience": "Students from all schools at GITAM with an interest in technology, gaming, and innovation.",
+        "expectedParticipants": "1000+ students"
+    },
+    "highlights": [
+        "GeeksforGeeks-powered coding contest to sharpen problem-solving and DSA skills.",
+        "Open Source Contribution workshop to learn collaboration, PRs, and contributing on GitHub.",
+        "Tech workshop focused on Data Structures and Algorithms for interviews.",
+        "GitHub Pages workshop to build and deploy a personal portfolio or project site.",
+        "Gaming tournaments, VR booths, and nostalgia-themed setups Powered by GitHub Community.",
+        "Interactive stalls and zones where students can explore, recharge coins, and connect with peers."
+    ],
+    "teamMembers": [
+        {
+            "id": 1,
+            "name": "Greeshmitha B",
+            "role": "President",
+            "image": "/Assets/images/Greeshmitha .jpg",
+            "description": "Driving the vision and execution — making sure everything comes together seamlessly."
+        },
+        {
+            "id": 2,
+            "name": "Rohit R",
+            "role": "Vice President",
+            "image": "/Assets/images/Rohit_R.jpg",
+            "description": "Building the tech backbone — from workshops to competitions to keeping everything running smoothly."
+        },
+        {
+            "id": 3,
+            "name": "Afreen D",
+            "role": "Outreach coordinator",
+            "image": "/Assets/images/Afreen.jpg",
+            "description": "Shaping the visual identity you see across posters, social media, and the campus."
+        },
+        {
+            "id": 4,
+            "name": "Rama Sathya Sai",
+            "role": "Tech Lead",
+            "image": "/Assets/images/ram.jpg",
+            "description": "Making sure every event, stall, and zone runs without a hitch — from logistics to permissions."
+        },
+        {
+            "id": 5,
+            "name": "Nikhil",
+            "role": "Repo Maintainer",
+            "image": "/Assets/images/Nikhil .jpg",
+            "description": "Spreading the word and bringing the campus into Epoch 4.0."
+        },
+        {
+            "id": 6,
+            "name": "Roshini K",
+            "role": "Media Team",
+            "image": "/Assets/images/Roshini .jpg",
+            "description": "Capturing the moments and keeping the community updated throughout the fest."
+        },
+        {
+            "id": 7,
+            "name": "7",
+            "role": "Partnership Team",
+            "image": "/Assets/images/Rohit_R.jpg",
+            "description": "Building partnerships that bring more value to everyone at Epoch."
+        }
+    ]
+}
