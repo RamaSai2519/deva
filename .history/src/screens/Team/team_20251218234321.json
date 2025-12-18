@@ -62,7 +62,7 @@
             "name": "Rohit",
             "role": "Security Lead",
             "department": "Security",
-            "image": "Assets/images/Rohit_R.jpg",
+            "image": "Assets/images/Rohit_security.jpg",
             "description": "Keeps everyone safe so the fest runs smoothly",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -95,10 +95,10 @@
         },
         {
             "id": 10,
-            "name": "Venkat Sai",
-            "role": "Finance Lead",
-            "department": "Finance",
-            "image": "Assets/images/venkat sai .jpg",
+            "name": "Venkat ",
+            "role": "Experience Zones Lead",
+            "department": "Experiences",
+            "image": "Assets/images/test.jpg",
             "description": "Curates the stalls and zones that make Epoch memorable",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -107,7 +107,7 @@
             "name": "Core Member C",
             "role": "Gaming Lead",
             "department": "Gaming",
-            "image": "Assets/images/Ruchitha.jpg",
+            "image": "Assets/images/test.jpg",
             "description": "Builds the gaming and VR experiences people talk about",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -116,7 +116,7 @@
             "name": "Core Member D",
             "role": "Learning Lead",
             "department": "Learning",
-            "image": "Assets/images/Saloni Raj.jpg",
+            "image": "Assets/images/test.jpg",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         }

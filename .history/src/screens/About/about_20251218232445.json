@@ -37,14 +37,14 @@
             "id": 2,
             "name": "2",
             "role": "Tech Team",
-            "image": "/Assets/images/ram.jpg",
+            "image": "/Assets/images/lechakrawarthy.jpeg",
             "description": "Building the tech backbone — from workshops to competitions to keeping everything running smoothly."
         },
         {
             "id": 3,
             "name": "3",
             "role": "Design Team",
-            "image": "/Assets/images/lechakrawarthy.jpg",
+            "image": "/Assets/images/lechakrawarthy.jpeg",
             "description": "Shaping the visual identity you see across posters, social media, and the campus."
         },
         {
@@ -65,14 +65,14 @@
             "id": 6,
             "name": "6",
             "role": "Media Team",
-            "image": "/Assets/images/Roshini .jpg",
+            "image": "/Assets/images/Roshini_logistics.jpg",
             "description": "Capturing the moments and keeping the community updated throughout the fest."
         },
         {
             "id": 7,
             "name": "7",
             "role": "Partnership Team",
-            "image": "/Assets/images/Rohit_R.jpg",
+            "image": "/Assets/images/Rohit_security.jpg",
             "description": "Building partnerships that bring more value to everyone at Epoch."
         }
     ]

@@ -14,46 +14,46 @@
     "teamMembers": [
         {
             "id": 1,
-            "name": "Santosh",
+            "name": "Afreen",
             "role": "Design Lead",
             "department": "Design",
-            "image": "Assets/images/lechakrawarthy.jpg",
+            "image": "Assets/images/sa.jpg",
             "description": "Shapes the visual identity of Epoch across posters, socials, and on-ground experiences",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 2,
-            "name": "Santosh",
+            "name": "Greeshmitha",
             "role": "Technical Support Lead",
             "department": "Tech",
-            "image": "Assets/images/santosh.jpg",
+            "image": "Assets/images/Greeshmitha_tech.jpg",
             "description": "Keeps the tech infrastructure running smoothly throughout the fest",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 3,
-            "name": "Lakshmi Srujana",
+            "name": "Harinmayi",
             "role": "Design Manager",
             "department": "Design",
-            "image": "Assets/images/lakshmi_core.jpg",
+            "image": "Assets/images/Harinmayi _Design.jpg",
             "description": "Brings creative ideas to life across all visual touchpoints",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 4,
-            "name": "Roshini",
+            "name": "Nikhil",
             "role": "Content Lead",
             "department": "Operations",
-            "image": "Assets/images/Roshini .jpg",
+            "image": "Assets/images/Nikhil_content.jpg",
             "description": "Crafts the story and messaging that brings Epoch to the campus",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 5,
-            "name": "Nikhil",
+            "name": "Roshini",
             "role": "Logistics Lead",
             "department": "Logistics",
-            "image": "Assets/images/Nikhil .jpg",
+            "image": "Assets/images/Roshini_logistics.jpg",
             "description": "Ensures every piece is in the right place at the right time",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -62,43 +62,43 @@
             "name": "Rohit",
             "role": "Security Lead",
             "department": "Security",
-            "image": "Assets/images/Rohit_R.jpg",
+            "image": "Assets/images/Rohit_security.jpg",
             "description": "Keeps everyone safe so the fest runs smoothly",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 7,
-            "name": "Lakshmi Srujana",
+            "name": "Deeksha",
             "role": "Core Team Lead",
             "department": "Core",
-            "image": "Assets/images/lakshmi_core.jpg",
+            "image": "Assets/images/Deeksha_core.jpg",
             "description": "Drives the vision and execution — brings everything together seamlessly",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 8,
-            "name": "Devi Priya",
-            "role": "Outreach Manager",
+            "name": "Lakshmi",
+            "role": "Outreach Lead",
             "department": "Outreach",
-            "image": "Assets/images/Devi Priya .jpg",
+            "image": "Assets/images/lakshmi_core.jpg",
             "description": "Connects with the campus and builds the Epoch community",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 9,
-            "name": "Chandrika",
-            "role": "Content Manager",
-            "department": "Content",
-            "image": "Assets/images/chandrika.png",
+            "name": "Core Member A",
+            "role": "Operations Coordinator",
+            "department": "Operations",
+            "image": "Assets/images/test.jpg",
             "description": "On the ground making sure every zone runs without a hitch",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
             "id": 10,
-            "name": "Venkat Sai",
-            "role": "Finance Lead",
-            "department": "Finance",
-            "image": "Assets/images/venkat sai .jpg",
+            "name": "Core Member B",
+            "role": "Experience Zones Lead",
+            "department": "Experiences",
+            "image": "Assets/images/test.jpg",
             "description": "Curates the stalls and zones that make Epoch memorable",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -107,7 +107,7 @@
             "name": "Core Member C",
             "role": "Gaming Lead",
             "department": "Gaming",
-            "image": "Assets/images/Ruchitha.jpg",
+            "image": "Assets/images/test.jpg",
             "description": "Builds the gaming and VR experiences people talk about",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -116,7 +116,7 @@
             "name": "Core Member D",
             "role": "Learning Lead",
             "department": "Learning",
-            "image": "Assets/images/Saloni Raj.jpg",
+            "image": "Assets/images/test.jpg",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         }
