@@ -47,10 +47,10 @@ export function SuccessModal({ isOpen, onClose, transactionData, transactionType
         </p>
 
         {!isCoupon && (
-          <div className="text-center mb-8">
-            <GitCoin />
+          <div className="text-center mb-8 flex items-center justify-center space-x-2">
             <span className="text-foreground text-4xl font-bold">
               {transactionData.amount}</span>
+            <GitCoin />
           </div>
         )}
 
