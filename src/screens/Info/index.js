@@ -76,25 +76,25 @@ const Info = () => {
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Duration</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">48 Hours</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Non-stop learning, competition & experiences</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-400">Non-stop learning, competition & experiences</p>
                         </div>
 
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Participants</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">1000+</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Students from all schools at GITAM</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-400">Students from all schools at GITAM</p>
                         </div>
 
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Events & Zones</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">15+</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Contests, workshops, gaming, stalls & VR zones</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-400">Contests, workshops, gaming, stalls & VR zones</p>
                         </div>
 
                         <div className="flex flex-col items-center">
                             <p className="text-[11px] sm:text-xs md:text-sm uppercase tracking-[0.18em] text-gray-400 mb-1">Mentors & Speakers</p>
                             <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-1">50+</h2>
-                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-500">Industry & community mentors, speakers & volunteers</p>
+                            <p className="text-[11px] sm:text-xs md:text-sm text-gray-400">Industry & community mentors, speakers & volunteers</p>
                         </div>
                     </div>
                 </div>

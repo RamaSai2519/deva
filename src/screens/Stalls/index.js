@@ -154,7 +154,7 @@ export default function QRGeneratorPage() {
                                 </div>
 
                                 <div className="bg-white p-4 rounded-lg inline-block">
-                                    <img src={qrData.qrCodeUrl || "/placeholder.svg"} alt="Generated QR Code" className="w-64 h-64" />
+                                    <img src={qrData.qrCodeUrl || "/placeholder.svg"} alt="Generated QR Code" width={256} height={256} className="w-64 h-64" />
                                 </div>
 
                                 <div className="flex gap-3 w-full">

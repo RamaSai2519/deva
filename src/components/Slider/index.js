@@ -43,6 +43,8 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                                     alt={event.title}
                                     loading="lazy"
                                     decoding="async"
+                                    width={1200}
+                                    height={630}
                                     className="w-full h-auto max-h-[50vh] object-contain rounded-xl shadow-lg"
                                 />
                             </div>
@@ -54,8 +56,9 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
             {/* Category Scroller */}
             <div className="flex justify-center items-center pt-8 w-full">
                 <button
-                    className={`border-r ${currentSlide !== 0 ? "animate-fade-in" : "animate-fade-out"}`}
+                    className={`border-r px-3 py-2 ${currentSlide !== 0 ? "animate-fade-in" : "animate-fade-out"}`}
                     onClick={handlePrev}
+                    aria-label="Previous event"
                 >
                     <LeftOutlined className="text-white" />
                 </button>
@@ -74,7 +77,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                                 onClick={() => setCurrentSlide(index)}
                                 className={`text-sm text-nowrap w-full pb-1 transition-all duration-300 ${currentSlide === index
                                     ? "text-white font-bold border-b-2 border-blue-400 shadow-[0_2px_8px_rgba(59,130,246,0.4)]"
-                                    : "text-slate-500 hover:text-slate-300"
+                                    : "text-slate-400 hover:text-slate-200"
                                     }`}
                             >
                                 {event.title}
@@ -83,8 +86,9 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                     </div>
                 </div>
                 <button
-                    className={`border-l ${currentSlide !== events.length - 1 ? "animate-fade-in" : "animate-fade-out"}`}
+                    className={`border-l px-3 py-2 ${currentSlide !== events.length - 1 ? "animate-fade-in" : "animate-fade-out"}`}
                     onClick={handleNext}
+                    aria-label="Next event"
                 >
                     <RightOutlined className="text-white" />
                 </button>
@@ -105,18 +109,32 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                     <p className="text-xs sm:text-sm text-sky-300/80 mb-3 sm:mb-4">
                         Earn Epoch Coins by participating in this event.
                     </p>
-                    <button
-                        type="button"
-                        onClick={() => {
-                            setActiveEvent(events[currentSlide]);
-                            setShowPopup(true);
-                        }}
-                        className="md:mb-10 mb-6 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold text-white bg-lightBlack/80 border border-blue-400/30 hover:border-blue-400/50 hover:bg-lightBlack transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50"
-                        aria-label="Explore this event details"
-                    >
-                        <span>Explore this event</span>
-                        <span className="text-base sm:text-lg" aria-hidden="true">→</span>
-                    </button>
+                    <div className="flex flex-col sm:flex-row gap-3 items-center justify-center sm:justify-start md:mb-10 mb-6">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setActiveEvent(events[currentSlide]);
+                                setShowPopup(true);
+                            }}
+                            className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold text-white bg-lightBlack/80 border border-blue-400/30 hover:border-blue-400/50 hover:bg-lightBlack transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50"
+                            aria-label="Explore this event details"
+                        >
+                            <span>Explore this event</span>
+                            <span className="text-base sm:text-lg" aria-hidden="true">→</span>
+                        </button>
+                        {events[currentSlide]?.registrationUrl && (
+                            <a
+                                href={events[currentSlide].registrationUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm sm:text-base font-semibold text-white bg-blue-500/90 hover:bg-blue-500 border border-blue-400/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/50"
+                                aria-label="Register for this event"
+                            >
+                                <span>Register now</span>
+                                <span className="text-base sm:text-lg" aria-hidden="true">↗</span>
+                            </a>
+                        )}
+                    </div>
                 </div>
             </div>
 

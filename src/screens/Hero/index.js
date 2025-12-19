@@ -50,14 +50,23 @@ const Hero = () => {
                         )}
                         <span className="absolute inset-0 blur-[14px] opacity-80">
                             <img
-                                src="Assets/images/githubLogo.png"
+                                src="Assets/images/githubLogo.webp"
                                 alt=""
+                                width={512}
+                                height={512}
+                                loading="eager"
+                                decoding="async"
                                 className="w-full h-full object-contain"
                             />
                         </span>
                         <img
                             src="Assets/images/githubLogo.png"
                             alt="GitHub Logo"
+                            width={512}
+                            height={512}
+                            loading="eager"
+                            decoding="async"
+                            fetchpriority="high"
                             className="w-full h-full object-contain relative"
                         />
                         <span className="absolute text-mutedWhite/70 text-[1.7em] sm:text-[0.65em] md:text-[0.75em] drop-shadow-[0_0_6px_rgba(15,23,42,0.9)]">
@@ -79,7 +88,7 @@ const Hero = () => {
                 </h1>
             </div>
 
-            <div className='lg:mr-14 flex flex-col items-center max-w-3xl z-10'>
+            <div className='lg:mr-14 flex flex-col items-center max-w-3xl z-10 pb-16 sm:pb-20'>
                 <p className="text-[11px] sm:text-xs font-semibold tracking-[0.24em] uppercase text-slate-400 mb-3">
                     GitHub Community Club presents
                 </p>
@@ -110,13 +119,16 @@ const Hero = () => {
                 >
                     Explore Events →
                 </a>
-                <p className="text-lg sm:text-xl md:text-2xl relative mt-3 sm:mt-4">
+            </div>
+
+            <div className="absolute bottom-10 sm:bottom-12 left-0 right-0 z-10 px-4">
+                <p className="text-lg sm:text-xl md:text-2xl relative text-center">
                     <span className="absolute inset-0 blur-[10px] text-blue-400/65">29th - 30th December 2025</span>
                     <span className="absolute inset-0 blur-[5px] text-blue-300/80">29th - 30th December 2025</span>
                     <span className="relative text-white font-medium tracking-wide">29th - 30th December 2025</span>
                 </p>
             </div>
-            <div className={`bg-[linear-gradient(to_bottom,_transparent_0%,_black_100%)] ${isScrolled ? "animate-fade-in" : "animate-fade-out"} w-full h-20 absolute bottom-0 ring-0 left-0 z-20`} />
+            <div className={`pointer-events-none bg-[linear-gradient(to_bottom,_transparent_0%,_black_100%)] ${isScrolled ? "animate-fade-in" : "animate-fade-out"} w-full h-20 absolute bottom-0 ring-0 left-0 z-0`} />
         </div>
     );
 };

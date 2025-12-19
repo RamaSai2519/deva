@@ -17,8 +17,12 @@ const Footer = () => {
                     <div className="space-y-4">
                         <div className="inline-flex items-center gap-3">
                             <img
-                                src="Assets/images/epoch_logo.png"
+                                src="Assets/images/epoch_logo.webp"
                                 alt="Epoch"
+                                width={40}
+                                height={40}
+                                loading="lazy"
+                                decoding="async"
                                 className="h-10 w-10 object-contain"
                             />
                             <div className="flex flex-col">
@@ -74,25 +78,25 @@ const Footer = () => {
                             <span className="text-[11px] font-semibold tracking-[0.25em] uppercase text-slate-400">Sponsors</span>
                             <div className="flex items-center gap-2">
                                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">Official Coding Partner</span>
-                                <span className="text-[11px] text-slate-500">GeeksforGeeks | DosL | Gitam & more.</span>
+                                <span className="text-[11px] text-slate-400">GeeksforGeeks | DosL | Gitam & more.</span>
                             </div>
                         </div>
                         <div className="flex items-center gap-2 sm:gap-3">
                             <a href="https://www.geeksforgeeks.org/" target="_blank" rel="noopener noreferrer" className="h-10 px-3 rounded-md border border-slate-700/60 bg-black/40 flex items-center justify-center hover:border-slate-600 transition-colors">
-                                <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks" className="h-6 opacity-80 hover:opacity-100 transition-opacity" />
+                                <img src="https://media.geeksforgeeks.org/gfg-gg-logo.svg" alt="GeeksforGeeks" width={120} height={24} loading="lazy" decoding="async" className="h-6 opacity-80 hover:opacity-100 transition-opacity" />
                             </a>
                             <div className="h-10 px-3 rounded-md border border-slate-700/60 bg-black/40 flex items-center justify-center">
-                                <img src="Assets/images/dosl.png" alt="DoSL" className="h-7 opacity-80" />
+                                <img src="Assets/images/dosl.webp" alt="DoSL" width={112} height={28} loading="lazy" decoding="async" className="h-7 opacity-80" />
                             </div>
                             <div className="h-10 px-3 rounded-md border border-slate-700/60 bg-black/40 flex items-center justify-center">
-                                <img src="Assets/images/gitam.png" alt="GITAM" className="h-7 opacity-80" />
+                                <img src="Assets/images/gitam.webp" alt="GITAM" width={112} height={28} loading="lazy" decoding="async" className="h-7 opacity-80" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* Legal strip */}
-                <div className="border-t border-white/5 pt-4 mt-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-500">
+                <div className="border-t border-white/5 pt-4 mt-4 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
                     <p>© {currentYear} GitHub Community Club · GITAM Bengaluru. All rights reserved.</p>
                     <p>Built with ❤️ by the GitHub Community Club at GITAM for Epoch 4.0.</p>
                 </div>

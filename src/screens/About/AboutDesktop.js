@@ -1,4 +1,4 @@
-import { useEffect,  useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import PropTypes from 'prop-types';
 
 const AboutDesktop = ({
@@ -20,8 +20,8 @@ const AboutDesktop = ({
         if (currentRef) observer.observe(currentRef);
 
         return () => { if (currentRef) observer.unobserve(currentRef) };
-    
-    // eslint-disable-next-line
+
+        // eslint-disable-next-line
     }, [intersectionThreshold]);
 
     const positions = useMemo(() => [
@@ -40,12 +40,12 @@ const AboutDesktop = ({
             className={`relative w-full h-full flex items-center justify-center ${isVisible ? "parent-animate-in" : "animate-fade-out"}`}
         >
             <div className="absolute w-[200px] h-[100px] md:w-[300px] md:h-[150px] lg:w-[400px] lg:h-[200px] z-20 rounded-lg overflow-hidden">
-                <img src={mainImage} alt="Team" className="w-full h-full object-cover" aria-label="Team image" />
+                <img src={mainImage} alt="Team" width={800} height={400} loading="lazy" decoding="async" className="w-full h-full object-cover" aria-label="Team image" />
             </div>
 
             {/* GitHub Community Club credit */}
             <div className="absolute top-[280px] md:top-[320px] lg:top-[380px] z-30 text-center">
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-slate-400">
                     Powered by the GitHub Community Club
                 </p>
             </div>
@@ -62,7 +62,7 @@ const AboutDesktop = ({
                         }}
                     >
                         <div className="flex items-start gap-4">
-                            <img src={member.image} alt={member.name} className="w-16 h-16 rounded-lg object-cover" aria-label={`${member.name}'s profile picture`} />
+                            <img src={member.image} alt={member.name} width={64} height={64} loading="lazy" decoding="async" className="w-16 h-16 rounded-lg object-cover" aria-label={`${member.name}'s profile picture`} />
                             <div>
                                 <h3 className="text-lg font-semibold group-hover:text-white transition-colors">{member.name}</h3>
                                 <p className="text-blue-400 text-sm group-hover:text-blue-300 transition-colors">{member.role}</p>

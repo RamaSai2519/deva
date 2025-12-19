@@ -44,13 +44,17 @@ const AboutMobile = ({
                 <img
                     src={mainImage}
                     alt="Team"
+                    width={800}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                     aria-label="Team image"
                 />
             </div>
 
             {/* GitHub Community Club credit */}
-            <p className="text-xs text-slate-500 text-center mb-4">
+            <p className="text-xs text-slate-400 text-center mb-4">
                 Powered by the GitHub Community Club
             </p>
             <div className="">
@@ -70,6 +74,10 @@ const AboutMobile = ({
                             <img
                                 src={member.image}
                                 alt={member.name}
+                                width={64}
+                                height={64}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-16 h-16 rounded-lg object-cover"
                                 aria-label={`${member.name}'s profile picture`}
                             />
