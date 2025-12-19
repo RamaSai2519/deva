@@ -17,6 +17,15 @@ const Notify = () => {
     };
 
     const onFinish = async (values) => {
+        if (Array.isArray(values.filter_value)) {
+            if (values.filter_value.length > 1) {
+                message.error('Please select only one filter value');
+                setLoading(false);
+                return;
+            }
+            values.filter_value = values.filter_value[0];
+        }
+
         setLoading(true);
         try {
             const response = await Raxios.post('/notify', values);
