@@ -160,7 +160,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                                     rel="noreferrer"
                                     className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500 hover:bg-blue-400 text-xs sm:text-sm font-semibold text-white shadow-[0_10px_30px_rgba(37,99,235,0.6)] transition-colors"
                                 >
-                                    <span>Register now </span>
+                                    <span>Register now on Luma</span>
                                     <span className="ml-2 text-base">↗</span>
                                 </a>
                             </div>

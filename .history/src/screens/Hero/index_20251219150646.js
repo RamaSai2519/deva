@@ -7,9 +7,9 @@ import UniverseBG from '../../components/Backgrounds/Universe';
 
 const Hero = () => {
     const navigate = useNavigate();
-    const { isScrolled, scrolledHero } = useScrollPosition('1vh');
+    const { isScrolled } = useScrollPosition('1vh');
     const isDesktop = useDeviceType();
-    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+                    Explore Events 
 
     useEffect(() => {
         if (typeof window === 'undefined' || !window.matchMedia) return;
@@ -23,11 +23,7 @@ const Hero = () => {
     return (
         <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 md:pt-28 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
-            {isDesktop ? (
-                <UniverseBG paused={prefersReducedMotion || scrolledHero} />
-            ) : (
-                <StarfieldBG paused={prefersReducedMotion || scrolledHero} />
-            )}
+            {isDesktop ? <UniverseBG paused={prefersReducedMotion} /> : <StarfieldBG />}
 
             <div className="relative mb-6 sm:mb-8 flex flex-col items-center z-10">
                 <h1 className="text-[3.2rem] sm:text-[4.8rem] md:text-[6.5rem] lg:text-[15rem] font-bold flex items-center justify-center w-full">
@@ -94,9 +90,11 @@ const Hero = () => {
                         <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
                     </div>
                 </button>
+                {/* Microcopy under CTA */}
                 <p className="mt-1 text-xs sm:text-sm text-slate-400">
                     Limited seats · Free entry · Open to all students
                 </p>
+                {/* Sub-headline */}
                 <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl font-semibold text-slate-200 max-w-2xl leading-relaxed">
                     48 Hours. Learn. Compete. Build. Play. — Powered by Github Community
                 </p>
@@ -105,11 +103,12 @@ const Hero = () => {
                 </p>
                 <a
                     href="#events"
-                    className="inline-block mt-2 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                    className="inline-flex items-center justify-center mt-3 px-4 py-2 rounded-full bg-lightBlack/70 border border-sky-400/25 text-sm sm:text-base font-medium text-sky-200 hover:text-white hover:border-sky-400/40 hover:bg-lightBlack/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/50"
                     aria-label="Explore events section"
                 >
                     Explore Events →
                 </a>
+                {/* Dates */}
                 <p className="text-lg sm:text-xl md:text-2xl relative mt-3 sm:mt-4">
                     <span className="absolute inset-0 blur-[10px] text-blue-400/65">29th - 30th December 2025</span>
                     <span className="absolute inset-0 blur-[5px] text-blue-300/80">29th - 30th December 2025</span>

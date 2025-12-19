@@ -7,7 +7,7 @@ import UniverseBG from '../../components/Backgrounds/Universe';
 
 const Hero = () => {
     const navigate = useNavigate();
-    const { isScrolled, scrolledHero } = useScrollPosition('1vh');
+    const { isScrolled } = useScrollPosition('1vh');
     const isDesktop = useDeviceType();
     const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -23,11 +23,7 @@ const Hero = () => {
     return (
         <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 md:pt-28 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
-            {isDesktop ? (
-                <UniverseBG paused={prefersReducedMotion || scrolledHero} />
-            ) : (
-                <StarfieldBG paused={prefersReducedMotion || scrolledHero} />
-            )}
+            {isDesktop ? <UniverseBG paused={prefersReducedMotion} /> : <StarfieldBG />}
 
             <div className="relative mb-6 sm:mb-8 flex flex-col items-center z-10">
                 <h1 className="text-[3.2rem] sm:text-[4.8rem] md:text-[6.5rem] lg:text-[15rem] font-bold flex items-center justify-center w-full">

@@ -7,7 +7,7 @@ import UniverseBG from '../../components/Backgrounds/Universe';
 
 const Hero = () => {
     const navigate = useNavigate();
-    const { isScrolled, scrolledHero } = useScrollPosition('1vh');
+    const { isScrolled } = useScrollPosition('1vh');
     const isDesktop = useDeviceType();
     const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
@@ -23,11 +23,7 @@ const Hero = () => {
     return (
         <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 md:pt-28 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
-            {isDesktop ? (
-                <UniverseBG paused={prefersReducedMotion || scrolledHero} />
-            ) : (
-                <StarfieldBG paused={prefersReducedMotion || scrolledHero} />
-            )}
+            {isDesktop ? <UniverseBG paused={prefersReducedMotion} /> : <StarfieldBG />}
 
             <div className="relative mb-6 sm:mb-8 flex flex-col items-center z-10">
                 <h1 className="text-[3.2rem] sm:text-[4.8rem] md:text-[6.5rem] lg:text-[15rem] font-bold flex items-center justify-center w-full">
@@ -105,10 +101,29 @@ const Hero = () => {
                 </p>
                 <a
                     href="#events"
-                    className="inline-block mt-2 text-xs sm:text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                    className="relative mt-4 inline-flex group focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/50 rounded-full"
                     aria-label="Explore events section"
+                    title="Jump to Events"
                 >
-                    Explore Events →
+                    <span className="relative z-10 inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm sm:text-base font-semibold text-white bg-black/30 group-hover:bg-black/20 transition-colors">
+                        Explore Events
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            className="w-4 h-4 opacity-90 group-hover:opacity-100 transition-opacity"
+                            aria-hidden="true"
+                        >
+                            <path
+                                fillRule="evenodd"
+                                d="M3 10a.75.75 0 0 1 .75-.75h10.69l-3.22-3.22a.75.75 0 1 1 1.06-1.06l4.5 4.5c.3.3.3.77 0 1.06l-4.5 4.5a.75.75 0 1 1-1.06-1.06l3.22-3.22H3.75A.75.75 0 0 1 3 10Z"
+                                clipRule="evenodd"
+                            />
+                        </svg>
+                    </span>
+                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/30 to-purple-400/30 p-[1px]">
+                        <span className="block h-full w-full rounded-full bg-lightBlack/70 group-hover:bg-lightBlack/85 transition-colors" />
+                    </span>
                 </a>
                 <p className="text-lg sm:text-xl md:text-2xl relative mt-3 sm:mt-4">
                     <span className="absolute inset-0 blur-[10px] text-blue-400/65">29th - 30th December 2025</span>
