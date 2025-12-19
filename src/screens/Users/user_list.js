@@ -77,13 +77,18 @@ export function UserListPage() {
         <div className="min-h-screen py-8 px-4 overflow-auto">
             <div className="max-w-7xl mx-auto">
                 <Space direction="vertical" size="large" className="w-full mb-8">
-                    <Space align="center" size="middle">
-                        <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-500/10">
-                            <UserOutlined className="text-xl text-blue-500" />
+                    <Space align="center" size="middle" className="w-full justify-between items-end">
+                        <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-blue-500/10">
+                                <UserOutlined className="text-xl text-blue-500" />
+                            </div>
+                            <div>
+                                <Title level={2} className="!m-0">Users</Title>
+                                <Text type="secondary">Manage and view all registered users</Text>
+                            </div>
                         </div>
-                        <div>
-                            <Title level={2} className="!m-0">Users</Title>
-                            <Text type="secondary">Manage and view all registered users</Text>
+                        <div className="">
+                            <Text type="secondary">Total Users: {totalUsers}</Text>
                         </div>
                     </Space>
                 </Space>

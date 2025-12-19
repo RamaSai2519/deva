@@ -42,7 +42,7 @@ const CreateStallModal = ({ isOpen, onClose }) => {
                 action: 'register',
                 name: formData.name,
                 password: formData.password,
-                email: 'ramasathyasai2519@gitam.in',
+                email: 'lsreeniv@gitam.in',
                 user_type: 'stall'
             });
             if (response.status === 200) {
