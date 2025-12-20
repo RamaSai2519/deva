@@ -29,7 +29,7 @@ const protectedRoutes = [
 ];
 
 const App = () => {
-  const version = '1.7.0';
+  const version = '1.7.3';
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
   useScrollTo();
