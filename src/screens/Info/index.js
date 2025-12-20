@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const TimeUnit = ({ value, label }) => (
     <div className="relative group">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg blur opacity-40 group-hover:opacity-40 transition duration-1000"></div>
         <div className="relative bg-black rounded-lg flex flex-col items-center p-3 sm:p-4 md:p-6">
             <span className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[80px] font-bold text-white mb-1 sm:mb-2">
                 {String(value).padStart(2, '0')}
