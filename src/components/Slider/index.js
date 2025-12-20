@@ -109,7 +109,7 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
                     <p className="text-xs sm:text-sm text-sky-300/80 mb-3 sm:mb-4">
                         Earn Epoch Coins by participating in this event.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-3 items-center justify-center sm:justify-start md:mb-10 mb-6">
+                    <div className="flex gap-3 flex-wrap md:mb-10 mb-6">
                         <button
                             type="button"
                             onClick={() => {

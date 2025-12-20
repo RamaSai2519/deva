@@ -7,8 +7,8 @@ import UniverseBG from '../../components/Backgrounds/Universe';
 
 const Hero = () => {
     const navigate = useNavigate();
-    const { isScrolled, scrolledHero } = useScrollPosition('1vh');
     const isDesktop = useDeviceType();
+    const { scrolledHero } = useScrollPosition('1vh');
     const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div id='hero' className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 md:pt-28 overflow-hidden">
+        <div id='hero' className="relative min-h-screen max-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 sm:pt-24 md:pt-28 overflow-hidden">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0.32),transparent_60%)]" />
             {isDesktop ? (
                 <UniverseBG paused={prefersReducedMotion || scrolledHero} />
@@ -96,7 +96,7 @@ const Hero = () => {
                     className="relative bg-lightBlack border border-transparent hover:border-transparent rounded-full px-8 py-3 text-lg font-medium mb-4 group"
                     onClick={() => navigate('/account')}
                 >
-                    <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent group-hover:text-blue-400 bg-clip-text transition-colors duration-300">
+                    <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent bg-clip-text transition-colors duration-300">
                         Register Now
                     </span>
                     <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-100 p-[1px]">
@@ -119,16 +119,12 @@ const Hero = () => {
                 >
                     Explore Events →
                 </a>
-            </div>
-
-            <div className="absolute bottom-10 sm:bottom-12 left-0 right-0 z-10 px-4">
                 <p className="text-lg sm:text-xl md:text-2xl relative text-center">
                     <span className="absolute inset-0 blur-[10px] text-blue-400/65">29th - 30th December 2025</span>
                     <span className="absolute inset-0 blur-[5px] text-blue-300/80">29th - 30th December 2025</span>
                     <span className="relative text-white font-medium tracking-wide">29th - 30th December 2025</span>
                 </p>
             </div>
-            <div className={`pointer-events-none bg-[linear-gradient(to_bottom,_transparent_0%,_black_100%)] ${isScrolled ? "animate-fade-in" : "animate-fade-out"} w-full h-20 absolute bottom-0 ring-0 left-0 z-0`} />
         </div>
     );
 };
