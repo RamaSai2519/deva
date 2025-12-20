@@ -8,7 +8,7 @@ const Events = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     return (
-        <section className="bg-black text-white min-h-screen w-full pt-px relative" id="events">
+        <section className="bg-black text-white min-h-screen w-full pt-px relative scroll-mt-24">
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-3xl mx-auto text-left">
                     <h2 className="text-xl text-gray-400 mb-2 uppercase tracking-wide">GITAM</h2>
@@ -16,7 +16,7 @@ const Events = () => {
                     <p className="text-lg text-gray-400">
                         Celebration of technology, innovation, and creativity.
                     </p>
-                    <a href="#intro" className="text-blue-500 hover:underline">
+                    <a href="#intro" className="text-blue-500 hover:underline" id="events">
                         Know More about Epoch 4.0
                     </a>
                     <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-slate-400 uppercase mt-6">

@@ -6,7 +6,7 @@ const Intro = () => {
     const [showPopup, setShowPopup] = useState(false);
     return (
         <div className="relative">
-            <div id="intro" className="flex flex-col items-center justify-between p-5">
+            <div id="intro" className="flex flex-col items-center justify-between p-5 scroll-mt-24">
                 <div className="flex flex-col items-center justify-center text-center max-w-4xl mx-auto">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 sm:mb-8">
                         What is Epoch 4.0?
@@ -19,19 +19,19 @@ const Intro = () => {
                     <div className="space-y-3 sm:space-y-4 text-base sm:text-lg md:text-xl text-slate-300">
                         <p className="flex items-center justify-center gap-1">
                             <span className="text-blue-400 font-semibold">Learn</span>
-                            <span className="text-slate-500">in workshops & hands-on sessions</span>
+                            <span className="text-slate-400">in workshops & hands-on sessions</span>
                         </p>
                         <p className="flex items-center justify-center gap-1">
                             <span className="text-pink-400 font-semibold">Build</span>
-                            <span className="text-slate-500">ideas into working prototypes</span>
+                            <span className="text-slate-400">ideas into working prototypes</span>
                         </p>
                         <p className="flex items-center justify-center gap-1">
                             <span className="text-sky-400 font-semibold">Play</span>
-                            <span className="text-slate-500">explore & earn with Epoch Coins</span>
+                            <span className="text-slate-400">explore & earn with Epoch Coins</span>
                         </p>
                         <p className="flex items-center justify-center gap-1">
                             <span className="text-purple-400 font-semibold">Compete</span>
-                            <span className="text-slate-500">in coding contests & gaming tournaments</span>
+                            <span className="text-slate-400">in coding contests & gaming tournaments</span>
                         </p>
                     </div>
 

@@ -10,7 +10,7 @@ const FAQ = () => {
     const [showPopup, setShowPopup] = useState(false);
 
     return (
-        <div id="faq" className="bg-black p-8 flex flex-col items-center justify-between">
+        <div id="faq" className="bg-black p-8 flex flex-col items-center justify-between scroll-mt-24">
             <div className="w-full max-w-2xl">
                 <h1 className="text-3xl font-bold text-white mb-6 text-center">FAQs</h1>
                 <div className="space-y-4">

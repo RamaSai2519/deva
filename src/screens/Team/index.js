@@ -13,6 +13,8 @@ const TeamCard = ({ member }) => (
                 alt={member.name}
                 loading="lazy"
                 decoding="async"
+                width={600}
+                height={600}
                 className="w-full h-full object-top object-cover transition-transform duration-500 group-hover:scale-110 grayscale-[15%]"
             />
             {/* Stronger unified overlay for photo consistency */}
@@ -34,7 +36,7 @@ const TeamCard = ({ member }) => (
 
             <div className="mt-3 flex items-center justify-between">
                 {member.description && (
-                    <p className="text-xs text-slate-500 max-w-[70%] line-clamp-2">
+                    <p className="text-xs text-slate-400 max-w-[70%] line-clamp-2">
                         {member.description}
                     </p>
                 )}
@@ -86,7 +88,7 @@ const Team = () => {
     };
 
     return (
-        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen sm:mt-0 md:mt-14 sm:py-16" id='team'>
+        <div className="bg-gradient-to-b from-black via-[#020617] to-black min-h-screen sm:mt-0 md:mt-14 sm:py-16 scroll-mt-24" id='team'>
             <div className="max-w-6xl mx-auto px-4 mb-16">
                 <h2 className="text-2xl md:text-[2.5rem] leading-tight text-center">
                     <span className="block md:hidden">
@@ -105,12 +107,12 @@ const Team = () => {
             <div className="relative max-w-7xl mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10 mb-10">
                     {getCurrentMembers().map((member) => (
-                        <TeamCard key={member.id} member={member} />
+                        <TeamCard key={`${member.id}-${member.name}`} member={member} />
                     ))}
                 </div>
 
                 {/* Volunteer credit */}
-                <p className="text-center text-sm text-slate-500 mt-8 mb-6">
+                <p className="text-center text-sm text-slate-400 mt-8 mb-6">
                     And many more volunteers who make Epoch possible.
                 </p>
 
@@ -140,7 +142,7 @@ const Team = () => {
                         <button
                             key={i}
                             onClick={() => setCurrentPage(i)}
-                            className={`w-[10px] h-[10px] rounded-full transition-colors ${i === currentPage ? 'bg-blue-500' : 'bg-zinc-700'
+                            className={`w-6 h-6 rounded-full transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/60 ${i === currentPage ? 'bg-blue-500' : 'bg-zinc-700'
                                 }`}
                             aria-label={`Go to page ${i + 1}`}
                         />

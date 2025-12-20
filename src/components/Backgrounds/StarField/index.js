@@ -1,8 +1,6 @@
-"use client"
-
 import { useEffect, useRef } from "react"
 
-export default function StarfieldBG() {
+export default function StarfieldBG({ paused = false }) {
     const canvasRef = useRef(null)
 
     useEffect(() => {
@@ -29,7 +27,9 @@ export default function StarfieldBG() {
             })
         }
 
-        const animate = () => {
+        let rafId = 0
+
+        const renderFrame = () => {
             ctx.fillStyle = "rgba(0, 0, 0, 0.1)"
             ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -37,6 +37,7 @@ export default function StarfieldBG() {
             const centerY = canvas.height / 2
 
             stars.forEach((star) => {
+                if (paused) return
                 star.z -= speed
 
                 if (star.z <= 0) {
@@ -74,7 +75,9 @@ export default function StarfieldBG() {
                 }
             })
 
-            requestAnimationFrame(animate)
+            if (!paused) {
+                rafId = requestAnimationFrame(renderFrame)
+            }
         }
 
         const handleResize = () => {
@@ -89,12 +92,13 @@ export default function StarfieldBG() {
         }
 
         window.addEventListener("resize", handleResize)
-        animate()
+        renderFrame()
 
         return () => {
             window.removeEventListener("resize", handleResize)
+            if (rafId) cancelAnimationFrame(rafId)
         }
-    }, [])
+    }, [paused])
 
     return <canvas ref={canvasRef} className="absolute inset-0 bg-black" />
 }

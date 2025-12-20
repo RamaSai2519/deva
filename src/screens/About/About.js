@@ -15,7 +15,7 @@ const About = () => {
     } = aboutData;
 
     return (
-        <div className="relative" id="about" ref={parentRef}>
+        <div className="relative scroll-mt-24" id="about" ref={parentRef}>
             <div
 
                 id="core-team"

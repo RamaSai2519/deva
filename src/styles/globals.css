@@ -3,6 +3,10 @@
 @import 'tailwindcss/utilities';
 @import './animations.css';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   background-color: black;

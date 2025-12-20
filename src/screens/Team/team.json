@@ -26,7 +26,7 @@
             "name": "Santosh Krishna B",
             "role": "Design & Tech Manager",
             "department": "Design | Tech",
-            "image": "Assets/images/santosh.jpg",
+            "image": "Assets/images/santosh.webp",
             "description": "Keeps the tech logic running smoothly throughout the fest",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -35,7 +35,7 @@
             "name": "Lakshmi Srujana V",
             "role": "Design & Epoch Team Head",
             "department": "Design",
-            "image": "Assets/images/lakshmi_core.jpg",
+            "image": "Assets/images/lakshmi_core.webp",
             "description": "Brings creative ideas to life across all visuals annd leads Epoch Team",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -44,7 +44,7 @@
             "name": "Monisha S",
             "role": "Marketing Manager",
             "department": "Marketing",
-            "image": "Assets/images/Monisha s.jpg",
+            "image": "Assets/images/Monisha s.webp",
             "description": "Crafts the story and messaging that brings Epoch to the campus",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -53,7 +53,7 @@
             "name": "Devi Priya",
             "role": "Outreach Manager",
             "department": "Outreach",
-            "image": "Assets/images/Devi Priya .jpg",
+            "image": "Assets/images/Devi Priya .webp",
             "description": "Connects with the campus and builds the Epoch community",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -62,16 +62,16 @@
             "name": "Chandrika R",
             "role": "Content Manager",
             "department": "Content",
-            "image": "Assets/images/chandrika.png",
+            "image": "Assets/images/chandrika.webp",
             "description": "On the ground making sure every zone runs without a hitch",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
-            "id": 11,
+            "id": 13,
             "name": "Dikshitha D",
             "role": "Event Manager",
             "department": "Events",
-            "image": "Assets/images/Dikshitha D.jpg",
+            "image": "Assets/images/Dikshitha D.webp",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -80,7 +80,7 @@
             "name": "Anees",
             "role": "Content Manager",
             "department": "Content",
-            "image": "Assets/images/Anees .jpg",
+            "image": "Assets/images/Anees .webp",
             "description": "On the ground making sure every zone runs without a hitch",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -89,7 +89,7 @@
             "name": "Venkat Sai",
             "role": "Finance Lead",
             "department": "Finance",
-            "image": "Assets/images/venkat sai .jpg",
+            "image": "Assets/images/venkat sai .webp",
             "description": "Curates the stalls and zones that make Epoch memorable",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -98,7 +98,7 @@
             "name": "Ruchitha",
             "role": "Marketing Manager",
             "department": "Marketing",
-            "image": "Assets/images/Ruchitha.jpg",
+            "image": "Assets/images/Ruchitha.webp",
             "description": "Builds the gaming and VR experiences people talk about",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -107,16 +107,16 @@
             "name": "Saloni Raj",
             "role": "Marketing Manager",
             "department": "Marketing",
-            "image": "Assets/images/Saloni Raj.jpg",
+            "image": "Assets/images/Saloni Raj.webp",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
-            "id": 11,
+            "id": 14,
             "name": "Harshitha Reddy",
             "role": "Event Manager",
             "department": "Events",
-            "image": "Assets/images/Harshitha Reddy.jpg",
+            "image": "Assets/images/Harshitha Reddy.webp",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
@@ -125,16 +125,16 @@
             "name": "Sreya G",
             "role": "Event Manager",
             "department": "Events",
-            "image": "Assets/images/Sreya.jpg",
+            "image": "Assets/images/Sreya.webp",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         },
         {
-            "id": 11,
+            "id": 15,
             "name": "Sai Laghuvar",
             "role": "Finance Manager",
             "department": "Finance",
-            "image": "Assets/images/sai laghuvar.jpg",
+            "image": "Assets/images/sai laghuvar.webp",
             "description": "Coordinates workshops that help people grow and learn",
             "linkedin": "https://linkedin.com/in/aditya-sharma"
         }
