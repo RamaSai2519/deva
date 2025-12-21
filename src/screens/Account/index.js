@@ -38,9 +38,7 @@ export function Account() {
         }
     }, [form]);
 
-    useEffect(() => {
-        fetchProfileData();
-    }, [fetchProfileData]);
+    useEffect(() => { fetchProfileData(); }, [fetchProfileData]);
 
     const handleEditToggle = () => {
         if (isEditing) {

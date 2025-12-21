@@ -19,6 +19,7 @@ const logout = () => {
         localStorage.removeItem('is_logged_in');
         localStorage.removeItem('access_token');
         localStorage.removeItem('user_id');
+        localStorage.setItem('prev_user', 'true');
         window.location.href = '/login';
     } catch (error) {
         console.error('Error during logout:', error);

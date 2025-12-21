@@ -23,6 +23,7 @@ Raxios.interceptors.request.use(
 
 const logout_user = () => {
     localStorage.clear();
+    localStorage.setItem('prev_user', 'true');
     navigateTo('/login');
 };
 

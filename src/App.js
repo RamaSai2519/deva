@@ -34,7 +34,11 @@ const App = () => {
   const navigate = useNavigate();
   useScrollTo();
 
-  if (localStorage.getItem('version') !== version) { localStorage.clear(); localStorage.setItem('version', version); }
+  if (localStorage.getItem('version') !== version) {
+    localStorage.clear(); localStorage.setItem('version', version);
+    if (isAuthenticated) localStorage.setItem('prev_user', 'true');
+    window.location.reload();
+  }
 
   useEffect(() => {
     setNavigate(navigate);
