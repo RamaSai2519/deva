@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import useDeviceType from "../../hooks/useDeviceType";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import GiantPopup from "../Popups/GiantPopup";
@@ -7,6 +7,11 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
     const isDesktop = useDeviceType();
     const [showPopup, setShowPopup] = useState(false);
     const [activeEvent, setActiveEvent] = useState(null);
+    const [isInView, setIsInView] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
+    const sliderRef = useRef(null);
+    const touchStartX = useRef(0);
+    const touchEndX = useRef(0);
 
     const handlePrev = () => {
         setCurrentSlide((prev) => (prev === 0 ? events.length - 1 : prev - 1));
@@ -16,17 +21,76 @@ const Slider = ({ events, currentSlide, setCurrentSlide }) => {
         setCurrentSlide((prev) => (prev === events.length - 1 ? 0 : prev + 1));
     };
 
+    // Intersection Observer to detect when slider comes into view
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.5 }
+        );
+
+        const currentSlider = sliderRef.current;
+        if (currentSlider) observer.observe(currentSlider);
+
+        return () => {
+            if (currentSlider) observer.unobserve(currentSlider)
+        };
+    }, []);
+
+    // Auto-slideshow effect
+    useEffect(() => {
+        if (!isInView || isPaused) return;
+
+        const interval = setInterval(() => {
+            handleNext();
+        }, 3500);
+
+        return () => clearInterval(interval);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isInView, isPaused, currentSlide]);
+
+    // Gesture control handlers
+    const handleTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX;
+        setIsPaused(true);
+    };
+
+    const handleTouchMove = (e) => touchEndX.current = e.touches[0].clientX;
+
+    const handleTouchEnd = () => {
+        const minSwipeDistance = 50;
+        const swipeDistance = touchStartX.current - touchEndX.current;
+
+        if (swipeDistance > minSwipeDistance) {
+            handleNext();
+        } else if (swipeDistance < -minSwipeDistance) {
+            handlePrev();
+        }
+    };
+
+    const handleMouseEnter = () => setIsPaused(true);
+    const handleMouseLeave = () => setIsPaused(false);
+
     const translateX = isDesktop
         ? `translateX(calc(15% - ${currentSlide * 70}%))`
         : `translateX(-${currentSlide * 100}%)`;
 
     return (
-        <div className="relative">
+        <div
+            ref={sliderRef}
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <div className="overflow-hidden relative">
                 <div
                     id="slider"
                     className="flex transition-transform duration-500 ease-in-out items-center"
                     style={{ transform: translateX }}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
                 >
                     {events.map((event, index) => (
                         <div
