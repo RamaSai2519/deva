@@ -270,6 +270,7 @@ export function AuthPage({ setIsAuthenticated }) {
                                         <Checkbox className="text-gray-300">
                                             I agree to the{' '}
                                             <button
+                                                type="button"
                                                 onClick={() => setIsModalOpen(true)}
                                                 className="text-[#3533cd] underline"
                                             >
