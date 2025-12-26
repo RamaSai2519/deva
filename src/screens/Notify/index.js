@@ -151,10 +151,27 @@ const Notify = () => {
                     </Form.Item>
 
                     <Form.Item
+                        label="Click Action URL"
+                        name="href"
+                        rules={[
+                            { required: true, message: 'Please enter click action URL' },
+                            { type: 'url', message: 'Please enter a valid URL' }
+                        ]}
+                    >
+                        <input
+                            type="url"
+                            placeholder="e.g., https://gitamepoch.vercel.app/"
+                            style={inputStyle}
+                            onFocus={(e) => e.target.style.borderColor = '#40a9ff'}
+                            onBlur={(e) => e.target.style.borderColor = '#d9d9d9'}
+                        />
+                    </Form.Item>
+
+                    <Form.Item
                         label="Image URL"
                         name="image_url"
                         rules={[
-                            { required: true, message: 'Please enter image URL' },
+                            // { required: true, message: 'Please enter image URL' },
                             { type: 'url', message: 'Please enter a valid URL' }
                         ]}
                     >
@@ -167,6 +184,7 @@ const Notify = () => {
                             onBlur={(e) => e.target.style.borderColor = '#d9d9d9'}
                         />
                     </Form.Item>
+
 
                     {imageUrl && (
                         <Form.Item label="Image Preview">
