@@ -89,23 +89,25 @@ const Hero = () => {
             </div>
 
             <div className='lg:mr-14 flex flex-col items-center max-w-3xl z-10 pb-16 sm:pb-20'>
-                <p className="text-[11px] sm:text-xs font-semibold tracking-[0.24em] uppercase text-slate-400 mb-3">
-                    GitHub Community Club presents
-                </p>
-                <button
-                    className="relative bg-lightBlack border border-transparent hover:border-transparent rounded-full px-8 py-3 text-lg font-medium mb-4 group"
-                    onClick={() => navigate('/account')}
-                >
-                    <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent bg-clip-text transition-colors duration-300">
-                        Register Now
-                    </span>
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-100 p-[1px]">
-                        <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
-                    </div>
-                </button>
-                <p className="mt-1 text-xs sm:text-sm text-slate-400">
-                    Limited seats · Free entry · Open to all students
-                </p>
+                {!localStorage.getItem('is_logged_in') && <>
+                    <p className="text-[11px] sm:text-xs font-semibold tracking-[0.24em] uppercase text-slate-400 mb-3">
+                        GitHub Community Club presents
+                    </p>
+                    <button
+                        className="relative bg-lightBlack border border-transparent hover:border-transparent rounded-full px-8 py-3 text-lg font-medium mb-4 group"
+                        onClick={() => navigate('/account')}
+                    >
+                        <span className="relative text-xl z-10 bg-gradient-to-r from-blue-400/80 to-purple-400/80 text-transparent bg-clip-text transition-colors duration-300">
+                            Register Now
+                        </span>
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-100 p-[1px]">
+                            <div className="h-full w-full bg-black rounded-full group-hover:bg-gradient-to-r group-hover:from-blue-500/10 group-hover:to-purple-500/10 transition-all duration-300"></div>
+                        </div>
+                    </button>
+                    <p className="mt-1 text-xs sm:text-sm text-slate-400">
+                        Limited seats · Free entry · Open to all students
+                    </p>
+                </>}
                 <p className="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl font-semibold text-slate-200 max-w-2xl leading-relaxed">
                     48 Hours. Learn. Compete. Build. Play. — Powered by Github Community
                 </p>
