@@ -1,0 +1,45 @@
+/home/rama/Projects/deva/README.md
+/home/rama/Projects/deva/poa.md
+/home/rama/Projects/deva/public/index.html
+/home/rama/Projects/deva/public/robots.txt
+/home/rama/Projects/deva/public/Assets/48h_notification.png
+/home/rama/Projects/deva/public/Assets/gitcoin_notify.png
+/home/rama/Projects/deva/public/Assets/images/Afreen_1.webp
+/home/rama/Projects/deva/public/Assets/images/Anees .webp
+/home/rama/Projects/deva/public/Assets/images/Devi Priya .webp
+/home/rama/Projects/deva/public/Assets/images/Dikshitha D.webp
+/home/rama/Projects/deva/public/Assets/images/Greeshmitha .webp
+/home/rama/Projects/deva/public/Assets/images/Harshitha Reddy.webp
+/home/rama/Projects/deva/public/Assets/images/Monisha s.jpg
+/home/rama/Projects/deva/public/Assets/images/Monisha s.webp
+/home/rama/Projects/deva/public/Assets/images/Nikhil .webp
+/home/rama/Projects/deva/public/Assets/images/Rohit_R.webp
+/home/rama/Projects/deva/public/Assets/images/Roshini .webp
+/home/rama/Projects/deva/public/Assets/images/Ruchitha.webp
+/home/rama/Projects/deva/public/Assets/images/Saloni Raj.webp
+/home/rama/Projects/deva/public/Assets/images/Sreya.webp
+/home/rama/Projects/deva/public/Assets/images/chandrika.webp
+/home/rama/Projects/deva/public/Assets/images/dosl.webp
+/home/rama/Projects/deva/public/Assets/images/epoch_logo.webp
+/home/rama/Projects/deva/public/Assets/images/event_1.webp
+/home/rama/Projects/deva/public/Assets/images/event_2.webp
+/home/rama/Projects/deva/public/Assets/images/event_3.webp
+/home/rama/Projects/deva/public/Assets/images/event_4.webp
+/home/rama/Projects/deva/public/Assets/images/event_description.png
+/home/rama/Projects/deva/public/Assets/images/gitam.webp
+/home/rama/Projects/deva/public/Assets/images/gitcoin.png
+/home/rama/Projects/deva/public/Assets/images/gitcoin_nobg.png
+/home/rama/Projects/deva/public/Assets/images/githubLogo.png
+/home/rama/Projects/deva/public/Assets/images/githubLogo.webp
+/home/rama/Projects/deva/public/Assets/images/lakshmi_core.webp
+/home/rama/Projects/deva/public/Assets/images/lechakrawarthy.jpg
+/home/rama/Projects/deva/public/Assets/images/logoBlue-cropped.svg
+/home/rama/Projects/deva/public/Assets/images/logoBlue.svg
+/home/rama/Projects/deva/public/Assets/images/ram.jpg
+/home/rama/Projects/deva/public/Assets/images/sai laghuvar.webp
+/home/rama/Projects/deva/public/Assets/images/santosh.webp
+/home/rama/Projects/deva/public/Assets/images/test.jpg
+/home/rama/Projects/deva/public/Assets/images/test.webp
+/home/rama/Projects/deva/public/Assets/images/venkat sai .jpg
+/home/rama/Projects/deva/public/Assets/images/venkat sai .webp
+/home/rama/Projects/deva/public/favicon-dark.png

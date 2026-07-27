@@ -1,0 +1,1361 @@
+{
+  "nodes": [
+    {
+      "id": "readme_project",
+      "label": "Gitam EPOCH 4.0 Website",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/README.md",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "poa_epoch_4_0",
+      "label": "Epoch 4.0",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Overview, line 23",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Premier GitHub Community Club event designed for tech enthusiasts, developers, and innovators. Aims to inspire creative expression and build a strong tech community at GITAM University."
+    },
+    {
+      "id": "poa_github_community_club",
+      "label": "GitHub Community Club",
+      "file_type": "concept",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Event Details, line 31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "poa_gitam_university",
+      "label": "GITAM University",
+      "file_type": "concept",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Event Details, line 30",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "poa_dosl",
+      "label": "DoSL",
+      "file_type": "concept",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Event Details, line 31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "poa_epoch_coins_system",
+      "label": "Epoch Coins System",
+      "file_type": "rationale",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Epoch Coins System, line 47",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Unified digital reward and activity currency designed to enhance student engagement. Encourages exploration of the entire fest, incentivizes learning-based participation, ensures fair resource usage, and provides a gamified experience."
+    },
+    {
+      "id": "poa_epoch_coins",
+      "label": "Epoch Coins",
+      "file_type": "rationale",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section What Are Epoch Coins?, line 51",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Official virtual currency of Epoch 4.0 acting as participation credits redeemable at Game Zones, VR Booths, and Fun & Activity Zones."
+    },
+    {
+      "id": "poa_geeksforgeeks_contest",
+      "label": "GeeksforGeeks Contest",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section 1. GeeksforGeeks Contest, line 109",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Enhance problem-solving, logical thinking, and programming skills in a competitive environment. Provides a platform to test skills and gain exposure to competitive programming."
+    },
+    {
+      "id": "poa_geeksforgeeks",
+      "label": "GeeksforGeeks",
+      "file_type": "concept",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section 1. GeeksforGeeks Contest, line 120",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "poa_workshop_github_actions",
+      "label": "GitHub Actions Workshop",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section 2. AI Workshop, line 135",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Help students gain a clear understanding of GitHub and its importance in a developer workflow, with focus on GitHub Actions and automation of tasks like testing and deployment."
+    },
+    {
+      "id": "poa_tech_workshop_dsa",
+      "label": "Tech Workshop: DSA",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section 3. Tech Workshop, line 154",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Help students understand the importance of Data Structures and Algorithms in technical interviews and build strong problem-solving skills."
+    },
+    {
+      "id": "poa_gaming_tournament",
+      "label": "Gaming Tournament",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section 4. Gaming Tournament, line 173",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Bring students together through competitive digital gameplay, fostering teamwork, quick thinking, and strategic skills."
+    },
+    {
+      "id": "poa_prompt_to_prototype",
+      "label": "Prompt to Prototype",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section 5. Prompt to Prototype, line 196",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Introduce students to prompt-based development and rapid prototyping using modern AI tools, transforming simple text prompts into working prototypes."
+    },
+    {
+      "id": "poa_flashmob",
+      "label": "Flashmob",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Day 0 timeline, line 87",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Banner launch and pre-event activation to generate awareness for Epoch 4.0."
+    },
+    {
+      "id": "poa_recharge_stations",
+      "label": "Recharge Stations",
+      "file_type": "rationale",
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Earning More Coins, line 64",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Special recharge counters placed across the venue where students earn additional coins by playing selected mini-games or completing quick challenges."
+    },
+    {
+      "id": "public_index_website",
+      "label": "Gitam Github EPOCH Website Entry",
+      "file_type": "code",
+      "source_file": "/home/rama/Projects/deva/public/index.html",
+      "source_location": "line 12",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_robots_rules",
+      "label": "Robots Exclusion Rules",
+      "file_type": "document",
+      "source_file": "/home/rama/Projects/deva/public/robots.txt",
+      "source_location": "line 2-3",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_48h_notification_48h_notification",
+      "label": "48h Notification - Epoch 4.0 Push Notification UI",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/48h_notification.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_gitcoin_notify_gitcoin_notification",
+      "label": "Gitcoin Notification - GitCoin Credit Push Notification UI",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/gitcoin_notify.png",
+      "source_location": "src/screens/Notify/index.js:180",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_afreen_1_afreen",
+      "label": "Afreen D - Outreach Coordinator, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Afreen_1.webp",
+      "source_location": "src/screens/About/about.json:45",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_anees__anees",
+      "label": "Anees - Content Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Anees .webp",
+      "source_location": "src/screens/Team/team.json:80",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_devi_priya__devi_priya",
+      "label": "Devi Priya - Outreach Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Devi Priya .webp",
+      "source_location": "src/screens/Team/team.json:53",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_dikshitha_d_dikshitha_d",
+      "label": "Dikshitha D - Event Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Dikshitha D.webp",
+      "source_location": "src/screens/Team/team.json:70",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_greeshmitha__greeshmitha",
+      "label": "Greeshmitha B - President, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Greeshmitha .webp",
+      "source_location": "src/screens/About/about.json:31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_harshitha_reddy_harshitha_reddy",
+      "label": "Harshitha Reddy - Event Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Harshitha Reddy.webp",
+      "source_location": "src/screens/Team/team.json:116",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_monisha_s_monisha_jpg",
+      "label": "Monisha S - Marketing Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Monisha s.jpg",
+      "source_location": "src/screens/Team/team.json:44",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_monisha_s_monisha_s",
+      "label": "Monisha S - Marketing Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Monisha s.webp",
+      "source_location": "src/screens/Team/team.json:44",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_nikhil__nikhil",
+      "label": "Nikhil - Repo Maintainer, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Nikhil .webp",
+      "source_location": "src/screens/About/about.json:59",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_rohit_r_rohit_r",
+      "label": "Rohit R - Vice President, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Rohit_R.webp",
+      "source_location": "src/screens/About/about.json:37",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_roshini__roshini_krishna_sri",
+      "label": "Roshini Krishna Sri - Content Head, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Roshini .webp",
+      "source_location": "src/screens/About/about.json:65",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_ruchitha_ruchitha",
+      "label": "Ruchitha - Marketing Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Ruchitha.webp",
+      "source_location": "src/screens/Team/team.json:97",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_saloni_raj_saloni_raj",
+      "label": "Saloni Raj - Marketing Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Saloni Raj.webp",
+      "source_location": "src/screens/Team/team.json:105",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_sreya_sreya_g",
+      "label": "Sreya G - Event Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Sreya.webp",
+      "source_location": "src/screens/Team/team.json:123",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_chandrika_chandrika_r",
+      "label": "Chandrika R - Content Manager, Epoch 4.0",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/chandrika.webp",
+      "source_location": "src/screens/Team/team.json:61",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_dosl_dosl_logo",
+      "label": "DoSL Logo - Directorate of Student Life, GITAM University",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/dosl.webp",
+      "source_location": "src/components/Footer/index.js:89",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_epoch_logo",
+      "label": "Epoch 4.0 Logo Image",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/epoch_logo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_event_1",
+      "label": "Event Image - GFG Coding Contest",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/event_1.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_event_2",
+      "label": "Event Image - Open Source Workshop",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/event_2.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_event_3",
+      "label": "Event Image - DSA for Tech Interviews",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/event_3.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_event_4",
+      "label": "Event Image - Gaming Tournament",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/event_4.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_event_description",
+      "label": "Event Description Poster Image",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/event_description.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_gitam",
+      "label": "GITAM University Logo Image",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/gitam.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_gitcoin",
+      "label": "Gitcoin Logo Image (with background)",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/gitcoin.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_gitcoin_nobg",
+      "label": "Gitcoin Logo Image (no background)",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/gitcoin_nobg.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "epoch_4_0_event",
+      "label": "Epoch 4.0",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gfg_coding_contest_event",
+      "label": "GFG Coding Contest",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "open_source_workshop_event",
+      "label": "Open Source Contribution Workshop",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "dsa_for_tech_interviews_event",
+      "label": "DSA for Tech Interviews",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gaming_tournament_event",
+      "label": "Gaming Tournament",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "github_pages_workshop_event",
+      "label": "GitHub Pages Workshop",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gitam_university",
+      "label": "GITAM University",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gitcoin_platform",
+      "label": "Gitcoin",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "epoch_coins_system",
+      "label": "Epoch Coins System",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_assets_images_githublogo_png",
+      "label": "GitHub Logo PNG",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/githubLogo.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_githublogo_webp",
+      "label": "GitHub Logo WebP",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/githubLogo.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_lakshmi_core_webp",
+      "label": "Lakshmi Core Profile Photo",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/lakshmi_core.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_lechakrawarthy_jpg",
+      "label": "Lecha Krawarthy Profile Photo",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/lechakrawarthy.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_logoblue_cropped_svg",
+      "label": "Project Logo Blue Cropped SVG",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/logoBlue-cropped.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_logoblue_svg",
+      "label": "Project Logo Blue SVG",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/logoBlue.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_ram_jpg",
+      "label": "Ram Profile Photo",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/ram.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_sai_laghuvar_webp",
+      "label": "Sai Laghuvar Profile Photo",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/sai laghuvar.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_assets_images_santosh_webp",
+      "label": "Santosh Profile Photo",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/santosh.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "file_type": "image"
+    },
+    {
+      "id": "public_Assets_images_test_jpg",
+      "label": "Epoch 4.0 Banner (test.jpg)",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/test.jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_Assets_images_test_webp",
+      "label": "Epoch 4.0 Banner (test.webp)",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/test.webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_Assets_images_venkat_sai_jpg",
+      "label": "Venkat Sai Portrait (venkat sai .jpg)",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/venkat sai .jpg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_Assets_images_venkat_sai_webp",
+      "label": "Venkat Sai Portrait (venkat sai .webp)",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/venkat sai .webp",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "public_favicon_dark_png",
+      "label": "EPOCH Dark Favicon",
+      "file_type": "image",
+      "source_file": "/home/rama/Projects/deva/public/favicon-dark.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "venkat_sai_person",
+      "label": "Venkat Sai",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "epoch_40_event",
+      "label": "Epoch 4.0 Tech Fest",
+      "file_type": null,
+      "source_file": null,
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "readme_project",
+      "target": "poa_epoch_4_0",
+      "relation": "describes_website_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/README.md",
+      "source_location": "line 1",
+      "weight": 1.0
+    },
+    {
+      "source": "public_index_website",
+      "target": "poa_epoch_4_0",
+      "relation": "represents_event_website",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/public/index.html",
+      "source_location": "line 12: title and line 9: meta description",
+      "weight": 1.0
+    },
+    {
+      "source": "public_robots_rules",
+      "target": "public_index_website",
+      "relation": "controls_access_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/robots.txt",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_github_community_club",
+      "relation": "organized_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Event Details, line 31",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_dosl",
+      "relation": "co_organized_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Event Details, line 31",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_gitam_university",
+      "relation": "hosted_at",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Event Details, line 30",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_epoch_coins_system",
+      "relation": "has_reward_system",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Epoch Coins System, line 47",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_geeksforgeeks_contest",
+      "relation": "includes_event",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Events, line 109",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_workshop_github_actions",
+      "relation": "includes_event",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Events, line 135",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_tech_workshop_dsa",
+      "relation": "includes_event",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Events, line 154",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_gaming_tournament",
+      "relation": "includes_event",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Events, line 173",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_prompt_to_prototype",
+      "relation": "includes_event",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Events, line 196",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_4_0",
+      "target": "poa_flashmob",
+      "relation": "includes_event",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Timeline Day 0, line 87",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_coins_system",
+      "target": "poa_epoch_coins",
+      "relation": "uses_currency",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section What Are Epoch Coins?, line 51-53",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_epoch_coins",
+      "target": "poa_recharge_stations",
+      "relation": "earned_at",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "section Recharge Stations, line 64-66",
+      "weight": 1.0
+    },
+    {
+      "source": "poa_geeksforgeeks_contest",
+      "target": "poa_geeksforgeeks",
+      "relation": "powered_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/poa.md",
+      "source_location": "line 120",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_afreen_1_afreen",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Afreen_1.webp",
+      "source_location": "src/screens/About/about.json:45-48",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_anees__anees",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Anees .webp",
+      "source_location": "src/screens/Team/team.json:80-85",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_devi_priya__devi_priya",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Devi Priya .webp",
+      "source_location": "src/screens/Team/team.json:53-58",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_dikshitha_d_dikshitha_d",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Dikshitha D.webp",
+      "source_location": "src/screens/Team/team.json:70-76",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_greeshmitha__greeshmitha",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Greeshmitha .webp",
+      "source_location": "src/screens/About/about.json:31-34",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_harshitha_reddy_harshitha_reddy",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Harshitha Reddy.webp",
+      "source_location": "src/screens/Team/team.json:116-121",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_monisha_s_monisha_jpg",
+      "target": "epoch_40_event",
+      "relation": "member_of",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Monisha s.jpg",
+      "source_location": "src/screens/Team/team.json:44-49",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_48h_notification_48h_notification",
+      "target": "epoch_40_event",
+      "relation": "brand_asset_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/home/rama/Projects/deva/public/Assets/48h_notification.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_gitcoin_notify_gitcoin_notification",
+      "target": "gitcoin_platform",
+      "relation": "depicts",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/home/rama/Projects/deva/public/Assets/gitcoin_notify.png",
+      "source_location": "src/screens/Notify/index.js:180",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_gitcoin_notify_gitcoin_notification",
+      "target": "epoch_40_event",
+      "relation": "brand_asset_for",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/home/rama/Projects/deva/public/Assets/gitcoin_notify.png",
+      "source_location": "src/screens/Notify/index.js:180",
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_monisha_s_monisha_jpg",
+      "target": "public_assets_images_monisha_s_monisha_s",
+      "relation": "alternative_format",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/public/Assets/images/Monisha s.jpg",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "public_assets_images_monisha_s_monisha_s",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Marketing Manager",
+        "department": "Marketing",
+        "source": "src/screens/Team/team.json:44-49"
+      }
+    },
+    {
+      "source": "public_assets_images_nikhil__nikhil",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Repo Maintainer",
+        "source": "src/screens/About/about.json:59-62"
+      }
+    },
+    {
+      "source": "public_assets_images_rohit_r_rohit_r",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Vice President",
+        "source": "src/screens/About/about.json:37-41"
+      }
+    },
+    {
+      "source": "public_assets_images_roshini__roshini_krishna_sri",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Content Head",
+        "source": "src/screens/About/about.json:65-69"
+      }
+    },
+    {
+      "source": "public_assets_images_ruchitha_ruchitha",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Marketing Manager",
+        "department": "Marketing",
+        "source": "src/screens/Team/team.json:97-103"
+      }
+    },
+    {
+      "source": "public_assets_images_saloni_raj_saloni_raj",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Marketing Manager",
+        "department": "Marketing",
+        "source": "src/screens/Team/team.json:105-112"
+      }
+    },
+    {
+      "source": "public_assets_images_sreya_sreya_g",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Event Manager",
+        "department": "Events",
+        "source": "src/screens/Team/team.json:123-130"
+      }
+    },
+    {
+      "source": "public_assets_images_chandrika_chandrika_r",
+      "target": "epoch_40_event",
+      "label": "is_team_member_of",
+      "relationship_type": "INFERRED",
+      "confidence_score": 0.95,
+      "metadata": {
+        "role": "Content Manager",
+        "department": "Content",
+        "source": "src/screens/Team/team.json:61-67"
+      }
+    },
+    {
+      "source": "public_assets_images_dosl_dosl_logo",
+      "target": "epoch_40_event",
+      "label": "sponsor_of",
+      "relationship_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "metadata": {
+        "source": "src/components/Footer/index.js:89-90"
+      }
+    },
+    {
+      "source_id": "public_assets_images_epoch_logo",
+      "target_id": "epoch_4_0_event",
+      "relation": "is_logo_of",
+      "relation_type": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "/home/rama/Projects/deva/src/components/Footer/index.js:20",
+      "metadata": "Used as Epoch 4.0 logo in website footer"
+    },
+    {
+      "source_id": "public_assets_images_event_1",
+      "target_id": "gfg_coding_contest_event",
+      "relation": "depicts",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/src/screens/Events/events.json:5",
+      "metadata": "Image assigned to GFG Coding Contest event"
+    },
+    {
+      "source_id": "public_assets_images_event_2",
+      "target_id": "open_source_workshop_event",
+      "relation": "depicts",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/src/screens/Events/events.json:27",
+      "metadata": "Image assigned to Open Source Contribution Workshop event"
+    },
+    {
+      "source_id": "public_assets_images_event_2",
+      "target_id": "github_pages_workshop_event",
+      "relation": "depicts",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/src/screens/Events/events.json:91",
+      "metadata": "Image also assigned to GitHub Pages Workshop event"
+    },
+    {
+      "source_id": "public_assets_images_event_3",
+      "target_id": "dsa_for_tech_interviews_event",
+      "relation": "depicts",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/src/screens/Events/events.json:48",
+      "metadata": "Image assigned to DSA for Tech Interviews event"
+    },
+    {
+      "source_id": "public_assets_images_event_4",
+      "target_id": "gaming_tournament_event",
+      "relation": "depicts",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/src/screens/Events/events.json:69",
+      "metadata": "Image assigned to Gaming Tournament event"
+    },
+    {
+      "source_id": "public_assets_images_gitam",
+      "target_id": "gitam_university",
+      "relation": "is_logo_of",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/home/rama/Projects/deva/src/components/Footer/index.js:92",
+      "metadata": "Used as GITAM University logo in website footer"
+    },
+    {
+      "source_id": "public_assets_images_gitcoin",
+      "target_id": "gitcoin_platform",
+      "relation": "is_logo_of",
+      "relation_type": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/home/rama/Projects/deva/src/Icons/gitcoin.js",
+      "metadata": "Gitcoin logo used as Epoch Coins icon in the app"
+    },
+    {
+      "source_id": "public_assets_images_gitcoin_nobg",
+      "target_id": "gitcoin_platform",
+      "relation": "is_logo_of",
+      "relation_type": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": null,
+      "metadata": "Gitcoin logo variant without background"
+    },
+    {
+      "source_id": "public_assets_images_event_description",
+      "target_id": "epoch_4_0_event",
+      "relation": "depicts",
+      "relation_type": "AMBIGUOUS",
+      "confidence_score": 0.2,
+      "source_file": null,
+      "metadata": "Event description poster - purpose unverified from source code"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.2,
+      "from_id": "public_assets_images_githublogo_png",
+      "to_id": "public_assets_images_githublogo_webp",
+      "relation": "same_as",
+      "notes": "Same logo, different format (PNG vs WebP) — cannot visually verify without image input support"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.2,
+      "from_id": "public_assets_images_logoblue_cropped_svg",
+      "to_id": "public_assets_images_logoblue_svg",
+      "relation": "cropped_version_of",
+      "notes": "Cropped variant of the full logo — filename pattern suggests relationship, cannot visually confirm"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.15,
+      "from_id": "public_assets_images_logoblue_svg",
+      "to_id": null,
+      "relation": "is_logo_of",
+      "notes": "Likely the project logo — inferred from filename 'logoBlue' in this project context; SVG contains embedded circular emblem design but content cannot be fully verified"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.15,
+      "from_id": "public_assets_images_lechakrawarthy_jpg",
+      "to_id": null,
+      "relation": "profile_photo_of",
+      "notes": "Filename suggests photo of team member 'Lecha Krawarthy' — cannot verify visual content"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.15,
+      "from_id": "public_assets_images_lakshmi_core_webp",
+      "to_id": null,
+      "relation": "profile_photo_of",
+      "notes": "Filename suggests photo of team member 'Lakshmi Core' — cannot verify visual content"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.15,
+      "from_id": "public_assets_images_ram_jpg",
+      "to_id": null,
+      "relation": "profile_photo_of",
+      "notes": "Filename suggests photo of team member 'Ram' — cannot verify visual content"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.15,
+      "from_id": "public_assets_images_sai_laghuvar_webp",
+      "to_id": null,
+      "relation": "profile_photo_of",
+      "notes": "Filename suggests photo of team member 'Sai Laghuvar' — cannot verify visual content"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.15,
+      "from_id": "public_assets_images_santosh_webp",
+      "to_id": null,
+      "relation": "profile_photo_of",
+      "notes": "Filename suggests photo of team member 'Santosh' — cannot verify visual content"
+    },
+    {
+      "type": "AMBIGUOUS",
+      "confidence_score": 0.1,
+      "from_id": "public_assets_images_githublogo_png",
+      "to_id": null,
+      "relation": "external_reference",
+      "notes": "GitHub logo — likely used as a link/button icon to GitHub repository, but visual context unconfirmed"
+    },
+    {
+      "source_id": "public_Assets_images_test_jpg",
+      "target_id": "public_Assets_images_test_webp",
+      "relation": "alternative_format",
+      "relation_type": "INFERRED",
+      "confidence_score": 0.95,
+      "evidence": "Same base filename in same directory; JPG and WebP are alternate encodings of same image"
+    },
+    {
+      "source_id": "public_Assets_images_venkat_sai_jpg",
+      "target_id": "public_Assets_images_venkat_sai_webp",
+      "relation": "alternative_format",
+      "relation_type": "INFERRED",
+      "confidence_score": 0.95,
+      "evidence": "Same base filename in same directory; JPG and WebP are alternate encodings of same image"
+    },
+    {
+      "source_id": "public_Assets_images_test_jpg",
+      "target_id": "epoch_40_event",
+      "relation": "promotional_image_for",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "evidence": "Used as mainImage in About.js line 12 for Epoch 4.0 About section"
+    },
+    {
+      "source_id": "public_Assets_images_venkat_sai_jpg",
+      "target_id": "venkat_sai_person",
+      "relation": "portrait_of",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "evidence": "Mapped to Venkat Sai in about.json line 75 and team.json line 92 as team member image"
+    },
+    {
+      "source_id": "public_Assets_images_venkat_sai_webp",
+      "target_id": "venkat_sai_person",
+      "relation": "portrait_of",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "evidence": "Mapped to Venkat Sai in about.json and team.json as team member image"
+    },
+    {
+      "source_id": "public_favicon_dark_png",
+      "target_id": "epoch_40_event",
+      "relation": "brand_icon_for",
+      "relation_type": "EXTRACTED",
+      "confidence_score": 1.0,
+      "evidence": "Configured as favicon and apple-touch-icon in index.html and manifest.json for EPOCH site"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 1900,
+  "output_tokens": 2800
+}
